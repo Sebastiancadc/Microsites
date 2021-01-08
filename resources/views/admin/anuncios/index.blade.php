@@ -19,6 +19,7 @@
                 </button>
             </div>
             @endif
+            
             @include('admin.anuncios.estadisticas')
             <div class="row">
                 <div class="col-md-12">

@@ -248,9 +248,7 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
     @yield('jss')
     <script src="{{asset("plantilla/vendor/date/bootstrap-datetimepicker.js")}}"></script>
     <!-- Argon JS -->
-    <script src="{{asset("plantilla/js/dark.js")}}"></script>
-    <script src="{{asset("plantilla/js/perfil.js")}}"></script>
-    
+    <script src="{{asset("plantilla/js/dark.js")}}"></script>   
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
     <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>

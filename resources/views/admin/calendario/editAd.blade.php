@@ -25,6 +25,7 @@
 					</li>
 				</ul>
 			</div>
+			
 			<div class="col-md-9 ml-auto mr-auto">
 				<div class="card">
 					<form action="{{url('Calendario/editarEventoAd',$eventos->id)}}" method="POST">

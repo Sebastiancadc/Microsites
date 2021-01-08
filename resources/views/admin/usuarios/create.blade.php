@@ -17,7 +17,8 @@
                 <form role="form" method="POST" action="{{url('admin/usuario')}}">
                     @csrf @method('POST')
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-sm-12"> 
+                            
                             <div class="form-group form-group-default">
                                 <label>Nombre</label>
                                 <input type="text" class="form-control" placeholder="Tu nombre..." name="name" >

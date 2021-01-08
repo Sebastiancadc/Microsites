@@ -19,6 +19,7 @@
                 </button>
             </div>
             @endif
+
             @if (session('Permisosedit'))
             <div class="alert alert-warning" role="alert">
                 {{(session('Permisosedit'))}}
@@ -173,13 +174,6 @@
 
 <script src="{{asset("plantillaAdmin/assets/js/bootstrap-datetimepicker.min.js")}}"></script>
 <script src="{{asset("plantillaAdmin/assets/js/select2.full.min.js")}}"></script>
-<script>
-    $('#datepicker').datetimepicker({
-        format: 'DD/MM/YYYY',
-    });
-    $('#datetime').datetimepicker({
-        format: 'MM/DD/YYYY H:mm',
-    });
-</script>
+
 @endsection
 @endsection

@@ -35,6 +35,7 @@
                                 @endif
                             </div>
                         </div>
+                        
                         <div class="col-md-11 pr-0">
                             <div class="form-group form-group-default">
                                 <label>Tipo</label>

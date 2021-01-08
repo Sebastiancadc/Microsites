@@ -10,6 +10,7 @@ position: fixed; transition: all 0.5s ease-in-out 0s;
   animation-iteration-count: 1;">
   <span class="alert-icon ni ni-bell-55" data-notify="icon">
   </span>
+  
   <div class="alert-text" div="">
     <span class="alert-title" data-notify="title">
       {{$notificacion->data['titulo']}}

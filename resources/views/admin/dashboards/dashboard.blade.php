@@ -118,20 +118,8 @@ $date =date('m-d')
 
 @section('js')
 <script src="{{asset("plantilla/vendor/fullcalendar/dist/locale/es.js")}}"></script>
-<script>
-  $(document).ready(function () {
-          events={!! json_encode($calendario) !!};
-          $('#date').fullCalendar({
-              events: events,
-
-          })
-      });
-</script>
-
 <script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>
-<script src="{{asset("pausasacitvas/pausas.js")}}"></script>
 <script src="{{asset("plantilla/js/gallery.js")}}"></script>
-
 </body>
 @endsection
 @endsection

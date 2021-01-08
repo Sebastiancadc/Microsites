@@ -78,7 +78,8 @@
                                 <button type="submit" class="btn btn-primary my-4">Enviar</button>
                                 <button onclick="window.history.back();" class="btn btn-danger my-4">Cancelar</button>
                             </div>
-                            </input>
+                            </input> 
+                            
                     </form>
                 </div>
             </div>

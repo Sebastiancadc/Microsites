@@ -122,5 +122,6 @@
 			theme: "bootstrap"
 		});
 	</script>
+	
 	@endsection
 	@endsection

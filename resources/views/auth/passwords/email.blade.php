@@ -12,6 +12,7 @@
   <!-- Favicon -->
   <link rel="icon" href="{{asset("plantilla/img/brand/favicon.png")}}" type="image/png">
   <!-- Fonts -->
+  
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700">
   <!-- Icons -->
   <link rel="stylesheet" href="{{asset("plantilla/vendor/nucleo/css/nucleo.css")}}" type="text/css">

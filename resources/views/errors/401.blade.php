@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{asset("css/style-400.css")}}" type="text/css">
     <link rel="stylesheet" href="{{asset("plantilla/bootstrap/css/bootstrap.css")}}" type="text/css">
 </head>
+
 <body class="error404 text-center">
     <div class="container-fluid  error-content">
         <div class="">

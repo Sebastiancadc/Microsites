@@ -12,6 +12,7 @@ $user = auth()->user();
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      
       <div class="modal-body ">
         <form role="form" method="POST" action="{{url('Calendario/crearEvento')}}">
           @csrf @method('POST')

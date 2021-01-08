@@ -18,6 +18,7 @@
     </div>
   </div>
 </div>
+
 <div class="container-fluid mt--6">
   <div class="row justify-content-center">
     <div class="col-lg-6">

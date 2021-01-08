@@ -21,6 +21,7 @@
                 </button>
             </div>
             @endif
+            
             @if (session('update'))
             <div class="alert alert-warning" role="alert">
                 {{(session('update'))}}
