@@ -108,69 +108,8 @@ $date =date('m-d')
             </div>               
         </div>
       <div class="col-lg-4">
-        <div class="card">
-          <div class="card-header bg-transparent"> 
-                <div class="row align-items-center">
-                    <div class="col">
-                        <h5 class="h3 mb-0">Próximos cumpleaños</h5>
-                    </div>
-                </div>
-          </div>
-          <div class="card-body">
-           @foreach ($users as $user)
-            <div class="row align-items-center">
-              <div class="col-auto">
-                <a class="avatar rounded-circle">
-                <img src="{{$user->photo}}">
-                </a>
-              </div>
-              <div class="col ml--2">
-                <h4 class="mb-0">
-                <a>{{$user->name}} {{$user->lastname}} <a class="gris">{{App\Helpers\Helpers::formatearFecha($user->cumpleanios)}}</a></a>
-                </h4>
-              </div>
-            </div>
-            @endforeach
-          </div>
-        </div>
-        {{-- Modal feliz cumpleaños --}}
-        @include('admin.modales.cumpleanios')
-        {{-- Modal llenar campos --}}
-        @include('admin.modales.modalCampos')
-        {{-- Modal pausas activas --}}
-        @include('admin.modales.modalPausas')
         @include('admin.modales.anuncios')
         <!-- Timeline card -->
-        <div class="card widget-calendar">
-          <!-- Card header -->
-                    <div class="card-header">
-            <!-- Title -->
-            <h5 class="h3 mb-0">Próximos eventos</h5>
-             <h5>
-          </h5>
-          </div>
-          
-          <div class="card-header">
-                <div class="h3 mb-0 widget-calendar-day"></div>
-                <div class="h3 text-muted mb-1 widget-calendar-year"></div>
-          </div>
-          <!-- Card body -->
-          <div class="card-body">
-            <div class="calendar" id="sad" data-toggle="widget-calendar" style="visibility: hidden;"></div>
-            <div data-toggle="calendar" id="date" style="margin-top: -151%;" ></div>
-          </div>
-          @foreach ($eventos as $evento)
-          <div class="etnrr">
-            <h4>
-              <br>
-            <a style="margin-left:31px;">{{$evento->name}}
-            <a class="gris">{{App\Helpers\Helpers::formatearFecha($evento->start_time)}}</a>
-            <a class="gris"> hasta {{App\Helpers\Helpers::formatearFecha($evento->end_time)}}</a></a>
-          <br>
-            </h4>
-          </div>
-          @endforeach
-        </div>
       </div>
     </div>
     @include('admin.layouts.footer')

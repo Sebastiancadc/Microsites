@@ -5,19 +5,13 @@
 $user = auth()->user();
 $rol = auth()->user()->role;
 $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Roles', '=', $rol)->first();
-$page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->first();
-$chat = Illuminate\Support\Facades\DB::table('messages')->select('*')->first();
-$connt = Illuminate\Support\Facades\DB::table('messages')->select('seen')->whereto_id(Auth::user()->id)->count();
-$ids = Auth::user()->id;
-$conntss = Illuminate\Support\Facades\DB::select("SELECT seen FROM messages WHERE to_id = '$ids' AND seen = 0");
-$horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as created_at FROM messages WHERE to_id = '$ids'");
+
 ?>
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
-  <!-- Favicon -->
-  <link rel="icon" href="{{$page->logoisotipo}}" type="image/png">
+  
   <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700">
   <!-- Icons -->
@@ -38,9 +32,7 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
   <title>Montechelo </title>
 </head>
-
 <body>
-  {{-- @include('admin.modales.anuncios') --}}
   @include('admin.configuracionweb.css2')
   <!-- Sidenav -->
   <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light " id="sidenav-main">
@@ -48,9 +40,7 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
       <!-- Brand -->
       <div class="sidenav-header d-flex align-items-center">
         <a class="navbar-brand" href="{{url("home")}}">
-          <img src="{{$page->logonav}}" id="imagenmenuleft" class="navbar-brand-img" style="margin-top: -7px;
-          max-width: 126%;
-          max-height: 10rem;">
+  
         </a>
         <div class="ml-auto">
           <!-- Sidenav toggler -->
@@ -74,78 +64,30 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
               <span class="nav-link-text">Inicio</span>
             </a>
             </li>
-            @if ($colaborador->chat_status == '1')
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url('Chatmontechelo')}}">
-                <i class="ni ni-chat-round text-orange"></i>
-                <span class="nav-link-text">Chat</span>
-              </a>
-            </li>
-            @endif
-            @if ($colaborador->directorio_status == '1')
-            <li class="nav-item">
-              <a class="nav-link" href="{{url("directorio")}}">
-                <i class="ni ni-badge text-info"></i>
-                <span class="nav-link-text">Directorio</span>
-              </a>
-            </li>
-            @endif
             @if ($colaborador->talento_status == '1')
             <li class="nav-item">
-              <a class="nav-link" href="{{url('talento')}}">
+              <a class="nav-link" href="{{url('noticiausu')}}">
                 <i class="ni ni-archive-2 text-black"></i>
-                <span class="nav-link-text">Talento Humano</span>
+                <span class="nav-link-text">Noticias</span>
               </a>
             </li>
             @endif
-            @if ($colaborador->repositorio_status == '1')
+            {{-- @if ($colaborador->repositorio_status == '1')
             <li class="nav-item">
               <a class="nav-link" href="{{url("repositoriocola")}}">
                 <i class="ni ni-folder-17 text-pink"></i>
                 <span class="nav-link-text">Repositorio</span>
               </a>
             </li>
-            @endif
-            @if ($colaborador->calendario_status == '1')
+            @endif --}}
+            {{-- @if ($colaborador->calendario_status == '1')
             <li class="nav-item">
               <a class="nav-link" href="{{url("calendar")}}">
                 <i class="ni ni-calendar-grid-58 text-red"></i>
                 <span class="nav-link-text">Calendario</span>
               </a>
             </li>
-            @endif
-            @if ($colaborador->solicitud_status == '1')
-            <li class="nav-item">
-              <a class="nav-link" href="{{url('solicitudesd')}}">
-                <i class="ni ni-notification-70 text-green"></i>
-                <span class="nav-link-text">Solicitudes y trámites</span>
-              </a>
-            </li>
-            @endif
-            @if ($colaborador->buzon_status == '1')
-            <li class="nav-item">
-              <a class="nav-link" href="{{url("buzonusu")}}">
-                <i class="ni ni-send text-yellow"></i>
-                <span class="nav-link-text">Buzón de sugerencias</span>
-              </a>
-            </li>
-            @endif
-            @if ($colaborador->plan_status == '1')
-            <li class="nav-item">
-              <a class="nav-link" href="{{url("planestrategico")}}">
-                <i class="ni ni-building text-orange"></i>
-                <span class="nav-link-text">Plan estratégico</span>
-              </a>
-            </li>
-            @endif
-            @if ($colaborador->novedad_status == '1')
-            <li class="nav-item">
-              <a class="nav-link" href="{{url('crearnovedad')}}">
-                <i class="ni ni-building text-purple"></i>
-                <span class="nav-link-text">Novedad</span>
-              </a>
-            </li>
-            @endif
+            @endif  --}}
           </ul>
         </div>
       </div>
@@ -157,32 +99,6 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
     <nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <!-- Search form -->
-          <form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main">
-            <div class="form-group mb-0">
-              <div class="input-group input-group-alternative input-group-merge" style="height: 42px;
-              width: 334px;">
-                <div class="input-group-prepend">
-                  <span class="input-group-text"><i class="fas fa-search"></i></span>
-                </div>
-                <select class="js-example-basic-single" name="state" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
-                  <option value="">Buscar...</option>
-                  <option value="{{url('Chatmontechelo')}}">Chat</option>
-                  <option value="{{url("directorio")}}">Directorio</option>
-                  <option value="{{url('talento')}}">Talento humano</option>
-                  <option value="{{url("repositoriocola")}}">Repositorio</option>
-                  <option value="{{url("calendar")}}">Calendario</option>
-                  <option value="{{url('solicitud')}}">Solicitud</option>
-                  <option value="{{url("buzonusu")}}">Buzon de sugerencias</option>
-                  <option value="{{url("planestrategico")}}">Plan estrategico</option>
-                  <option value="{{url('crearnovedad')}}">Novedad</option>
-                </select>
-              </div>
-            </div>
-            <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </form>
           <!-- Navbar links -->
           <ul class="navbar-nav align-items-center ml-md-auto">
             <li class="nav-item d-xl-none">
@@ -204,73 +120,6 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
               <span><i class="fas fa-sun" style="15px"></i></span>
               <span><i class="fas fa-moon" style="15px"></i></span>
             </button>
-            <li class="nav-item dropdown">
-              <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="ni ni-chat-round"></i>
-                <span>
-                  @if (count($conntss) == 0)
-                  @else
-                  <span class="badge badge-danger circulorojo">.
-                  </span>
-                  @endif
-                </span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right py-0 overflow-hidden">
-                <!-- Dropdown header -->
-                <div class="px-3 py-3">
-                  <h6 class="text-sm text-muted m-0">Tienes <strong class="text-primary">{{count($conntss)}}</strong> Mensajes.
-                  </h6>
-                </div>
-                <!-- List group -->
-                <div class="list-group list-group-flush">
-                  @if (count($conntss) == 0)
-                  <a href="#!" class="list-group-item list-group-item-action">
-                    <div class="row align-items-center">
-                      <div class="col-auto">
-                        <i class="fas fa-comment-slash" style="font-size: 23px;"></i>
-                      </div>
-                      <div class="col ml--2">
-                        <div class="d-flex justify-content-between align-items-center">
-                          <div>
-
-                          </div>
-                          <div class="text-right text-muted">
-                            <small>--</small>
-                          </div>
-                        </div>
-                        <p class="text-sm mb-0">No tienes mensajes</p>
-                      </div>
-                    </div>
-                  </a>
-                  @else
-                  <a href="{{url('Chatmontechelo')}}" class="list-group-item list-group-item-action">
-                    <div class="row align-items-center">
-                      <div class="col-auto">
-                        <!-- Avatar -->
-                        <div class="col-auto">
-                          <i class="ni ni-chat-round" style="font-size: 23px;"></i>
-                        </div>
-                      </div>
-                      <div class="col ml--2">
-                        <div class="d-flex justify-content-between align-items-center">
-                          <div>
-                            <h4 class="mb-0 text-sm">Chat</h4>
-                          </div>
-                          <div class="text-right text-muted">
-                            {{-- <small>{{json_encode($horas)}}</small> --}}
-                            <p></p>
-                          </div>
-                        </div>
-                        <p class="text-sm mb-0">Tienes un mensaje nuevo</p>
-                      </div>
-                    </div>
-                  </a>
-                  @endif
-                </div>
-                <!-- View all -->
-                <a href="{{url('Chatmontechelo')}}" class="dropdown-item text-center text-primary font-weight-bold py-3">Ver mis mensajes</a>
-              </div>
-            </li>
             {{-- Notificaciones campana --}}
             <li class="nav-item dropdown">
               <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -347,10 +196,7 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
                 <div class="dropdown-header noti-title">
                   <h6 class="text-overflow m-0">Bienvenido!</h6>
                 </div>
-                <a href="{{ url('perfil')}}" class="dropdown-item">
-                  <i class="ni ni-single-02"></i>
-                  <span>Mi perfil</span>
-                </a>
+
                 @if ($user->role=='admin')
                 <a href="{{ url('admin/HomeAdmin')}}" class="dropdown-item">
                   <i class="ni ni-settings-gear-65"></i>
@@ -380,7 +226,6 @@ $horas = Illuminate\Support\Facades\DB::select("SELECT MAX(created_at) as create
     @yield('content')
     <!-- Argon Scripts -->
     <!-- Core -->
-    
     <script src="{{asset("plantilla/vendor/jquery/dist/jquery.min.js")}}"></script>
     <script src="{{asset("plantilla/vendor/bootstrap/dist/js/bootstrap.bundle.min.js")}}"></script>
     <script src="{{asset("plantilla/vendor/js-cookie/js.cookie.js")}}"></script>

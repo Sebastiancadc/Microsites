@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html>
-<?php
-$page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->first();
-?>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Login</title>
-    <!-- Favicon -->
-    <link rel="icon" href="{{$page->logoisotipo}}" type="image/png">
+
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700">
     <!-- Icons -->
@@ -54,7 +50,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
                 <div class="col-lg-5 col-md-7">
                     <div class="card bg-secondary border-0 mb-0" style="top: -190px;">
                         <div class="card-header bg-transparent pb-5" style="padding-bottom: 1rem !important; margin-left: auto; margin-right:auto;">
-                        <img src="{{$page->logologin}}" style="height: 70px;">
+                        
                         </div>
                         <div class="card-body px-lg-5 py-lg-5">
                             <div class="text-center text-muted mb-4">
@@ -101,11 +97,6 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
 
                             <a href="{{ route('password.request')}}" class="text-light"><small>Olvidaste la contraseña?</small></a>
                         </div>
-
-                        <div class="col-6 text-right">
-                            <a href="{{ route('register') }}" class="text-light"><small>Crear nueva cuenta</small></a>
-                        </div>
-
                     </div>
                 </div>
             </div>

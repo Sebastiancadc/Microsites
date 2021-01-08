@@ -81,12 +81,9 @@ class InicioController extends Controller
         $noticias= Noticia::latest()->take(2)->get();
         $noticias2= Noticia::first()->take(1)->get();
         
-        $pausasramdom = Pausasactivas::select('video')
-        ->inRandomOrder() 
-        ->first();
 
         return view('admin.dashboards.dashboard',compact('users','eventos','calendario'
-        ,'modal','noticias','noticias2','pausasramdom'));
+        ,'modal','noticias','noticias2'));
     }
 
     public function indexAdmin()

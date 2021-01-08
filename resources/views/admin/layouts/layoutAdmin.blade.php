@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<?php
-$page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->first();
-?>
 
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>Montechelo</title>
 	  <!-- Fonts -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700">
-
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="{{$page->logoisotipo}}" type="image/png">
 	<!-- Fonts and icons -->
 	<script src="{{asset("plantillaAdmin/assets/js/plugin/webfont/webfont.min.js")}}"></script>
 
@@ -30,9 +25,6 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
 		});
 	</script>
 	<!-- CSS Files -->
-	<?php
-	$page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->first();
-	?>
 	<link rel="stylesheet" href="{{asset("plantillaAdmin/assets/css/bootstrap.min.css")}}">
 	<link rel="stylesheet" href="{{asset("plantillaAdmin/assets/css/azzara.css")}}">
 
@@ -86,9 +78,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
 										</div>
 									</div>
 								</li>
-								<li>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="{{ url('perfil')}}">Mi Perfil</a>
+								<li>									
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">Cerrar sesion</a>
@@ -145,79 +135,19 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
 								</ul>
 							</div>
 						</li>
-						<li class="nav-item ">
-							<a href="{{url('admin/novedad')}}">
-								<i class="fas fa-hotel"></i>
-								<p>Novedades</p>
-							</a>
-						</li>
-						<li class="nav-item ">
-							<a href="{{url('admin/solicitud')}}">
-								<i class="fas fas fa-hand-holding"></i>
-								<p>Solicitudes</p>
-							</a>
-						</li>
-						<li class="nav-item ">
-							<a href="{{url('admin/buzonAdmin')}}">
-								<i class="fas fa-paper-plane"></i>
-								<p>Buzon</p>
-							</a>
-						</li>
+{{-- 
 						<li class="nav-item ">
 							<a href="{{url('admin/eventos')}}">
 								<i class="fas fa-calendar-alt"></i>
 								<p>Eventos</p>
 							</a>
-						</li>
+						</li> --}}
 						<li class="nav-item ">
 							<a href="{{url('admin/noticia')}}">
 								<i class="fas fa-newspaper"></i>
 								<p>Noticias
 								</p>
 							</a>
-						</li>
-						<li class="nav-item ">
-							<a href="{{url('admin/capacitaciones')}}">
-								<i class="fas fa-chalkboard-teacher"></i>
-								<p>Capacitaciones
-								</p>
-							</a>
-						</li>
-						<li class="nav-item ">
-							<a href="{{url('admin/pasuasAdmin')}}">
-								<i class="fas fa-child"></i>
-								<p>Pauas activas
-								</p>
-							</a>
-						</li>
-						<li class="nav-section">
-							<span class="sidebar-mini-icon">
-								<i class="fa fa-ellipsis-h"></i>
-							</span>
-							<h4 class="text-section">Sistema de gestión de contenidos</h4>
-						</li>
-						<?php
-						$page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->first();
-						?>
-						<li class="nav-item ">
-							<a href="{{route('editarpage',$page->id)}}">
-								<i class="fas fa-cogs"></i>
-								<p>General
-								</p>
-							</a>
-						</li>
-						<li class="nav-item ">
-							<a href="{{url('admin/logsAdmin')}}">
-								<i class="fas fa-cubes"></i>
-								<p>Logs del sistema</p>
-							</a>
-						</li>
-						<li class="nav-item ">
-							<a href="{{url('admin/AnunciosAdmin')}}">
-								<i class="fas fa-bullhorn"></i>
-								<p>Anuncios</p>
-							</a>
-						</li>
 					</ul>
 				</div>
 			</div>

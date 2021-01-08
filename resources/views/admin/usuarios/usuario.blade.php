@@ -39,18 +39,13 @@
                                 <h4 class="card-title">Gestión de Usuarios</h4>
                                 <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
                                     <i class="fa fa-plus"></i>
-                                    Crear administrador
-                                </button>
-                                <span>.</span>
-                                <button class="btn btn-primary btn-round" data-toggle="modal" data-target="#addRowModal2">
-                                    <i class="fa fa-plus"></i>
-                                    Crear colaborador
+                                    Crear usuario
                                 </button>
                             </div>
                         </div>
                         <div class="card-body">
                             @include('admin.usuarios.create')
-                            @include('admin.usuarios.createcola')
+                       
                             <div class="table-responsive">
                                 <table id="add-row" class="display table table-striped table-hover">
                                     <thead>

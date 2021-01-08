@@ -35,18 +35,8 @@ class NoticiasController extends Controller
     public function index2()
     {
         $noticias = Noticia::paginate(6);
-        $pausasramdom = Pausasactivas::select('video')
-        ->inRandomOrder() 
-        ->first();
 
-        return view('admin.noticias.noticia',compact('noticias','pausasramdom'));
-    }
-    public function talento()
-    {
-        $pausasramdom = Pausasactivas::select('video')
-        ->inRandomOrder() 
-        ->first();
-        return view('admin.talentohumano.talento',compact('pausasramdom'));
+        return view('admin.noticias.noticia',compact('noticias'));
     }
 
     public function crearnoticia()

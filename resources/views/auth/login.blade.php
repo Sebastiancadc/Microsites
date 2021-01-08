@@ -7,8 +7,8 @@
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
   <title>Login</title>
-  <!-- Favicon -->
-  <link rel="icon" href="{{asset("plantilla/img/theme/isotipo.png")}}" type="image/png">
+  {{-- <!-- Favicon -->
+  <link rel="icon" href="{{asset("plantilla/img/theme/isotipo.png")}}" type="image/png"> --}}
   <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700">
   <!-- Icons -->
@@ -49,7 +49,7 @@
         <div class="col-lg-5 col-md-7">
           <div class="card bg-secondary border-0 mb-0" style="top: -184px;">
             <div class="card-header bg-transparent pb-5" style="padding-bottom: 1rem !important;">
-              <img src="{{asset("plantilla/img/theme/isotipo.png")}}" style="height: 70px;margin-left: 150px;">
+              {{-- <img src="{{asset("plantilla/img/theme/isotipo.png")}}" style="height: 70px;margin-left: 150px;"> --}}
             </div>
             <div class="card-body px-lg-5 py-lg-5" >
               <div class="text-center text-muted mb-4">
