@@ -40,11 +40,11 @@
                         <textarea class="form-control" placeholder="Descripcion de la notica" name="descripcion" type="text" cols="10" rows="5" required></textarea>
                     </div>
                   </div>
-                  <div class="form-group mb-3">
+                  {{-- <div class="form-group mb-3">
                     <div class="input-group input-group-merge input-group-alternative">
                         <input type="file"  class="form-control form-control-alternative"  name="image">
                     </div>
-                  </div>
+                  </div> --}}
                   <div class="text-center">
                     <button type="submit" class="btn btn-primary my-4">Crear</button>
                     <button class="btn btn-danger ml-auto" data-dismiss="modal">Cancelar</button>                   

@@ -96,9 +96,6 @@
                         <div class="col-6">
                             <a href="{{ url('loginAdmin')}}" class="text-light"><small>Login admin</small></a>
                         </div>
-                        <div class="col-6 text-right">
-                            <a href="{{url('Solicitud')}}" class="text-light"><small>Solicitar usuario</small></a>
-                          </div>
                     </div>
                 </div>
             </div>

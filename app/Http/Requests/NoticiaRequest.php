@@ -26,7 +26,7 @@ class NoticiaRequest extends FormRequest
         return [
            'title' => 'required|min:4|max:35',
            'body' => 'required|min:15|max:501',
-           'image' => 'required',
+          
         ];
     }
 
@@ -39,7 +39,7 @@ class NoticiaRequest extends FormRequest
             'body.min' => 'El Contenido debe tener minimo 15 caracteres.',
             'body.max' => 'El Contenido debe tener maximo 500 caracteres.',
             'body.required' => 'El Contenido es requerido.',
-            'image.required' => 'La Portada es requerida.',
+          
         ];
     }
 }

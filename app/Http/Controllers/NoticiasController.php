@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use App\Notifications\NoticiasNotification;
+use App\Permisos;
 use Redirect;
 
 class NoticiasController extends Controller
@@ -50,14 +51,17 @@ class NoticiasController extends Controller
     public function crearnoticia()
     {
         $user = User::find(Auth::User()->id);
+        $vercampaña = DB::select("SELECT * FROM rol WHERE Roles <> 'admin'");
         $categoria = Category::all();
-        return view('admin.noticias.crearnoticia',compact('categoria','user'));
+
+        return view('admin.noticias.crearnoticia',compact('categoria','user','vercampaña'));
     }
     public function crearnoticias()
     {
        $user = User::find(Auth::User()->id);
        $categoria = Category::all();
-       return view('admin.crearnoticia',compact('categoria','user'));
+       $vercampaña = DB::select("SELECT * FROM rol WHERE Roles <> 'admin'");
+       return view('admin.crearnoticia',compact('categoria','user','vercampaña'));
     }
     /**
      * Store a newly created resource in storage.

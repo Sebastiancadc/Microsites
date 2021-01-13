@@ -38,7 +38,7 @@ $date =date('m-d')
                             @foreach ($vercampaña as $item)
                             <a href="{{'post'}}/{{ $item->slug }}">
                                 <div class="gallery-item " data-width="1" data-height="1" style="padding-left: 10px; width: auto;">
-                                    <img src="{{$item->image}}" alt="" class="image-responsive imgsss">
+                                    <h4 style="color:white;">{{$item->title}}</h4>
                                     <div class="overlayer bottom-left full-width"  style="margin-top: -127px;margin-left: 16px;">
                                     <div class="overlayer-wrapper item-info ">
                                             <div class="gradient-grey p-l-20 p-r-20 p-t-20 p-b-5">
@@ -49,44 +49,14 @@ $date =date('m-d')
                                             </div>
                                     </div>
                                     </div>
-        
                                 </div>
                             </a>
                             @endforeach
                         </div>
-                        @foreach ($vercampaña as $noticia2)
-                        <div class="col-md-8" style="margin-left: -20px;" >
-                            <a href="{{'post'}}/{{ $noticia2->slug }}">
-                                <div class="gallery-item " data-width="2" data-height="2" style="padding-left: 10px; width: auto">
-                                    <!-- START PREVIEW -->
-                                    <div class="live-tile slide" data-speed="750" data-delay="4000" data-mode="carousel">
-                                        <div class="slide-front">
-                                            <img src="{{$noticia2->image}}" class="image-responsive-height imgsss2">
-                                        </div>
-                                    </div>
-                                    <!-- END PREVIEW -->
-                                    <!-- START ITEM OVERLAY DESCRIPTION -->
-                                    <div class="overlayer bottom-left full-width" style="margin-top: -185px;margin-left: 16px;">
-                                    <div class="overlayer-wrapper item-info more-content">
-                                        <div class="gradient-grey p-l-20 p-r-20 p-t-20 p-b-5">
-                                        <div class="">
-                                            <h3 class="pull-left bold text-white no-margin">{{$noticia2->title}}</h3>                                        
-                                            <div class="clearfix"></div>
-                                        </div>
-                     
-                                        </div>
-                                    </div>
-                                    </div>
-                                    <!-- END PRODUCT OVERLAY DESCRIPTION -->
-                                </div>
-                            </a>
-                        </div>
-                        @endforeach
                     </div>
                 </div>
             </div>               
         </div>
-    
     </div>
     @include('admin.layouts.footer')
   </div>

@@ -131,11 +131,7 @@
 											<span class="sub-item">Permisos</span>
 										</a>
 									</li>
-									<li>
-										<a href="{{url('admin/ListaSolicitud')}}">
-											<span class="sub-item">Solicitudes</span>
-										</a>
-									</li>
+									
 								</ul>
 							</div>
 						</li>

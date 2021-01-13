@@ -93,20 +93,14 @@
                   </label>
                 </div>
                 <div class="text-center">
-
                   <button type="submit" class="btn btn-primary my-4">Ingresar</button>
-
                 </div>
               </form>
             </div>
           </div>
-
           <div class="row" style="margin-top: -185px;">          
             <div class="col-6">
                 <a href="{{ url('loginAdmin')}}" class="text-light"><small>Login admin</small></a>
-            </div>
-            <div class="col-6 text-right">
-              <a href="{{url('Solicitud')}}" class="text-light"><small>Solicitar usuario</small></a>
             </div>
         </div>
         </div>

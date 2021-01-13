@@ -44,18 +44,17 @@
                                 <strong class="text-danger tamano">{{$errors->first('title') }}</strong>
                                 @endif
                             </div>
-                           
                             <div class="form-group">
-                                <label class="form-control-label">Categorias</label>
-                                <select class="form-control" name="category_id" required>
-                                    @foreach ($categoria as $category)
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                    @endforeach
+                                <label class="form-control-label" for="exampleFormControlInput1">Campaña</label>
+                                
+                                <select class="form-control"  name="campana" id=""> 
+                                @foreach ($vercampaña as $item)
+                                <div>{{$item->Roles}}</div>
+                                  <option value="{{$item->Roles}}">{{$item->Roles}}</option>      
+                                  @endforeach
                                 </select>
-                                @if ($errors->has('category_id'))
-                                <strong class="text-danger tamano">{{$errors->first('category_id') }}</strong>
-                                @endif
                             </div>
+
                             <div class="form-group">
                                 <label class="form-control-label" for="exampleFormControlTextarea1">Contenido</label>
                                 <div class="col-md-12">
@@ -65,21 +64,11 @@
                                     @endif
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <div class="form-group">
-                                    <label class="form-control-label"> Portada </label>
-                                    <input type="file" class="form-control form-control-alternative"  name="image" >
-                                    @if ($errors->has('image'))
-                                    <strong class="text-danger tamano">{{$errors->first('image') }}</strong>
-                                    @endif
-                                </div>
-                            </div>
+                         
                             <div class="col-lg-6 col-5 text-right" style="float: right;">
                                 <button type="submit" class="btn btn-primary my-4">Enviar</button>
-                                <button onclick="window.history.back();" class="btn btn-danger my-4">Cancelar</button>
-                            </div>
-                            </input> 
-                            
+                                <a href="{{url('noticiausu')}}" class="btn btn-danger my-4">Cancelar</a>
+                            </div>                       
                     </form>
                 </div>
             </div>
