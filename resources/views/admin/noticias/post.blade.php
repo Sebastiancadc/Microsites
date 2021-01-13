@@ -1,5 +1,11 @@
 @extends('admin.layouts.layout')
 @section('content')
+<?php
+
+$rol = auth()->user()->role;
+$campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Roles', '=', $rol)->first();
+
+?>
 <div class="header bg-primary pb-6">
     <div class="container-fluid">
         <div class="header-body">
@@ -49,14 +55,42 @@
                         </div>
                         </div>
                         <div class="text-right ml-auto">
-                            @if($noticia->user->id == Auth::User()->id)
-                        <a href="{{route('editarnoticia', $noticia->Id_noticia)}}" type="button" class="btn btn-sm btn-primary btn-icon">
+                            @if ($campaña->update_status == '1')
+                            <a href="{{route('editarnoticia', $noticia->Id_noticia)}}" type="button" class="btn btn-sm btn-primary btn-icon">
                             <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
                             <span class="btn-inner--text">Editar</span>
+                            @endif
+                            @if ($campaña->delete_status == '1')
+                            <a href="" data-toggle="modal" data-target="#deleteNoticia{{$noticia->Id_noticia}}" type="button" class="btn btn-sm btn-danger btn-icon">
+                            <span class="btn-inner--icon"><i class="ni ni-fat-remove"></i></span>
+                            <span class="btn-inner--text">Eliminar</span>
                             @endif
                         </a>
                         </div>
                     </div>
+                                <!-- Modal -->
+                                <div class="modal fade" id="deleteNoticia{{$noticia->Id_noticia}}" tabindex="-1" role="dialog" aria-labelledby="deleteUsuarioTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h3>¿Estás seguro de eliminar esta noticia?</h3>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <form role="form" method="POST" action="{{route('eliminarnoticia',$noticia->Id_noticia)}}">
+                                                @csrf @method('DELETE')
+                                                <div class="modal-body">
+                                                    ¡No podrás revertir esto!
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                                    <button type="sum" class="btn btn-primary">Eliminar</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                 <div class="card-body">
                     <p class="mb-4">
                         {{ $noticia->body }}

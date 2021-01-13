@@ -16,9 +16,7 @@ class Permisos extends Authenticatable implements MustVerifyEmail
 	protected $primaryKey = 'Id_Rol';
 
     protected $fillable = [
-        'Roles','chat_status','directorio_status','talento_status','repositorio_status','calendario_status',
-        'solicitud_status','buzon_status','plan_status','novedad_status'
+        'Roles','create_status','update_status','delete_status'
     ];
-
 
 }

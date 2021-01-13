@@ -73,7 +73,7 @@
 									<div class="user-box">
 										<div class="avatar-lg"><img src="{{Auth::user()->photo}}" alt="image profile" class="avatar-img rounded"></div>
 										<div class="u-text">
-											<h4>{{Auth::user()->name}} {{Auth::user()->lastname}}</h4>
+											<h4>{{Auth::user()->username}}</h4>
 											<p class="text-muted">{{Auth::user()->email}}</p>
 										</div>
 									</div>
@@ -131,17 +131,14 @@
 											<span class="sub-item">Permisos</span>
 										</a>
 									</li>
-
+									<li>
+										<a href="{{url('admin/ListaSolicitud')}}">
+											<span class="sub-item">Solicitudes</span>
+										</a>
+									</li>
 								</ul>
 							</div>
 						</li>
-{{-- 
-						<li class="nav-item ">
-							<a href="{{url('admin/eventos')}}">
-								<i class="fas fa-calendar-alt"></i>
-								<p>Eventos</p>
-							</a>
-						</li> --}}
 						<li class="nav-item ">
 							<a href="{{url('admin/noticia')}}">
 								<i class="fas fa-newspaper"></i>

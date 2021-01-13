@@ -62,7 +62,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                     </div>
-                    <input id="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" placeholder="Email" type="email" required autofocus>
+                    <input id="email" name="username" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" placeholder="username" type="text" required autofocus>
                     
                 </div>
               
@@ -101,17 +101,14 @@
             </div>
           </div>
 
-          <div class="row" style="margin-top: -179px;">
+          <div class="row" style="margin-top: -185px;">          
             <div class="col-6">
-
-              <a href="{{ route('password.request')}}" class="text-light"><small>Olvidaste la contraseña?</small></a>
+                <a href="{{ url('loginAdmin')}}" class="text-light"><small>Login admin</small></a>
             </div>
-
             <div class="col-6 text-right">
-              <a href="{{ route('register') }}" class="text-light"><small>Crear nueva cuenta</small></a>
+              <a href="{{url('Solicitud')}}" class="text-light"><small>Solicitar usuario</small></a>
             </div>
-
-          </div>
+        </div>
         </div>
       </div>
     </div>

@@ -7,7 +7,6 @@ $rol = auth()->user()->role;
 $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Roles', '=', $rol)->first();
 
 ?>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
@@ -30,7 +29,7 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
   <link rel="stylesheet" href="{{asset("plantilla/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css")}}">
 
   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
-  <title>Montechelo </title>
+  <title>Microsites </title>
 </head>
 <body>
   @include('admin.configuracionweb.css2')
@@ -64,30 +63,14 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
               <span class="nav-link-text">Inicio</span>
             </a>
             </li>
-            @if ($colaborador->talento_status == '1')
+            
             <li class="nav-item">
               <a class="nav-link" href="{{url('noticiausu')}}">
                 <i class="ni ni-archive-2 text-black"></i>
                 <span class="nav-link-text">Noticias</span>
               </a>
             </li>
-            @endif
-            {{-- @if ($colaborador->repositorio_status == '1')
-            <li class="nav-item">
-              <a class="nav-link" href="{{url("repositoriocola")}}">
-                <i class="ni ni-folder-17 text-pink"></i>
-                <span class="nav-link-text">Repositorio</span>
-              </a>
-            </li>
-            @endif --}}
-            {{-- @if ($colaborador->calendario_status == '1')
-            <li class="nav-item">
-              <a class="nav-link" href="{{url("calendar")}}">
-                <i class="ni ni-calendar-grid-58 text-red"></i>
-                <span class="nav-link-text">Calendario</span>
-              </a>
-            </li>
-            @endif  --}}
+
           </ul>
         </div>
       </div>
@@ -120,66 +103,7 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
               <span><i class="fas fa-sun" style="15px"></i></span>
               <span><i class="fas fa-moon" style="15px"></i></span>
             </button>
-            {{-- Notificaciones campana --}}
-            <li class="nav-item dropdown">
-              <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="ni ni-bell-55"></i>
-                <span>
-                  @if (count(Auth::user()->unreadNotifications))
-                  <span class="badge badge-danger circulorojo">.
-                  </span>
-                  @endif
-                </span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right py-0 overflow-hidden">
-                <!-- Dropdown header -->
-                <div class="px-3 py-3">
-                  <h6 class="text-sm text-muted m-0">Tienes
-                    @if (count(Auth::user()->unreadNotifications))
-                    <strong class="text-primary"> {{count(Auth::user()->unreadNotifications)}}</strong>
-                    @endif notificaciones.
-                  </h6>
-                </div>
-                <!-- List group -->
-                @forelse (Auth::user()->unreadNotifications as $notificacion )
-                <a href="{{$notificacion->data['link']}}" class="list-group-item list-group-item-action">
-                  <div class="row align-items-center">
-                    <div class="col-auto">
-                      <i class="ni {{$notificacion->data['icono']}}" style="font-size: 23px;"></i>
-                    </div>
-                    <div class="col ml--2">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div>
-                          <h4 class="mb-0 text-sm">{{$notificacion->data['evento']}} - {{$notificacion->data['titulo']}}</h4>
-                        </div>
-                        <div class="text-right text-muted">
-                          <small>{{$notificacion->created_at->diffForHumans()}}</small>
-                        </div>
-                      </div>
-                      <p class="text-sm mb-0">{{$notificacion->data['descripcion']}}</p>
-                    </div>
-                  </div>
-                </a>
-                @empty
-                <a class="list-group-item list-group-item-action">
-                <div class="row align-items-center">
-                  <div class="col-auto">
-                    <i class="fas fa-bell-slash" style="font-size: 23px;"></i>
-                  </div>
-                  <div class="col ml--2">
-                    <div class="d-flex justify-content-between align-items-center">
-                    </div>
-                    <p class="text-sm mb-0">Sin notificaciones</p>
-                  </div>
-                </div>
-              </a>
-                @endforelse
-                <!-- View all -->
-                <a href="{{route('leertodas')}}" style="margin-left: -7px;" class=" dropdown-item text-left text-primary font-weight-bold py-2">Marcar como leidas</a>
-                <a href="{{url('Notificaciones')}}" style="margin-left: -15px;margin-top: -45px;" class=" dropdown-item text-right text-primary font-weight-bold py-3">Ver todas</a>
-              </div>
-            </li>
-          </ul>
+         
           <ul class="navbar-nav align-items-center ml-auto ml-md-0">
             <li class="nav-item dropdown">
               <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -188,7 +112,7 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
                     <img alt="Image placeholder" src="{{Auth::user()->photo}}">
                   </span>
                   <div class="media-body ml-2 d-none d-lg-block">
-                    <span class="mb-0 text-sm  font-weight-bold">{{Auth::user()->name}} {{Auth::user()->lastname}}</span>
+                    <span class="mb-0 text-sm  font-weight-bold">{{Auth::user()->username}}</span>
                   </div>
                 </div>
               </a>

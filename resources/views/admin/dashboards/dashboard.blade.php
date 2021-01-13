@@ -26,20 +26,20 @@ $date =date('m-d')
     </div>
   </div>
   <div class="container-fluid mt--6">
-    <div class="row">
-      <div class="col-lg-8">
+    <div class="row">       
+        <div class="col-lg-8">
             <div class="card bg-default" style="background-color: #ffffff !important;">
                 <div class="card-header bg-transparent">
                     <div class="card-header bg-transparent">
                         <div class="row align-items-center">
                             <div class="col">
-                                <h2 class="mb-0">Noticias de Intéres</h5>
+                                <h2 class="mb-0">Noticias de interes</h5>
                             </div>
                         </div>
                     </div>
                     <div class="row align-items-center">
                         <div class="col sm-4">
-                            @foreach ($noticias as $item)
+                            @foreach ($vercampaña as $item)
                             <a href="{{'post'}}/{{ $item->slug }}">
                                 <div class="gallery-item " data-width="1" data-height="1" style="padding-left: 10px; width: auto;">
                                     <img src="{{$item->image}}" alt="" class="image-responsive imgsss">
@@ -50,24 +50,15 @@ $date =date('m-d')
                                                     <p class="pull-left bold text-white fs-14 p-t-10">{{$item->title}}</p>                                            
                                                     <div class="clearfix"></div>
                                                 </div>
-                                                <div class="m-t-10">
-                                                    <div class="thumbnail-wrapper d32 circular m-t-5 avatar rounded-circle">
-                                                        <img src="{{ $item->user->photo }}">
-                                                    </div>
-                                                    <div class="inline m-l-10">
-                                                        <p class="no-margin text-white fs-12">Escrito por {{$item->user->name}} {{$item->user->lastname}}</p>
-                                                    </div>                                                
-                                                    <div class="clearfix"></div>
-                                                </div>
                                             </div>
                                     </div>
                                     </div>
-
+        
                                 </div>
                             </a>
                             @endforeach
                         </div>
-                        @foreach ($noticias2 as $noticia2)
+                        @foreach ($vercampaña as $noticia2)
                         <div class="col-md-8" style="margin-left: -20px;" >
                             <a href="{{'post'}}/{{ $noticia2->slug }}">
                                 <div class="gallery-item " data-width="2" data-height="2" style="padding-left: 10px; width: auto">
@@ -86,15 +77,7 @@ $date =date('m-d')
                                             <h3 class="pull-left bold text-white no-margin">{{$noticia2->title}}</h3>                                        
                                             <div class="clearfix"></div>
                                         </div>
-                                        <div class="m-t-10">
-                                            <div class="thumbnail-wrapper d32 circular m-t-5  avatar rounded-circle">
-                                            <img width="auto" height="auto" src="{{$noticia2->user->photo}}"  alt="">
-                                            </div>
-                                            <div class="inline m-l-10">
-                                                <p class="no-margin text-white fs-12">Escrito por {{$noticia2->user->name}} {{$noticia2->user->lastname}}</p>                                      
-                                            </div>                                            
-                                            <div class="clearfix"></div>
-                                        </div>
+                     
                                         </div>
                                     </div>
                                     </div>
@@ -107,10 +90,7 @@ $date =date('m-d')
                 </div>
             </div>               
         </div>
-      <div class="col-lg-4">
-        @include('admin.modales.anuncios')
-        <!-- Timeline card -->
-      </div>
+    
     </div>
     @include('admin.layouts.footer')
   </div>

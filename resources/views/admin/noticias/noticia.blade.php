@@ -1,5 +1,11 @@
 @extends('admin.layouts.layout')
 @section('content')
+<?php
+
+$rol = auth()->user()->role;
+$colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Roles', '=', $rol)->first();
+
+?>
 <link rel="stylesheet" href="{{asset("plantilla/css/blog.css")}}" type="text/css">
 <link rel="stylesheet" href="{{asset("plantilla/css/landing.css")}}" type="text/css">
 <div id="headerWrapper" class="container-fluid navHeaderWrapper header-image">
@@ -9,7 +15,7 @@
                 <div class="site-header-inner  mt-lg-0 mt-5">
                     <h2 class="">Noticias de intéres</h2>
                     <p>Descubre lo último en actualidad y mantente conectado.</p>
-                    @if (Auth::user()->role == 'admin')
+                    @if ($colaborador->create_status == '1')
                     <a href="{{ url('crearnoticia') }}" class="btn btn-sm btn-neutral mt-5">Agregar</a>
                     @endif
                 </div>
@@ -37,7 +43,7 @@
                 <h2 class="pb-4 m-0">Artículos</h2>
             </div>
             <div id="articlesPostContent" class="col-md-12 mt-5 pt-4">
-                @foreach ($noticias as $item)
+                @foreach ($vercampaña as $item)
                 <article class="mb-5 pb-5">
                     <div class="row">
                         <div class="col-md-4 text-center">
@@ -46,19 +52,9 @@
                             </div>
                         </div>
                         <div class="col-md-8 text-md-left text-center">
-                            <h4 class="post-heading">{{$item->title }}</h4>
-                            <p class="meta  mb-4"><span class="post-category">{{ $item->category->name}}</span> / <span class="post-meta-info">{{ $item->created_at->format('d/m/Y') }}</span></p>
-
+                            <h4 class="post-heading">{{$item->title }}</h4>                       
                             <p class="post-text text-justify">{{ substr($item->body, 0,90) }}...</p>
-                            <div class="row mt-5">
-                                <div class="col-md-8 col-sm-8 col-12">
-                                    <div class="media usr-meta mx-auto mx-sm-0 mb-sm-0 mb-4">
-                                        <img alt="admin-profile" src="{{ $item->user->photo }}" class="meta-usr-profile img-fluid rounded-circle mr-3">
-                                        <div class="media-body">
-                                            <p class="meta-usr-name">{{$item->user->name}} {{$item->user->lastname}}</p>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="row mt-5">                 
                                 <div class="col-md-4 col-sm-4 col-12 text-center text-sm-right">
                                     <a href="{{'post'}}/{{ $item->slug }}" class="btn btn-outline-info btn-rounded">Ver artículo</a>
                                 </div>

@@ -18,7 +18,7 @@ class User extends Authenticatable implements MustVerifyEmail
 	protected $primaryKey = 'id';
 
     protected $fillable = [
-        'name','lastname', 'email', 'password','genero','cumpleanios','role','area','phone','biografia','phone_status','Rol_Id_Rol'
+        'username','ciudad','role','photo','password','Rol_Id_Rol'
     ];
 
     /**
@@ -58,10 +58,6 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->role === 'colaborador';
     }
-    public function setCrbDateAttribute($value)
-    {
-        $this->attributes['cumpleanios'] = Carbon::createFromFormat('Y/m/d', $value);
-    }
     
     public function noticias()
     {
@@ -73,6 +69,7 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany('App\Permisos');
     }
     
+  
     public function scopeBuscarpor($query,$tipo,$buscar)
     {
        if( ($tipo) &&  ($buscar))

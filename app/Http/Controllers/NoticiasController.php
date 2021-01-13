@@ -34,9 +34,17 @@ class NoticiasController extends Controller
     }
     public function index2()
     {
-        $noticias = Noticia::paginate(6);
-
-        return view('admin.noticias.noticia',compact('noticias'));
+        $usuariologeado = Auth::user();
+        $campaña = Auth::user()->username;
+  
+         if($usuariologeado->role  <> 'admin'){
+            $vercampaña = DB::select("SELECT * FROM noticias WHERE campana = '$campaña'");
+            
+        }else{
+            $vercampaña = Noticia::all();
+        }
+         
+        return view('admin.noticias.noticia',compact('vercampaña'));
     }
 
     public function crearnoticia()
@@ -174,6 +182,8 @@ class NoticiasController extends Controller
         Session::flash('message','Publicación borrada  correctamente');
         return redirect()->action('NoticiasController@index')->with('eliminar','la noticia se elimino correctamente');
     }
+
+
     public function logout()
     {
 

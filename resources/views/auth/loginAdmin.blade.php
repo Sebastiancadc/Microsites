@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Login</title>
+    <title>Login-ADMIN</title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700">
@@ -42,7 +42,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
         <!-- Page content -->
         <div class="container mt--8 pb-5">
@@ -50,7 +49,6 @@
                 <div class="col-lg-5 col-md-7">
                     <div class="card bg-secondary border-0 mb-0" style="top: -190px;">
                         <div class="card-header bg-transparent pb-5" style="padding-bottom: 1rem !important; margin-left: auto; margin-right:auto;">
-                        
                         </div>
                         <div class="card-body px-lg-5 py-lg-5">
                             <div class="text-center text-muted mb-4">
@@ -63,7 +61,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-single-02"></i></span>
                                         </div>
-                                        <input id="email" name="username" class="form-control" value="{{ old('email') }}" placeholder="username" type="text" autofocus>
+                                        <input id="email" name="username" class="form-control" value="{{ old('email') }}" placeholder="username-ADMIN" type="text"  pattern="(admin)" title="Solo puede ingresar el administrador" autofocus>
                                     </div>  
                                     @if ($errors->has('email'))
                                     <strong class="text-danger tamano">{{ $errors->first('email') }}</strong>
@@ -92,12 +90,13 @@
                         </div>
                     </div>
 
-                    <div class="row" style="margin-top: -185px;">          
+                    <div class="row" style="margin-top: -185px;">
                         <div class="col-6">
-                            <a href="{{ url('loginAdmin')}}" class="text-light"><small>Login admin</small></a>
+
+                            <a href="{{ route('password.request')}}" class="text-light"><small>Olvidaste la contraseña?</small></a>
                         </div>
                         <div class="col-6 text-right">
-                            <a href="{{url('Solicitud')}}" class="text-light"><small>Solicitar usuario</small></a>
+                            <a href="{{ route('login') }}" class="text-light"><small>Login usuarios</small></a>
                           </div>
                     </div>
                 </div>

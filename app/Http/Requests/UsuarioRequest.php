@@ -24,21 +24,16 @@ class UsuarioRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|min:3|max:10',
-            'email' => 'required|unique:usuario',
-            'cumpleanios' => 'required',
+            'username' => 'required|min:3|max:30',
             'password'=> 'required|min:6|max:13|confirmed',
         ];
     }
     public function messages()
     {
         return [
-            'name.required' => 'El Nombre es requerido.',
-            'name.min' => 'El Nombre debe tener minimo 3 caracteres.',
-            'name.max' => 'El Nombre debe tener maximo 10 caracteres.',
-            'email.required' => 'El Correo es requerido.',
-            'email.unique' => 'El correo ya esta registrado.',
-            'cumpleanios.required' => 'La Fecha de nacimiento es requerida.',
+            'username.required' => 'El Nombre es requerido.',
+            'username.min' => 'El Nombre debe tener minimo 3 caracteres.',
+            'username.max' => 'El Nombre debe tener maximo 10 caracteres.',
             'password.required' => 'La Contraseña es requerida.',
             'password.confirmed' => 'Las de Contraseña deben coincidir.',
             'password.min' => 'La Contraseña debe tener minimo 5 caracteres.',

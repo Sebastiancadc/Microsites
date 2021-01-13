@@ -16,7 +16,7 @@ class Noticia extends Model
     protected $guarded = ['Id_noticia'];
     protected $primaryKey = 'Id_noticia';
 
-    protected $fillable = ['user_id','category_id','title','slug','body','image','created_at','updated_at'];
+    protected $fillable = ['user_id','category_id','campana','title','slug','body','image','created_at','updated_at'];
 
     public function category()
     {

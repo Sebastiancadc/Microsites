@@ -5,9 +5,9 @@
     <div class="content">
         <div class="page-inner">
             @include('admin.usuarios.estadisticas')
-            @if (session('crearUsuario'))
+            @if (session('crearCampaña'))
             <div class="alert alert-primary" role="alert">
-                {{(session('crearUsuario'))}}
+                {{(session('crearCampaña'))}}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -36,10 +36,10 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Gestión de Usuarios</h4>
+                                <h4 class="card-title">Gestión de Campañas</h4>
                                 <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
                                     <i class="fa fa-plus"></i>
-                                    Crear usuario
+                                    Crear campaña
                                 </button>
                             </div>
                         </div>
@@ -50,26 +50,16 @@
                                 <table id="add-row" class="display table table-striped table-hover">
                                     <thead>
                                         <tr>
-                                            <th>Nombre</th>
-                                            <th>Correo</th>
-                                            <th>Género</th>
-                                            <th>Fecha de nacimiento</th>
-                                            <th>Área</th>
-                                            <th>Teléfono</th>
-                                            <th>Rol</th>
+                                            <th>Campaña</th>
+                                            <th>Ciudad</th>
                                             <th style="width: 10%">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($users as $user)
                                         <tr>
-                                            <td>{{$user->name}} {{$user->lastname}}</td>
-                                            <td>{{$user->email}}</td>
-                                            <td>{{$user->genero}}</td>
-                                            <td>{{$user->cumpleanios}}</td>
-                                            <td>{{$user->area}}</td>
-                                            <td>{{$user->phone}}</td>
-                                            <td>{{$user->role}}</td>
+                                            <td>{{$user->username}}</td>
+                                            <td>{{$user->ciudad}}</td>                                      
                                             <td>
                                                 <div class="form-button-action">
                                                     <a href="{{route('editarusuario',$user->id)}}" class="btn btn-link btn-primary btn-lg" data-original-title="Editar usuario">
@@ -139,9 +129,7 @@
     $('#basic').select2({
         theme: "bootstrap"
     });
-    $('#basic2').select2({
-        theme: "bootstrap"
-    });
+
 </script>
 @endsection
 @endsection

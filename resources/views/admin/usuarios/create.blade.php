@@ -17,44 +17,29 @@
                 <form role="form" method="POST" action="{{url('admin/usuario')}}">
                     @csrf @method('POST')
                     <div class="row">
-                        <div class="col-sm-12"> 
-                            
+                        <div class="col-sm-12">
                             <div class="form-group form-group-default">
                                 <label>Nombre</label>
-                                <input type="text" class="form-control" placeholder="Tu nombre..." name="name" >
+                                <input type="text" class="form-control" placeholder="Tu nombre..." name="username" >
                                 @if ($errors->has('name'))
                                 <strong class="text-danger tamano">{{ $errors->first('name') }}</strong>
                                 @endif
                             </div>    
                         </div>
-                        <div class="col-sm-12">
+                        <div class="col-md-12">
                             <div class="form-group form-group-default">
-                                <label>Correo</label>
-                                <input type="email" class="form-control" placeholder="Tucorreo@montechelo.com.co..." name="email" pattern="^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(gmail|hotmail)\.com$">
-                                @if ($errors->has('email'))
-                                <strong class="text-danger tamano">{{ $errors->first('email') }}</strong>
-                                @endif
+                                <label>Ciudad</label>
+                                <div class="col-md-12">
+                                    <select id="basic" name="ciudad" class="col-md-15">
+                                        <option value="">&nbsp;</option>
+                                        <option value="Bogota">Bogotá</option>
+                                        <option value="Barranquilla">Barranquilla</option>
+                                        <option value="Medellin">Medellín</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6 pr-0">
-                            <div class="form-group form-group-default">
-                                <label>Fecha de nacimiento</label>
-                                <input type="date" class="form-control" name="cumpleanios" >
-                                @if ($errors->has('cumpleanios'))
-                                <strong class="text-danger tamano">{{ $errors->first('cumpleanios') }}</strong>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group form-group-default">
-                                <label>Telefono</label>
-                                <input type="text" class="form-control" placeholder="3123123212..." name="phone" maxlength="11">
-                                @if ($errors->has('phone'))
-                                <strong class="text-danger tamano">{{ $errors->first('phone') }}</strong>
-                                @endif
-                            </div>
-                        </div>
-                        <input type="text" class="form-control" name="role" value="admin" hidden>
+                        <input type="text" class="form-control" name="role" value="Campaña" hidden>
                         <input type="text" class="form-control" name="Rol_Id_Rol" value="1" hidden>
                         <div class="col-md-6">
                             <div class="form-group form-group-default">

@@ -34,10 +34,7 @@
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title">Gestión de Permisos</h4>
-                                <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
-                                    <i class="fa fa-plus"></i>
-                                    Crear un rol
-                                </button>
+                              
                             </div>
                         </div>
                     </div>
@@ -47,7 +44,7 @@
                         <div class="card">
                             <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne{{$permiso->Id_Rol}}" aria-expanded="false" aria-controls="collapseOne">
                                 <div class="span-title">
-                                    <h3 class="text-section">{{$permiso->Roles}} - Modulos</h3>
+                                    <h3 class="text-section">{{$permiso->Roles}} - Acciones</h3>
                                 </div>
                                 <div class="span-mode"></div>
                             </div>
@@ -55,8 +52,19 @@
                                 <div class="card-body">
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item">
-                                            <h4 class="colorsito">Chat</h4>
-                                            @if ($permiso->chat_status == '1')
+                                            <h4 class="colorsito">Crear</h4>
+                                            @if ($permiso->create_status == '1')
+                                            <span class="badge badge-lg badge-success">
+                                                Habilitado
+                                                @else
+                                                <span class="badge badge-lg badge-danger">
+                                                    Deshabilitado
+                                                    @endif
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <h4 class="colorsito">Editar</h4>
+                                            @if ($permiso->update_status == '1')
                                             <span class="badge badge-lg badge-success">
                                                 Habilitado
                                                 @else
@@ -65,78 +73,8 @@
                                                     @endif
                                         </li>
                                         <li class="list-group-item">
-                                            <h4 class="colorsito">Directorio</h4>
-                                            @if ($permiso->directorio_status == '1')
-                                            <span class="badge badge-lg badge-success">
-                                                Habilitado
-                                                @else
-                                                <span class="badge badge-lg badge-danger">
-                                                    Deshabilitado
-                                                    @endif
-                                        </li>
-                                        <li class="list-group-item">
-                                            <h4 class="colorsito">Talento Humano</h4>
-                                            @if ($permiso->talento_status == '1')
-                                            <span class="badge badge-lg badge-success">
-                                                Habilitado
-                                                @else
-                                                <span class="badge badge-lg badge-danger">
-                                                    Deshabilitado
-                                                    @endif
-                                        </li>
-                                        <li class="list-group-item">
-                                            <h4 class="colorsito">Repositorio</h4>
-                                            @if ($permiso->repositorio_status == '1')
-                                            <span class="badge badge-lg badge-success">
-                                                Habilitado
-                                                @else
-                                                <span class="badge badge-lg badge-danger">
-                                                    Deshabilitado
-                                                    @endif
-                                        </li>
-                                        <li class="list-group-item">
-                                            <h4 class="colorsito">Calendario</h4>
-                                            @if ($permiso->calendario_status == '1')
-                                            <span class="badge badge-lg badge-success">
-                                                Habilitado
-                                                @else
-                                                <span class="badge badge-lg badge-danger">
-                                                    Deshabilitado
-                                                    @endif
-                                        </li>
-                                        <li class="list-group-item">
-                                            <h4 class="colorsito">Solicitud</h4>
-                                            @if ($permiso->solicitud_status == '1')
-                                            <span class="badge badge-lg badge-success">
-                                                Habilitado
-                                                @else
-                                                <span class="badge badge-lg badge-danger">
-                                                    Deshabilitado
-                                                    @endif
-                                        </li>
-                                        <li class="list-group-item">
-                                            <h4 class="colorsito">Buzon de sugerencias</h4>
-                                            @if ($permiso->buzon_status == '1')
-                                            <span class="badge badge-lg badge-success">
-                                                Habilitado
-                                                @else
-                                                <span class="badge badge-lg badge-danger">
-                                                    Deshabilitado
-                                                    @endif
-                                        </li>
-                                        <li class="list-group-item">
-                                            <h4 class="colorsito">Plan estrategico</h4>
-                                            @if ($permiso->plan_status == '1')
-                                            <span class="badge badge-lg badge-success">
-                                                Habilitado
-                                                @else
-                                                <span class="badge badge-lg badge-danger">
-                                                    Deshabilitado
-                                                    @endif
-                                        </li>
-                                        <li class="list-group-item">
-                                            <h4 class="colorsito">Novedad</h4>
-                                            @if ($permiso->novedad_status == '1')
+                                            <h4 class="colorsito">Elimiar</h4>
+                                            @if ($permiso->delete_status == '1')
                                             <span class="badge badge-lg badge-success">
                                                 Habilitado
                                                 @else

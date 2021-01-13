@@ -1,7 +1,4 @@
 
-<?php
-$page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->first();
-?>
 
 <style>
 
@@ -133,7 +130,8 @@ p
 {
     margin-top: 0;
     margin-bottom: 1rem;
-    color: {{$page->colortexto}};
+    color: 
+    
 }
 
 abbr[title],
@@ -511,7 +509,7 @@ h6,
 
     margin-bottom: .5rem;
 
-    color: {{$page->colortitulo}};
+    color:
 }
 
 h1,
@@ -3107,15 +3105,15 @@ fieldset:disabled a.btn
 .btn-primary
 {
     color: #fff;
-    border-color: {{$page->colorbtnprimary}};
-    background-color:{{$page->colorbtnprimary}};
+    border-color: #0098C9;
+    background-color: #0098C9;
     box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
 }
 .btn-primary:hover
 {
     color: #fff;
-    border-color: {{$page->colorbtnprimary}};
-    background-color:{{$page->colorbtnprimary}};
+    border-color: #0098C9;
+    background-color:#0098C9;
 }
 .btn-primary:focus,
 .btn-primary.focus
@@ -3307,15 +3305,15 @@ fieldset:disabled a.btn
 .btn-danger
 {
     color: #fff;
-    border-color: {{$page->colorbtndanger}};
-    background-color: {{$page->colorbtndanger}};
+    border-color: #f5365c;
+    background-color: #f5365c;
     box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
 }
 .btn-danger:hover
 {
     color: #fff;
-    border-color:{{$page->colorbtndanger}};
-    background-color: {{$page->colorbtndanger}}
+    border-color: #f5365c;
+    background-color: #f5365c;
 }
 .btn-danger:focus,
 .btn-danger.focus
@@ -8451,7 +8449,8 @@ a.close.disabled
 
 .bg-primary
 {
-    background-color: {{$page->colornavho}} !important;
+    background-color:
+     !important;
 }
 
 a.bg-primary:hover,
@@ -21594,7 +21593,8 @@ textarea[resize='horizontal']
 .navbar-vertical.navbar-light
 {
     border-color: rgba(0, 0, 0, .05);
-    background-color: {{$page->colornavver}};
+    background-color: 
+    
 }
 .navbar-vertical.navbar-dark
 {
@@ -29916,7 +29916,7 @@ border-bottom: 1px solid rgba(0, 0, 0, .05);
 
 .ggtr{
 background: linear-gradient( rgba(231, 223, 223, 0), rgb(255, 255, 255)),
-url({{asset("plantilla/img/theme/bb.jpg")}}); height: 300px;
+
 }
 
 .zulcs{
@@ -29933,7 +29933,7 @@ url({{asset("plantilla/img/theme/bb.jpg")}}); height: 300px;
 .imgpgsolicitud{
 background:
 linear-gradient( rgba(231, 223, 223, 0), rgba(255, 255, 255, 0.527)),
-url({{asset("plantilla/img/theme/solis.png")}}); height: auto; 
+
 background-repeat: no-repeat; 
 background-size: cover;
 }
@@ -29945,7 +29945,7 @@ background-size: cover;
 .imgtalentoh{
 background:
 url(
-    {{asset("plantilla/img/theme/completion.png")}}); height: auto; background-repeat: no-repeat; background-size: cover;
+    ); height: auto; background-repeat: no-repeat; background-size: cover;
 }
 
 .tarjetastalento{

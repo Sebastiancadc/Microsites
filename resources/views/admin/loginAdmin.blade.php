@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Login</title>
+    <title>Login-ADMIN</title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700">
@@ -63,7 +63,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-single-02"></i></span>
                                         </div>
-                                        <input id="email" name="username" class="form-control" value="{{ old('email') }}" placeholder="username" type="text" autofocus>
+                                        <input id="email" name="username" class="form-control" value="{{ old('email') }}" placeholder="username-ADMIN" type="text" pattern="(admin)" title="Solo puede ingresar el administrador" autofocus>
                                     </div>  
                                     @if ($errors->has('email'))
                                     <strong class="text-danger tamano">{{ $errors->first('email') }}</strong>
@@ -81,9 +81,7 @@
                                     @endif 
                                 </div>
                                 <div class="text-center">
-
                                     <button type="submit" class="btn btn-primary my-4">Ingresar</button>
-
                                 </div>
                                <div class="copyright text-center text-lg-left text-muted">
                                <a style="color: #5e72e4;" class="font-weight-bold ml-1" >Creado por grupo 3 Sena Montechelo.</a>
@@ -92,12 +90,12 @@
                         </div>
                     </div>
 
-                    <div class="row" style="margin-top: -185px;">          
+                    <div class="row" style="margin-top: -185px;">
                         <div class="col-6">
-                            <a href="{{ url('loginAdmin')}}" class="text-light"><small>Login admin</small></a>
+                            <a href="{{ route('password.request')}}" class="text-light"><small>Olvidaste la contraseña?</small></a>
                         </div>
                         <div class="col-6 text-right">
-                            <a href="{{url('Solicitud')}}" class="text-light"><small>Solicitar usuario</small></a>
+                            <a href="{{ route('login') }}" class="text-light"><small>Login usuarios</small></a>
                           </div>
                     </div>
                 </div>
@@ -117,7 +115,6 @@
     <script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
     <!-- Demo JS - remove this in your project -->
     <script src="{{asset("plantilla/js/demo.min.js")}}"></script>
-
     <script src="{{asset("plantilla/particles/particles.min.js")}}"></script>
     <script src="{{asset("plantilla/particles/app.js")}}"></script>
 </body> 

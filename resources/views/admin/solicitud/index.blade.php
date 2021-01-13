@@ -1,16 +1,19 @@
 @extends('admin.layouts.layoutAdmin')
 @section('contents')
+
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
-            @if (session('creareanuncio'))
+            @include('admin.solicitud.estadisticas')
+            @if (session('crearCampaña'))
             <div class="alert alert-primary" role="alert">
-                {{(session('creareanuncio'))}}
+                {{(session('crearCampaña'))}}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             @endif
+
             @if (session('seelimino'))
             <div class="alert alert-danger" role="alert">
                 {{(session('seelimino'))}}
@@ -19,46 +22,53 @@
                 </button>
             </div>
             @endif
-            
-            @include('admin.anuncios.estadisticas')
+
+            @if (session('editarsoli'))
+            <div class="alert alert-warning" role="alert">
+                {{(session('editarsoli'))}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @endif
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Gestión de Anuncios</h4>
-                                <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
-                                    <i class="fa fa-plus"></i>
-                                    Crear anuncio
-                                </button>
+                                <h4 class="card-title">Gestión de Campañas</h4>
                             </div>
                         </div>
-                        <div class="card-body">
-                            @include('admin.anuncios.create')
+                        <div class="card-body">                       
                             <div class="table-responsive">
                                 <table id="add-row" class="display table table-striped table-hover">
                                     <thead>
                                         <tr>
-                                            <th>Titulo</th>
-                                            <th>Descripción</th>
-                                            <th>Tipo</th>
+                                            <th>Solicitud</th>
+                                            <th>Estado</th>
                                             <th style="width: 10%">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($anuncios as $anuncio)
+                                        @foreach ($solicitud as $soli)
                                         <tr>
-                                            <td>{{$anuncio->titulo}}</td>
-                                            <td>{{$anuncio->descripcion}}</td>
-                                            <td><span class="badge badge-lg badge-{{$anuncio->tipo}}">{{$anuncio->tipo}}</span></td>
-
+                                            <td>{{$soli->name}}</td>
+                                            <td>
+                                                @if ($soli->estado == 'Revisado')
+                                                <span class="badge badge-lg badge-success">{{$soli->estado}}</span>
+                                                @else
+                                                <span class="badge badge-lg badge-danger">{{$soli->estado}}</span>
+                                                @endif</td>                                 
                                             <td>
                                                 <div class="form-button-action">
-                                                    <button href="#" class="btn btn-link btn-danger" data-toggle="modal" data-target="#deleteanuncio{{$anuncio->id}}">
+                                                    <a href="{{route('editarsolicitud',$soli->id)}}" class="btn btn-link btn-primary btn-lg" data-original-title="Editar usuario">
+                                                        <i class="fa fa-edit"></i>
+                                                    </a>
+                                                    <button href="#" class="btn btn-link btn-danger" data-toggle="modal" data-target="#deleteUsuario{{$soli->id}}" data-original-title="Eliminar usuario">
                                                         <i class="fa fa-times"></i>
                                                     </button>
                                                     <!-- Modal -->
-                                                    <div class="modal fade" id="deleteanuncio{{$anuncio->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+                                                    <div class="modal fade" id="deleteUsuario{{$soli->id}}" tabindex="-1" role="dialog" aria-labelledby="deleteUsuarioTitle" aria-hidden="true">
                                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
@@ -67,7 +77,7 @@
                                                                         <span aria-hidden="true">&times;</span>
                                                                     </button>
                                                                 </div>
-                                                                <form role="form" method="POST" action="{{route('eliminaranuncio',$anuncio->id) }}">
+                                                                <form role="form" method="POST" action="{{route('eliminarsolicitud',$soli->id) }}">
                                                                     @csrf @method('DELETE')
                                                                     <div class="modal-body">
                                                                         ¡No podrás revertir esto!
@@ -83,9 +93,8 @@
                                                 </div>
                                             </td>
                                         </tr>
+                                        @endforeach
                                     </tbody>
-
-                                    @endforeach
                                 </table>
                             </div>
                         </div>
@@ -96,29 +105,11 @@
     </div>
 
 </div>
-
 </div>
-
 @section('js')
-
-<!-- Datatables -->
 <script src="{{asset("plantillaAdmin/assets/js/plugin/datatables/datatables.min.js")}}"></script>
 <script src="{{asset("plantillaAdmin/assets/js/tablus.js")}}"></script>
+<script src="{{asset("plantillaAdmin/assets/js/bootstrap-datetimepicker.min.js")}}"></script>
 <script src="{{asset("plantillaAdmin/assets/js/select2.full.min.js")}}"></script>
-<!-- Bootstrap Notify -->
-<script src="{{asset("plantillaAdmin/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js")}}"></script>
-<!-- Bootstrap Toggle -->
-<script src="{{asset("plantillaAdmin/assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js")}}"></script>
-<!-- jQuery Scrollbar -->
-<script src="../../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-<!-- Azzara JS -->
-<script src="../../assets/js/ready.min.js"></script>
-<!-- Azzara DEMO methods, don't include it in your project! -->
-<script src="../../assets/js/setting-demo.js"></script>
-<script>
-    $('#basic').select2({
-        theme: "bootstrap"
-    });
-</script>
 @endsection
 @endsection
