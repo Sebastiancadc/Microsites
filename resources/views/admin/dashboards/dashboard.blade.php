@@ -17,17 +17,13 @@ $date =date('m-d')
             </nav>
           </div>
         </div>
-        <!-- Card stats -->
-        <div class="row">
-          <div class="col-xl-3 col-md-6">
-          </div>
-        </div>
+
       </div>
     </div>
   </div>
-  <div class="container-fluid mt--6">
+  <div class="col-md-10 ml-9 mr-auto mt--6">
     <div class="row">       
-        <div class="col-lg-8">
+        <div class="col-lg-11">
             <div class="card bg-default" style="background-color: #ffffff !important;">
                 <div class="card-header bg-transparent">
                     <div class="card-header bg-transparent">

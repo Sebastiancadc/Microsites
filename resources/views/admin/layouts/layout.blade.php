@@ -34,7 +34,7 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
 <body>
   @include('admin.configuracionweb.css2')
   <!-- Sidenav -->
-  <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light " id="sidenav-main">
+  {{-- <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light " id="sidenav-main">
     <div class="scrollbar-inner">
       <!-- Brand -->
       <div class="sidenav-header d-flex align-items-center">
@@ -75,7 +75,7 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
         </div>
       </div>
     </div>
-  </nav>
+  </nav> --}}
   <!-- Main content -->
   <div class="main-content" id="panel">
     <!-- Topnav -->
@@ -83,6 +83,20 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Navbar links -->
+          <ul class="navbar-nav ">
+            <li class="nav-item">
+              <a class="nav-link" href="{{url("home")}}">MICROSITES <span class="sr-only"></span></a>
+            </li>
+           
+          </ul>
+          <ul class="navbar-nav ml-lg-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('home')}}">Inicio <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url('noticiausu')}}">Noticias</a>
+            </li>
+          </ul>
           <ul class="navbar-nav align-items-center ml-md-auto">
             <li class="nav-item d-xl-none">
               <!-- Sidenav toggler -->
