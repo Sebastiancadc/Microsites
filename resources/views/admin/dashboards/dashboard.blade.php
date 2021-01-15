@@ -35,7 +35,12 @@ $date =date('m-d')
                     </div>
                     <div class="row align-items-center">
                         <div class="col sm-4">
+                           <?php
+                            $fechahoy = new \DateTime();
+                            $fechas = $fechahoy->format('d-m-Y');
+                           ?>
                             @foreach ($vercampaña as $item)
+                            @if(App\Helpers\Helpers::formatearFechahoy($item->fecha) == $fechas)
                             <a href="{{'post'}}/{{ $item->slug }}">
                                 <div class="gallery-item " data-width="1" data-height="1" style="padding-left: 10px; width: auto;">
                                     <h4 style="color:white;">{{$item->title}}</h4>
@@ -51,6 +56,9 @@ $date =date('m-d')
                                     </div>
                                 </div>
                             </a>
+                            {{-- @else
+                            Aun no esta disponible la noticia --}}
+                            @endif
                             @endforeach
                         </div>
                     </div>

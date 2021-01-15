@@ -25,8 +25,10 @@ class NoticiaRequest extends FormRequest
     {
         return [
            'title' => 'required|min:4|max:35',
-           'body' => 'required|min:15|max:501',
-          
+           'campana' => 'required',
+           'fecha' => 'required',
+           'image' => 'required',
+           
         ];
     }
 
@@ -35,11 +37,10 @@ class NoticiaRequest extends FormRequest
         return [
             'title.required' => 'El Titulo es requerido.',
             'title.min' => 'El Titulo debe tener minimo 4 caracteres.',
-            'title.max' => 'El Titulo debe tener maximo 35 caracteres.',
-            'body.min' => 'El Contenido debe tener minimo 15 caracteres.',
-            'body.max' => 'El Contenido debe tener maximo 500 caracteres.',
-            'body.required' => 'El Contenido es requerido.',
-          
+            'title.max' => 'El Titulo debe tener maximo 35 caracteres.',   
+            'campana.required' => 'La campaña es requerida.',  
+            'fecha.required' => 'La fecha de publicacion es requerida.', 
+            'image.required' => 'El archivo es requerido.',    
         ];
     }
 }

@@ -2,8 +2,8 @@
 @section('content')
 <?php
 
-$rol = auth()->user()->role;
-$colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Roles', '=', $rol)->first();
+$rol = auth()->user()->username;
+$campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Roles', '=', $rol)->first();
 
 ?>
 <link rel="stylesheet" href="{{asset("plantilla/css/blog.css")}}" type="text/css">
@@ -15,7 +15,7 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
                 <div class="site-header-inner  mt-lg-0 mt-5">
                     <h2 class="">Noticias de intéres</h2>
                     <p>Descubre lo último en actualidad y mantente conectado.</p>
-                    @if ($colaborador->create_status == '1')
+                    @if ($campaña->create_status == '1')
                     <a href="{{ url('crearnoticia') }}" class="btn btn-sm btn-neutral mt-5">Agregar</a>
                     @endif
                 </div>

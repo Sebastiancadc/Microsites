@@ -53,9 +53,17 @@
                                     {{ session('status') }}
                                 </div>
                             @endif
-                            <form method="POST" action="{{ route('password.update') }}">
-                                @csrf
-                                <input type="hidden" name="token" value="{{$token}}">
+                            @if (session('Pageedit'))
+                            <div class="alert alert-warning" role="alert">
+                                {{(session('Pageedit'))}}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            @endif
+                            <form action="{{route('updateContraseña','1')}}" method="POST">
+                                @method('PUT')
+						        @csrf
                                 <div class="form-group mb-3">
                                     <label>Correo</label>
                                     <div class="input-group input-group-merge input-group-alternative">
@@ -63,7 +71,7 @@
                                             <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                         </div>
                                         <input id="email" type="email"
-                                            class="form-control @error('email') is-invalid @enderror" name="email"
+                                            class="form-control @error('email') is-invalid @enderror" name=""
                                             placeholder="tucorreo@example.com" value="{{ $email ?? old('email') }}"
                                             required autocomplete="email" autofocus>
 

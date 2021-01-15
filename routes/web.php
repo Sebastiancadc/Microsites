@@ -1,4 +1,4 @@
-x<?php
+<?php
 
 use App\Http\Controllers\SolicitudController;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +31,10 @@ Route::get('cambiarpasss', function () {
 
     return view('auth.passwords.reset');
 });
+
+    
+Route::get('Cambiarcontraseña/{id}', 'CambiarpassController@edit')->name('Cambiarcontraseña');
+Route::put('updateContraseña/{id}', 'CambiarpassController@update')->name('updateContraseña');
 
 Route::get('loginAdmin', function () {
 
@@ -97,6 +101,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::post('crearcategorias', 'CategoryController@crearsugerencias')->name('crearcategorias');
     Route::get('editarcategoria/{id}', 'CategoryController@edit')->name('editar');
     Route::delete('deletecategoria/{id}', 'CategoryController@destroy')->name('eliminarcategoria');
+
+
 });
 
 Route::get('repositoriocola', function () {
@@ -118,4 +124,5 @@ Route::group(['auth', 'prefix' => ''], function () {
 
     //Manual
     Route::get('ayuda', 'ManualController@index');
+
 });

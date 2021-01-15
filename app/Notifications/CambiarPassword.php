@@ -7,18 +7,29 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class CambiarPassword extends Notification
+//USamos la notificación por defecto para extenderla
+use Illuminate\Auth\Notifications\ResetPassword as ResetPasswordNotification;
+
+class CambiarPassword extends ResetPasswordNotification
 {
     use Queueable;
 
     /**
-     * Create a new notification instance.
+     * The password reset token.
      *
+     * @var string
+     */
+    public $token;
+
+    /**
+     * Create a notification instance.
+     *
+     * @param  string  $token
      * @return void
      */
-    public function __construct()
+    public function __construct($token)
     {
-        //
+        $this->token = $token;
     }
 
     /**
@@ -41,9 +52,12 @@ class CambiarPassword extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+            ->subject('Solicitud de Cambio de Contraseña')
+            ->line('Estás recibiendo este email porque has solicitado cambiar la contraseña.')
+            ->action('Cambiar Contraseña', url(config('app.url').route('password.reset', ['token' => $this->token, 'email' => $notifiable->getEmailForPasswordReset()], false)))
+            ->line('')
+            ->line('Este enlace caducará en '.config('auth.passwords.users.expire').' minutos.')
+            ->line('Si no has solicitado el cambio de contraseña, no tienes que hacer nada.');
     }
 
     /**

@@ -2,11 +2,13 @@
 
 namespace App;
 
+
 use Carbon\Carbon;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
+use App\Notifications\CambiarPassword;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -18,7 +20,7 @@ class User extends Authenticatable implements MustVerifyEmail
 	protected $primaryKey = 'id';
 
     protected $fillable = [
-        'username','ciudad','role','photo','password','Rol_Id_Rol'
+        'username','email','ciudad','role','photo','password','Rol_Id_Rol'
     ];
 
     /**
@@ -50,6 +52,11 @@ class User extends Authenticatable implements MustVerifyEmail
     //     $this->notify(new \Illuminate\Auth\Notifications\VerifyEmail);
     // }
 
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new CambiarPassword($token));
+    }
+
     public function admin()
     {
         return $this->role === 'admin';
@@ -69,12 +76,4 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany('App\Permisos');
     }
     
-  
-    public function scopeBuscarpor($query,$tipo,$buscar)
-    {
-       if( ($tipo) &&  ($buscar))
-       {
-          return $query->where($tipo,'like',"%buscar%");
-       }
-    }
 }

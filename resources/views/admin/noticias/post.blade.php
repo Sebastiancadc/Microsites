@@ -2,7 +2,7 @@
 @section('content')
 <?php
 
-$rol = auth()->user()->role;
+$rol = auth()->user()->username;
 $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Roles', '=', $rol)->first();
 
 ?>

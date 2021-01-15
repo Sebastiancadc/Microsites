@@ -20,62 +20,23 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
   <link rel="stylesheet" href="{{asset("plantilla/css/jquery-ui.css")}}">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/fullcalendar/dist/fullcalendar.min.css")}}">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/sweetalert2/dist/sweetalert2.min.css")}}">
-  <!-- Argon CSS -->
+  <link rel="stylesheet" href="../../assets/vendor/quill/dist/quill.core.css">
+  <!-- Argon CSS -->  
+  <link rel="stylesheet" href="{{asset("plantilla/vendor/select2/dist/css/select2.min.css")}}" type="text/css">
   <link rel="stylesheet" href="{{asset("plantilla/css/argon.css?v=1.1.0")}}" type="text/css">
+  <link rel="stylesheet" href="{{asset("plantilla/endor/quill/dist/quill.core.css")}}" type="text/css">
+
   <!-- Modo Oscuro CSS -->
   <link rel="stylesheet" href="{{asset("plantilla/css/dark.css")}}" type="text/css">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css")}}">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css")}}">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css")}}">
 
-  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+  {{-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" /> --}}
   <title>Microsites </title>
 </head>
 <body>
-  @include('admin.configuracionweb.css2')
-  <!-- Sidenav -->
-  {{-- <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light " id="sidenav-main">
-    <div class="scrollbar-inner">
-      <!-- Brand -->
-      <div class="sidenav-header d-flex align-items-center">
-        <a class="navbar-brand" href="{{url("home")}}">
-  
-        </a>
-        <div class="ml-auto">
-          <!-- Sidenav toggler -->
-          <div class="sidenav-toggler d-none d-xl-block" data-action="sidenav-unpin" data-target="#sidenav-main">
-            <div class="sidenav-toggler-inner">
-              <i class="sidenav-toggler-line"></i>
-              <i class="sidenav-toggler-line"></i>
-              <i class="sidenav-toggler-line"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="navbar-inner">
-        <!-- Collapse -->
-        <div class="collapse navbar-collapse" id="sidenav-collapse-main">
-          <!-- Nav items -->
-          <ul class="navbar-nav">
-            <li class="nav-item"></li>
-            <a class="nav-link" href="{{ url('home')}}">
-              <i class="ni ni-shop text-primary"></i>
-              <span class="nav-link-text">Inicio</span>
-            </a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link" href="{{url('noticiausu')}}">
-                <i class="ni ni-archive-2 text-black"></i>
-                <span class="nav-link-text">Noticias</span>
-              </a>
-            </li>
-
-          </ul>
-        </div>
-      </div>
-    </div>
-  </nav> --}}
+  {{-- @include('admin.configuracionweb.css2') --}}
   <!-- Main content -->
   <div class="main-content" id="panel">
     <!-- Topnav -->
@@ -141,10 +102,6 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
                   <span>Administrador</span>
                 </a>
                 @endif
-                <a href="{{ url('ayuda')}}" class="dropdown-item">
-                  <i class="fa fa-bolt"></i>
-                  <span>Ayuda</span>
-                </a>
                 <div class="dropdown-divider"></div>
                 <a href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();" class="dropdown-item">

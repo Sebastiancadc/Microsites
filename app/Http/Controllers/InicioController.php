@@ -23,7 +23,9 @@ class InicioController extends Controller
         $campaña = Auth::user()->username;
 
         if ($usuariologeado->role  <> 'admin') {
-            $vercampaña = DB::select("SELECT * FROM noticias WHERE campana = '$campaña'");
+            $vercampañass = DB::select("SELECT * FROM noticias WHERE campana = '$campaña'");
+            $vercampañas = DB::select("SELECT * FROM noticias WHERE campana = 'admin'");
+            $vercampaña = array_merge($vercampañass,$vercampañas);
         } else {
             $vercampaña = Noticia::all();
         }

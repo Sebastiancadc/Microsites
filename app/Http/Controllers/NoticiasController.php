@@ -39,8 +39,9 @@ class NoticiasController extends Controller
         $campaña = Auth::user()->username;
   
          if($usuariologeado->role  <> 'admin'){
-            $vercampaña = DB::select("SELECT * FROM noticias WHERE campana = '$campaña'");
-            
+            $vercampañass = DB::select("SELECT * FROM noticias WHERE campana = '$campaña'");
+            $vercampañas = DB::select("SELECT * FROM noticias WHERE campana = 'admin'");
+            $vercampaña= array_merge($vercampañass,$vercampañas);
         }else{
             $vercampaña = Noticia::all();
         }
@@ -75,14 +76,12 @@ class NoticiasController extends Controller
          $noticia = new Noticia($request->all());
          $noticia->slug = Str::slug($request->title);
          $noticia->save();
-
-
          if ($request->file('image')) {
             $nombre = Storage::disk('imaposts')->put('imagenes/posts', $request->file('image'));
             $noticia->fill(['image' => asset($nombre)])->save();
          }
-        event(new NoticiasEvent($noticia));
-          return redirect()->action('NoticiasController@index2')->with('crearnoticia', 'Noticia publicada correctamente');
+ 
+         return redirect()->action('NoticiasController@index2')->with('crearnoticia', 'Noticia publicada correctamente');
     }
  
     public function edit($id)
@@ -101,22 +100,8 @@ class NoticiasController extends Controller
 
     public function update(NoticiaRequest $request, $id)
     {
-        $noticiaUpdate = Noticia::findOrFail($id);
-        $noticiaUpdate->save();
-
-        $rules = [
-          'title' => 'required',
-          'body' => 'required',
-          'image' =>'mimes:jpeg,bmp,png,jpg,gif|max:2000',
-         ];
-
-        $messages = [
-          'title.required' =>'Es obligatorio un título para la publicación',
-          'body.required' =>'Es obligatorio un contenido para la publicación',
-          'image.mimes' =>'El archivo debe  corresponder a un formato de imagen',
-          'image.max' =>'La imagen no debe ser mayor que 2 mb.'
-           ];
-            $this->validate($request, $rules, $messages);
+            $noticiaUpdate = Noticia::findOrFail($id);
+            $noticiaUpdate->save();
 
             $noticia = Noticia::find($id);
             $noticia->slug =  Str::slug($request->title);

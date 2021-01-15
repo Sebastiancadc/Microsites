@@ -3,13 +3,12 @@
 
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Montechelo</title>
+	<title>Microsites</title>
 	  <!-- Fonts -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700">
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<!-- Fonts and icons -->
 	<script src="{{asset("plantillaAdmin/assets/js/plugin/webfont/webfont.min.js")}}"></script>
-
 	<script>
 		WebFont.load({
 			google: {
@@ -27,7 +26,6 @@
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="{{asset("plantillaAdmin/assets/css/bootstrap.min.css")}}">
 	<link rel="stylesheet" href="{{asset("plantillaAdmin/assets/css/azzara.css")}}">
-
 </head>
 <body>
 	<div class="wrapper">

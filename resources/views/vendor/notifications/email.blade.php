@@ -31,7 +31,7 @@
             $color = 'primary';
     }
 ?>
-@component('mail::button', ['url' => 'http://localhost/Microsites/Microsites/public/cambiarpasss', 'color' => $color])
+@component('mail::button', ['url' => 'http://localhost/Microsites/public/cambiarpasss', 'color' => $color])
 <P style="color:white;">Recuperar contraseña</P>
 @endcomponent
 @endisset
@@ -60,7 +60,7 @@
     'barra de navegador: [:actionURL](:actionURL)',
     [
         'actionText' => $actionText,
-        'actionURL' => 'http://localhost/Microsites/Microsites/public/cambiarpasss',
+        'actionURL' => 'http://localhost/Microsites/public/cambiarpasss',
     ]
 )
 @endslot
