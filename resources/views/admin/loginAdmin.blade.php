@@ -82,7 +82,10 @@
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary my-4">Ingresar</button>
+                                    
                                 </div>
+
+
                                <div class="copyright text-center text-lg-left text-muted">
                                <a style="color: #5e72e4;" class="font-weight-bold ml-1" >Creado por grupo 3 Sena Montechelo.</a>
                               </div>

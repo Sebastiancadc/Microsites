@@ -45,7 +45,6 @@
         <div class="col-lg-5 col-md-7">
           <div class="card bg-secondary border-0 mb-0" style="top: -147px;" >
             <div class="card-header bg-transparent pb-5" style="padding-bottom: 1rem !important;">
-              <img src="{{asset("plantilla/img/theme/isotipo.png")}}" style="height: 70px;margin-left: 150px;">
           
             </div>
             <div class="card-body px-lg-5 py-lg-5">
@@ -56,7 +55,6 @@
                     @endif
               <form role="form" method="POST" action="{{ route('password.email') }}">
                 @csrf
-                
                 <div class="form-group mb-3">
                   <div class="input-group input-group-merge input-group-alternative">
                     <div class="input-group-prepend">

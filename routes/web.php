@@ -1,4 +1,4 @@
-<?php
+x<?php
 
 use App\Http\Controllers\SolicitudController;
 use Illuminate\Support\Facades\Route;
@@ -25,6 +25,11 @@ Route::get('logout', function () {
 Route::get('admin', function () {
 
     return view('admin.login');
+});
+
+Route::get('cambiarpasss', function () {
+
+    return view('auth.passwords.reset');
 });
 
 Route::get('loginAdmin', function () {
