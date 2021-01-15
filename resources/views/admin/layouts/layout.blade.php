@@ -46,7 +46,10 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
           <!-- Navbar links -->
           <ul class="navbar-nav ">
             <li class="nav-item">
-              <a class="nav-link" href="{{url("home")}}">MICROSITES <span class="sr-only"></span></a>
+              <a class="nav-link" href="{{url("home")}}">
+                <img src="{{asset('plantilla/img/theme/logoCOS.png')}}" id="imagenmenuleft" class="navbar-brand-img" style="margin-top: -7px;
+          max-width: 126%;
+          max-height: 10rem;"></a>
             </li>
            
           </ul>
@@ -74,10 +77,7 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
                 <i class="ni ni-zoom-split-in"></i>
               </a>
             </li>
-            <button class="switch" id="switch">
-              <span><i class="fas fa-sun" style="15px"></i></span>
-              <span><i class="fas fa-moon" style="15px"></i></span>
-            </button>
+            
          
           <ul class="navbar-nav align-items-center ml-auto ml-md-0">
             <li class="nav-item dropdown">

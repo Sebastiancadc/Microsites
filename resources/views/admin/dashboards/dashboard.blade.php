@@ -33,6 +33,9 @@ $date =date('m-d')
                             </div>
                         </div>
                     </div>
+                    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vScqL2bmb6NLER-m_ci6ee2mBN5selCN_X1Bvii0H2IXaCKJWTMDw9OLlcEECQEnQ/embed?start=false&loop=false&delayms=3000"
+                  frameborder="0" width="960" height="569" allowfullscreen="true" 
+                    mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
                     <div class="row align-items-center">
                         <div class="col sm-4">
                            <?php
