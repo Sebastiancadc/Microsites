@@ -16,14 +16,14 @@ body.error404 > .error-content {
 .error404 .img-cartoon { width: 210px; height: 210px; }
 .error404 .error-number {
   font-size: 170px;
-  color: #002A60;
+  color: #C01A24;
   font-weight: 600;
   margin-top: 3px;
   margin-bottom: 15px;
 }
 .error404 .error-des {
   font-size: 30px;
-  color: #002A60;
+  color: #C01A24;
   font-weight: 600;
 }
 .error404 .error-text { font-size: 20px; }
