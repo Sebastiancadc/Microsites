@@ -104,7 +104,7 @@ body {
   background-color: #177dff !important; }
 
 .bg-secondary {
-  background-color: #002A60 !important; }
+  background-color: #C01A24  !important; }
 
 .bg-info {
   background-color: #36a3f7 !important; }
@@ -138,7 +138,7 @@ body {
   background: linear-gradient(-45deg, #3641a0, #177dff) !important; }
 
 .bg-secondary-gradient {
-  background: #002A60 !important;
+  background: #C01A24 !important;
   background: -webkit-linear-gradient(legacy-direction(-45deg), #29276b, #716aca) !important;
   background: linear-gradient(-45deg, #29276b, #716aca) !important; }
 
@@ -1198,9 +1198,9 @@ body {
     background: #177dff !important; }
 
 .main-header[data-background-color="purple"] {
-  background: #002A60 !important; }
+  background: #C01A24 !important; }
   .main-header[data-background-color="purple"] .navbar-header {
-    background: #002A60 !important; }
+    background: #C01A24 !important; }
 
 .main-header[data-background-color="light-blue"] {
   background: #36a3f7 !important; }

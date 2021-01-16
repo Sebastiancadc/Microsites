@@ -46,10 +46,12 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
           <!-- Navbar links -->
           <ul class="navbar-nav ">
             <li class="nav-item">
-              <a class="nav-link" href="{{url("home")}}">
-                <img src="{{asset('plantilla/img/theme/logoCOS.png')}}" id="imagenmenuleft" class="navbar-brand-img" style="margin-top: -7px;
-          max-width: 126%;
-          max-height: 10rem;"></a>
+              <div style="margin-top: 7px;">
+              <a class="nav-link" href="{{url("home")}}" style="margin-top: -24px;">
+                <img src="{{asset('plantilla/img/theme/logoCOS.png')}}" class="navbar-brand-img" 
+                style="max-width: 60%;
+                max-height: 129px;"></a>
+                </div>
             </li>
            
           </ul>
