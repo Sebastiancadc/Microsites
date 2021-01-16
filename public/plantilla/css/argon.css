@@ -3695,16 +3695,16 @@ fieldset:disabled a.btn
 
 .btn-outline-info
 {
-    color: #11cdef;
-    border-color: #11cdef;
+    color: #C01A24;
+    border-color: #C01A24;
     background-color: transparent;
     background-image: none;
 }
 .btn-outline-info:hover
 {
     color: #fff;
-    border-color: #11cdef;
-    background-color: #11cdef;
+    border-color: #C01A24;
+    background-color: #C01A24;
 }
 .btn-outline-info:focus,
 .btn-outline-info.focus
@@ -26946,7 +26946,7 @@ table.dataTable tbody > tr.selected
     text-align: left;
 }
 .calendar .fc-day-grid-event
-{   
+{
     margin: 1px 9px;
 }
 
@@ -29636,7 +29636,7 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle
 }
 .gif{
 background-image: url('https://cdn.discordapp.com/attachments/751199423354241064/773242214649954324/giphy_1.gif');
-background-size: cover; 
+background-size: cover;
 }
 .gris{
 color: #8898aa !important;
@@ -29653,11 +29653,11 @@ color: #8898aa !important;
     background-color: #11cdef !important;
     }
 .eventoRojo{
-   
+
 background-image: url('https://cdn.discordapp.com/attachments/750800996946411684/769336734517035048/ezgif.com-gif-maker_2.gif');
 }
 .black{
-      color:#000000; 
+      color:#000000;
 }
 
 .tubn{
@@ -29719,11 +29719,11 @@ background-color: #11cdef !important;
 
 .img4{
     margin-left: 200px;
-    width: 300px; 
+    width: 300px;
     min-width: 300px;
 }
 
-  
+
 #cboxContent {
     background: black;
     /* overflow: hidden; */
@@ -29739,7 +29739,7 @@ background-color: #11cdef !important;
   border-radius: .25rem;
   background-color: #5e72e4;
   height: 31px;
-  width: 70px;    
+  width: 70px;
 }
 
 .tgg{
@@ -29780,7 +29780,7 @@ background-color: #11cdef !important;
 
 
 .texte{
-    text-align: justify; 
+    text-align: justify;
 }
 .test4{
     text-align: center;
