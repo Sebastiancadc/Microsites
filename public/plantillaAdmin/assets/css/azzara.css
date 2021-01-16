@@ -3142,11 +3142,11 @@ label.error {
     color: #ffffff !important; }
 
 .btn-danger {
-  background: #f3545d !important;
-  border-color: #f3545d !important; }
+  background: grey !important;
+  border-color: grey !important; }
   .btn-danger:hover, .btn-danger:focus, .btn-danger:disabled {
-    background: #f3545d !important;
-    border-color: #f3545d !important; }
+    background: grey !important;
+    border-color: grey !important; }
 
 .btn-light {
   background: #ffffff !important;

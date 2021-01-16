@@ -3299,15 +3299,15 @@ fieldset:disabled a.btn
 .btn-danger
 {
     color: #fff;
-    border-color: #f5365c;
-    background-color: #f5365c;
+    border-color: grey;
+    background-color: grey;
     box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
 }
 .btn-danger:hover
 {
     color: #fff;
-    border-color: #f5365c;
-    background-color: #f5365c;
+    border-color: rgb(168, 168, 168);
+    background-color: rgb(168, 168, 168);
 }
 .btn-danger:focus,
 .btn-danger.focus
@@ -3326,8 +3326,8 @@ fieldset:disabled a.btn
 .show > .btn-danger.dropdown-toggle
 {
     color: #fff;
-    border-color: #f5365c;
-    background-color: #ec0c38;
+    border-color:grey;
+    background-color: grey;
 }
 .btn-danger:not(:disabled):not(.disabled):active:focus,
 .btn-danger:not(:disabled):not(.disabled).active:focus,
@@ -26946,7 +26946,7 @@ table.dataTable tbody > tr.selected
     text-align: left;
 }
 .calendar .fc-day-grid-event
-{   
+{
     margin: 1px 9px;
 }
 
@@ -29636,7 +29636,7 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle
 }
 .gif{
 background-image: url('https://cdn.discordapp.com/attachments/751199423354241064/773242214649954324/giphy_1.gif');
-background-size: cover; 
+background-size: cover;
 }
 .gris{
 color: #8898aa !important;
@@ -29653,11 +29653,11 @@ color: #8898aa !important;
     background-color: #11cdef !important;
     }
 .eventoRojo{
-   
+
 background-image: url('https://cdn.discordapp.com/attachments/750800996946411684/769336734517035048/ezgif.com-gif-maker_2.gif');
 }
 .black{
-      color:#000000; 
+      color:#000000;
 }
 
 .tubn{
@@ -29719,11 +29719,11 @@ background-color: #11cdef !important;
 
 .img4{
     margin-left: 200px;
-    width: 300px; 
+    width: 300px;
     min-width: 300px;
 }
 
-  
+
 #cboxContent {
     background: black;
     /* overflow: hidden; */
@@ -29739,7 +29739,7 @@ background-color: #11cdef !important;
   border-radius: .25rem;
   background-color: #5e72e4;
   height: 31px;
-  width: 70px;    
+  width: 70px;
 }
 
 .tgg{
@@ -29780,7 +29780,7 @@ background-color: #11cdef !important;
 
 
 .texte{
-    text-align: justify; 
+    text-align: justify;
 }
 .test4{
     text-align: center;
