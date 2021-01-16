@@ -44,12 +44,12 @@
                                 <strong class="text-danger tamano">{{$errors->first('title') }}</strong>
                                 @endif
                             </div>
-                            @if (Auth::user()->role == 'admin')
+                            @if (Auth::user()->role == 'Admin')
                             <div class="form-group">
                                 <label class="form-control-label" for="exampleFormControlInput1">Campaña</label>
                                 <select class="form-control" aria-placeholder="sdaads" data-toggle="select" name="campana"> 
                                 <option value=" ">Selecciona una campaña </option> 
-                                <option value="admin">Todas las campañas</option> 
+                                <option value="Admin">Todas las campañas</option> 
                                 @foreach ($vercampaña as $item)
                                   <option value="{{$item->Roles}}">{{$item->Roles}}</option>      
                                   @endforeach

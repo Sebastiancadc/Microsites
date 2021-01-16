@@ -37,7 +37,7 @@
 									<div class="card-body">
 										<div class="row">
 
-											<div class="col-md-6">
+											<div class="col-md-12">
 
 												<h4>Titulo</h4>
 												<div class="input-group">
@@ -50,44 +50,27 @@
 													<input class="form-control" placeholder="Titulo" name="title" id="title" value="{{$noticiaActualizar->title }}" type="text">
 												</div>
 											</div>
-
-											<div class="col-md-6">
-
-												<h4>Autor</h4>
-												<div class="input-group">
-													<div class="input-group-prepend">
-														<span class="input-group-text">
-															<i class="fas fa-user-edit"></i>
-														</span>
-													</div>
-													<input class="form-control" placeholder="Autor" name="autor" value="{{$noticiaActualizar->user->name}}" disabled type="text">
-												</div>
-											</div>
 											<div class="col-md-12">
 												<br>
 												<h4>Categoria</h4>
-												<select class="form-control" id="exampleFormControlSelect1" name="category_id">
-													@foreach ($categoria as $category)
-													<option value="{{ $category->id }}">{{ $category->name }}</option>
-													<option>Seleccione categoria</option>
-													<option>Diseño</option>
-													<option>Desarrollo</option>
-													<option>Software</option>
-													<option>Analisis</option>
-													<option>Produccion</option>
-													@endforeach
-												</select>
+												<select class="form-control"  data-toggle="select" name="campana"> 
+													<option>{{$noticiaActualizar->campana}}</option> 
+													<option value="admin">Todas las campañas</option> 
+													@foreach ($vercampaña as $item)
+													
+													  <option value="{{$item->Roles}}">{{$item->Roles}}</option>      
+													  @endforeach
+														   
+													</select>
 											</div>
 											<div class="col-md-12">
 												<br>
-												<h4>Descripcion</h4>
-												<div class="input-group">
-													<textarea class="form-control" name="body" id="mymce" type="text" cols="10" rows="5" required>{{$noticiaActualizar->body}}</textarea>
-												</div>
+												<h4>Fecha de publicacion</h4>
+												<input class="form-control" placeholder="Fecha" name="fecha"  value="{{$noticiaActualizar->fecha}}" type="date">
 											</div>
 											<div class="col-md-12">
 												<br>
-												<h4>Imagen</h4>
+												<h4>Archivo</h4>
 												<div class="input-group">
 													<div class="input-group-prepend">
 														<span class="input-group-text">

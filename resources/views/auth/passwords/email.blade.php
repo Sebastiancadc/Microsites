@@ -20,7 +20,7 @@
   <!-- Argon CSS -->
   <link rel="stylesheet" href="{{asset("plantilla/css/argon.css?v=1.1.0")}}" type="text/css">
 
-<body class="bg-default" style="overflow-y: hidden; background: linear-gradient(87deg, #002a60 0%,rgb(31 34 37) 100%) !important;">
+<body class="bg-default" style="overflow-y: hidden; background: linear-gradient(87deg, #C01A24 50%,rgb(31 34 37) 100%) !important;">
   <!-- Navbar -->
   <div id="particles-js"> </div>
   <!-- Main content -->

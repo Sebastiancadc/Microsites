@@ -11,6 +11,9 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
   
+  <!-- Flaticon -->
+  <link rel="icon" href="{{asset('plantilla/img/theme/logoCOS.png')}}" type="image/png">
+
   <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700">
   <!-- Icons -->

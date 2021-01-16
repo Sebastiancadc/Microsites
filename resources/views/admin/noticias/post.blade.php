@@ -55,10 +55,12 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                         </div>
                         </div>
                         <div class="text-right ml-auto">
+                            @if($noticia->campana == Auth::User()->username)
                             @if ($campaña->update_status == '1')
                             <a href="{{route('editarnoticia', $noticia->Id_noticia)}}" type="button" class="btn btn-sm btn-primary btn-icon">
                             <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
                             <span class="btn-inner--text">Editar</span>
+                            @endif
                             @endif
                             @if ($campaña->delete_status == '1')
                             <a href="" data-toggle="modal" data-target="#deleteNoticia{{$noticia->Id_noticia}}" type="button" class="btn btn-sm btn-danger btn-icon">

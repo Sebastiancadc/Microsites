@@ -37,14 +37,7 @@
                     <form action="{{url('admin/updatenoticiaus',$noticiaActualizar->Id_noticia)}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                        <div class="form-group">
-                            <label class="form-control-label">Categoria de la publicación</label>
-                            <select class="form-control" name="category_id">
-                                @foreach ($categoria as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
+                       
                         <div class="form-group">
                             <label class="form-control-label" for="title">Título </label>
                             <input type="text" id="title" class="form-control form-control-alternative" value="{{$noticiaActualizar->title }}" name="title">
@@ -52,11 +45,27 @@
                             <strong class="text-danger tamano">{{ $errors->first('title') }}</strong>
                             @endif
                         </div>
+
+                        @if (Auth::user()->role == 'Admin')
+                        <label class="form-control-label">Campaña</label>
+                        <select class="form-control"  data-toggle="select" name="campana"> 
+                            <option value="Admin">Todas las campañas</option> 
+                            <option>{{$noticiaActualizar->campana}}</option> 
+                            @foreach ($vercampaña as $item)
+                              <option value="{{$item->Roles}}">{{$item->Roles}}</option>      
+                              @endforeach             
+                            </select>
+                            @else 
+                            <label class="form-control-label" for="title">Campaña </label>
+                            <input type="text"  class="form-control form-control-alternative" value="{{Auth::user()->username}}" name="campana" disabled>
+                            @endif
                         <div class="form-group">
-                            <label class="form-control-label" for="competencias">Contenido</label>
-                            <textarea class="form-control" id="mymce" rows="3" name="body">{{$noticiaActualizar->body }}</textarea>
-                            @if ($errors->has('body'))
-                            <strong class="text-danger tamano">{{ $errors->first('body') }}</strong>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label" for="title">Fecha de publicacion </label>
+                            <input type="date" class="form-control form-control-alternative" value="{{$noticiaActualizar->fecha }}" name="fecha">
+                            @if ($errors->has('title'))
+                            <strong class="text-danger tamano">{{ $errors->first('title') }}</strong>
                             @endif
                         </div>
                         <img src="{{$noticiaActualizar->image }}" class="img-fluid rounded img4">
@@ -69,6 +78,9 @@
                         </div>
                         <div class="col-lg-6 col-5 text-right" style="float: right;">
                             <button type="submit" class="btn btn-primary my-4">Actualizar</button>
+                        </div>
+                        <div class="col-lg-6 col-5 text-right" style="float: right;">
+                            <a href="{{route('index2')}}" style="margin-left: 34pc;" class="btn btn-danger my-4">Cancelar</a>
                         </div>
                     </form>
                 </div>

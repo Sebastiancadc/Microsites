@@ -88,23 +88,23 @@ class NoticiasController extends Controller
     {
         $noticiaActualizar = Noticia::findOrFail($id);
         $categoria = Category::all();
-        return view('admin/noticias/edit', compact('noticiaActualizar','categoria'));
+        $vercampaña = DB::select("SELECT * FROM rol WHERE Roles <> 'admin'");
+        return view('admin/noticias/edit', compact('noticiaActualizar','categoria','vercampaña'));
     }
     public function editAd($id)
     {
         $noticiaActualizar = Noticia::findOrFail($id);
         $categoria = Category::all();
-        return view('admin/noticias/editad', compact('noticiaActualizar','categoria'));
+        $vercampaña = DB::select("SELECT * FROM rol WHERE Roles <> 'admin'");
+        return view('admin/noticias/editad', compact('noticiaActualizar','categoria','vercampaña'));
     }
 
-
-    public function update(NoticiaRequest $request, $id)
+    public function update(Request $request, $id)
     {
             $noticiaUpdate = Noticia::findOrFail($id);
             $noticiaUpdate->save();
 
             $noticia = Noticia::find($id);
-            $noticia->slug =  Str::slug($request->title);
             $noticia->update($request->all());
 
            if($request->file('image')){
@@ -116,30 +116,12 @@ class NoticiasController extends Controller
            return redirect()->action('NoticiasController@index')->with('editarnoticia', 'Noticia actualizada correctamente');
     }
 
-    public function updateUs(NoticiaRequest $request, $id)
+    public function updateUs(Request $request, $id)
     {
         $noticiaUpdate = Noticia::findOrFail($id);
         $noticiaUpdate->save();
 
-        $rules = [
-          'title' => 'required',
-          'body' => 'required',
-          'image' =>'mimes:jpeg,bmp,png,jpg,gif|max:2000',
-         ];
-
-        $messages = [
-          'title.required' =>'Es obligatorio un título para la publicación',
-          'body.required' =>'Es obligatorio un contenido para la publicación',
-          'image.mimes' =>'El archivo debe  corresponder a un formato de imagen',
-          'image.max' =>'La imagen no debe ser mayor que 2 mb.'
-
-
-
-           ];
-            $this->validate($request, $rules, $messages);
-
             $noticia = Noticia::find($id);
-            $noticia->slug =  Str::slug($request->title);
             $noticia->update($request->all());
 
            if($request->file('image')){

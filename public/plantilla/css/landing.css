@@ -31,7 +31,7 @@ input:focus, textarea:focus, button:focus, button[role="button"]:focus {
 	outline: none!important;
 }
 .navHeaderWrapper.header-image {
-    background-image: linear-gradient(90deg,#002A60 -73%,#001531 100%);
+    background-image: linear-gradient(90deg,#C01A24 -4%,#4b0a0e 100%);
     background-size: cover;
 }
 .btn-rounded {

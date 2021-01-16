@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{{asset("plantilla/css/argon.css?v=1.1.0")}}" type="text/css">
 </head>
 
-<body class="bg-default" style="overflow-y: hidden; background: linear-gradient(87deg, #002a60 0%, rgb(31 34 37) 100%) !important;">
+<body class="bg-default" style="overflow-y: hidden; background: linear-gradient(87deg, #C01A24 50%, rgb(31 34 37) 100%) !important;">
     <!-- Navbar -->
     <div id="particles-js"> </div>
     <!-- Main content -->
@@ -86,7 +86,7 @@
 
                                 </div>
                                <div class="copyright text-center text-lg-left text-muted">
-                               <a style="color: #5e72e4;" class="font-weight-bold ml-1" >Creado por grupo 3 Sena Montechelo.</a>
+                               <a style="color: #C01A24;" class="font-weight-bold ml-1" >Creado por grupo 3 Sena Montechelo.</a>
                               </div>
                             </form>
                         </div>

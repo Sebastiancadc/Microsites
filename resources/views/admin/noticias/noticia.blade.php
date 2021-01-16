@@ -13,8 +13,8 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
         <div class="row">
             <div class="col-lg-6 col-md-12 col-sm-12 col-12 order-lg-1 order-2 align-self-center  mb-lg-0 mb-5">
                 <div class="site-header-inner  mt-lg-0 mt-5">
-                    <h2 class="">Noticias de intéres</h2>
-                    <p>Descubre lo último en actualidad y mantente conectado.</p>
+                    <h2 style="color:white;">Noticias de intéres</h2>
+                    <p style="color:white;">Descubre lo último en actualidad y mantente conectado.</p>
                     @if ($campaña->create_status == '1')
                     <a href="{{ url('crearnoticia') }}" class="btn btn-sm btn-neutral mt-5">Agregar</a>
                     @endif

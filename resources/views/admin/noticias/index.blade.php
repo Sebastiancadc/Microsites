@@ -22,9 +22,9 @@
             </div>
             @endif
             
-            @if (session('update'))
+            @if (session('editarnoticia'))
             <div class="alert alert-warning" role="alert">
-                {{(session('update'))}}
+                {{(session('editarnoticia'))}}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -48,11 +48,11 @@
                                     <thead>
                                         <tr>
                                             <th>Titulo</th>
-                                            <th>Categoría</th>
-                                            <th>Autor</th>
-                                            <th>Portada</th>
-                                            <th>Descripción </th>
-                                            <th>Fecha</th>
+                                            <th>Campaña</th>
+                                            
+                                            <th>Archivo</th>
+                                           
+                                            <th>Fecha de publicacion</th>
                                             <th style="width: 10%">Acciones</th>
                                         </tr>
                                     </thead>
@@ -60,13 +60,13 @@
                                         @foreach ($noticia as $item)
                                         <tr>
                                             <td>{{$item->title}}</td>
-                                            <td>{{$item->category->name}}</td>
-                                            <td>{{$item->user->name}}</td>
+                                            <td>{{$item->campana}}</td>
+                                           
                                             <td><a href="#" data-toggle="modal" data-target="#ver{{$item->Id_noticia}}">
-                                                    <img src="{{$item->image }}" width="80" height="900" class="img-fluid"></a>
+                                                <a src="{{$item->image }}" width="80" height="900" class="img-fluid" </a></a>
                                             </td>
-                                            <td>{{$item->body}}</td>
-                                            <td>{{$item->created_at}}</td>
+                                            
+                                            <td>{{$item->fecha}}</td>
                                             <td>
                                                 <div class="form-button-action">
                                                     <a href="{{route('editarnoticiaad', $item->Id_noticia)}}" class="btn btn-link btn-primary btn-lg" data-original-title="Editar capacitacion">
