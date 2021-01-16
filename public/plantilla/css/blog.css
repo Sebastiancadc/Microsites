@@ -183,7 +183,7 @@ body { background-color: #fff; }
 #articlesPostContent article p.meta  { margin: 8px 0; }
 #articlesPostContent article p.meta span.post-category {
     font-weight: 600;
-    color: #24ccda;
+    color: #ee3d50;
     text-transform: uppercase;
     font-size: 12px;
 }
