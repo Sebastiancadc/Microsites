@@ -5,6 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>Microsites</title>
 	  <!-- Fonts -->
+	  <link rel="icon" href="{{asset('plantilla/img/theme/IsotipoCOS.png')}}" type="image/png">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700">
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<!-- Fonts and icons -->
