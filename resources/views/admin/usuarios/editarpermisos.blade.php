@@ -25,7 +25,7 @@
 					</li>
 				</ul>
 			</div>
-			
+
 			<div class="col-md-9 ml-auto mr-auto">
 				<div class="card">
 					<form action="{{url('admin/updatepermisos',$permisoActualizar->Id_Rol)}}" method="POST">
@@ -58,7 +58,7 @@
 												</div>
 											</div>
 											<div class="col-md-4">
-												<h4>Elimiar</h4>
+												<h4>Eliminar</h4>
 												<div class="input-group">
 													<input type="checkbox" data-toggle="toggle" data-on="Habilitado" name="delete_status" data-off="Deshabilitado" @if ($permisoActualizar->delete_status == '1')
 													checked data-onstyle="success" value="1"

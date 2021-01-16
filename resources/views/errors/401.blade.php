@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Error 401</title>
      <!-- Favicon -->
-   
+     <link rel="icon" href="{{asset('plantilla/img/theme/IsotipoCOS.png')}}" type="image/png">
     <link href='https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=hidden' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{asset("plantilla/css/faq/plugins.css")}}" type="text/css">
     <link rel="stylesheet" href="{{asset("css/style-400.css")}}" type="text/css">

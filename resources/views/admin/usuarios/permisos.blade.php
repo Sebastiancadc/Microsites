@@ -34,7 +34,7 @@
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title">Gestión de Permisos</h4>
-                              
+
                             </div>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                                                     @endif
                                         </li>
                                         <li class="list-group-item">
-                                            <h4 class="colorsito">Elimiar</h4>
+                                            <h4 class="colorsito">Eliminar</h4>
                                             @if ($permiso->delete_status == '1')
                                             <span class="badge badge-lg badge-success">
                                                 Habilitado

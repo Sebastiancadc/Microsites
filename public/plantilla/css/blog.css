@@ -178,7 +178,7 @@ body { background-color: #fff; }
     height: 230px;
 }
 #articlesPostContent article .post-heading { color: #ee3d50; }
-#articlesPostContent article:hover .post-heading { color: #3862f5; }
+#articlesPostContent article:hover .post-heading { color: #ee3d50; }
 #articlesPostContent article .post-text { color: #a2a3a3 }
 #articlesPostContent article p.meta  { margin: 8px 0; }
 #articlesPostContent article p.meta span.post-category {
