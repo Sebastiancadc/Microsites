@@ -34,7 +34,7 @@
                 <div class="card-body">
                     <form method="POST" action="{{ url('crearnoticias') }}" enctype="multipart/form-data">
                         @csrf @method('POST')
-                        <input type="hidden" name="user_id" name="user_id" value="{{$user->id}}" ;>
+                        <input type="hidden" name="user_id" name="user_id" value="{{$user->id}}">
                         <div class="form-group">
                             
                             <div class="form-group">
@@ -49,7 +49,7 @@
                                 <label class="form-control-label" for="exampleFormControlInput1">Campaña</label>
                                 <select class="form-control" aria-placeholder="sdaads" data-toggle="select" name="campana"> 
                                 <option value=" ">Selecciona una campaña </option> 
-                                <option value="Admin">Todas las campañas</option> 
+                                <option value="admin">Todas las campañas</option> 
                                 @foreach ($vercampaña as $item)
                                   <option value="{{$item->Roles}}">{{$item->Roles}}</option>      
                                   @endforeach
@@ -74,7 +74,7 @@
                                 </div>
                                 </div>
                                 @if ($errors->has('fecha'))
-                                 <strong class="text-danger tamano">{{$errors->first('fecha') }}</strong>
+                                 <strong class="text-danger tamano">{{$errors->first('fecha')}}</strong>
                                  @endif
                             </div>
                            

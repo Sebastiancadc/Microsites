@@ -6724,8 +6724,8 @@ a.badge:focus
 .alert-success
 {
     color: #fff;
-    border-color: #4fd69c;
-    background-color: #4fd69c;
+    border-color: #808080;
+    background-color: #808080;
 }
 .alert-success a
 {

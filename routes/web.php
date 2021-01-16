@@ -9,7 +9,7 @@ Auth::routes(['verify' => true]);
 Route::get('/', function () {
 
     return view('admin.login');
-});
+}); 
 
 Route::get('/home', 'InicioController@index');
 
@@ -32,7 +32,6 @@ Route::get('cambiarpasss', function () {
     return view('auth.passwords.reset');
 });
 
-    
 Route::get('Cambiarcontraseña/{id}', 'CambiarpassController@edit')->name('Cambiarcontraseña');
 Route::put('updateContraseña/{id}', 'CambiarpassController@update')->name('updateContraseña');
 
@@ -117,6 +116,11 @@ Route::group(['auth', 'prefix' => ''], function () {
     Route::post('crearnoticias', 'NoticiasController@store')->name('crearnoticias');
     Route::get('crearnoticia', 'NoticiasController@crearnoticia')->name('crearnoticia');
     Route::get('post/{slug}', 'NoticiasController@post')->name('post');
+    Route::get('editarnoticia/{id}', 'NoticiasController@edit')->name('editarnoticia');
+    Route::get('editarnoticiaad/{id}', 'NoticiasController@editAd')->name('editarnoticiaad');
+    Route::put('updatenoticia/{id}', 'NoticiasController@update')->name('update');
+    Route::put('updatenoticiaus/{id}', 'NoticiasController@updateUs');
+    Route::delete('deletenoticia/{id}', 'NoticiasController@destroy')->name('eliminarnoticia');
 
     //NOTICIA
     Route::get('editarnoticia/{id}', 'NoticiasController@edit')->name('editarnoticia');

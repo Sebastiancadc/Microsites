@@ -12,11 +12,9 @@
 
 {{-- Intro Lines --}}
 {{-- Intro Lines --}}
-<p>Estas recibiendo este email porque has salicitado cambiar la contraseña</p>
+<p>Estas recibiendo este email porque has solicitado cambiar la contraseña</p>
 
 {{-- Action Button --}}
-
-
 
 
 {{-- Action Button --}}

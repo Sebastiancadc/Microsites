@@ -2,22 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Capacitaciones;
 use Illuminate\Http\Request;
 use App\Noticia;
 use App\User;
 use App\Category;
-use App\Events\NoticiasEvent;
+use App\Helpers\Helpers;
 use App\Http\Requests\NoticiaRequest;
-use App\Pausasactivas;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
-use App\Notifications\NoticiasNotification;
-use App\Permisos;
-use Redirect;
+
 
 class NoticiasController extends Controller
 {
@@ -31,22 +28,22 @@ class NoticiasController extends Controller
         $noticia = Noticia::paginate(4);
         $noticiasRegistradas = DB::table('noticias')->count();
         $programacion = DB::table('noticias')->wherecategory_id(1)->count();
-        return view('admin.noticias.index', compact('noticia','noticiasRegistradas','programacion'));
+        return view('admin.noticias.index', compact('noticia', 'noticiasRegistradas', 'programacion'));
     }
     public function index2()
     {
         $usuariologeado = Auth::user();
         $campaña = Auth::user()->username;
-  
-         if($usuariologeado->role  <> 'admin'){
+
+        if ($usuariologeado->role  <> 'admin') {
             $vercampañass = DB::select("SELECT * FROM noticias WHERE campana = '$campaña'");
             $vercampañas = DB::select("SELECT * FROM noticias WHERE campana = 'admin'");
-            $vercampaña= array_merge($vercampañass,$vercampañas);
-        }else{
+            $vercampaña = array_merge($vercampañass, $vercampañas);
+        } else {
             $vercampaña = Noticia::all();
         }
-         
-        return view('admin.noticias.noticia',compact('vercampaña'));
+
+        return view('admin.noticias.noticia', compact('vercampaña'));
     }
 
     public function crearnoticia()
@@ -55,65 +52,78 @@ class NoticiasController extends Controller
         $vercampaña = DB::select("SELECT * FROM rol WHERE Roles <> 'admin'");
         $categoria = Category::all();
 
-        return view('admin.noticias.crearnoticia',compact('categoria','user','vercampaña'));
+        return view('admin.noticias.crearnoticia', compact('categoria', 'user', 'vercampaña'));
     }
     public function crearnoticias()
     {
-       $user = User::find(Auth::User()->id);
-       $categoria = Category::all();
-       $vercampaña = DB::select("SELECT * FROM rol WHERE Roles <> 'admin'");
-       return view('admin.crearnoticia',compact('categoria','user','vercampaña'));
+        $user = User::find(Auth::User()->id);
+        $categoria = Category::all();
+        $vercampaña = DB::select("SELECT * FROM rol WHERE Roles <> 'admin'");
+        return view('admin.crearnoticia', compact('categoria', 'user', 'vercampaña'));
     }
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(NoticiaRequest $request)
     {
 
-         $noticia = new Noticia($request->all());
-         $noticia->slug = Str::slug($request->title);
-         $noticia->save();
-         if ($request->file('image')) {
+        $noticia = new Noticia();
+        $noticia->title = $request->title;
+        $noticia->user_id = $request->user_id;
+        $noticia->campana = $request->campana;
+        $noticia->fecha = Carbon::createFromFormat('d/m/Y',$request->fecha);
+        $noticia->slug = Str::slug($request->title);
+        $noticia->image = $request->image;
+        $noticia->save();
+        if ($request->file('image')) {
             $nombre = Storage::disk('imaposts')->put('imagenes/posts', $request->file('image'));
             $noticia->fill(['image' => asset($nombre)])->save();
-         }
- 
-         return redirect()->action('NoticiasController@index2')->with('crearnoticia', 'Noticia publicada correctamente');
+        }
+
+        return redirect()->action('NoticiasController@index2')->with('crearnoticia', 'Noticia publicada correctamente');
     }
- 
+
     public function edit($id)
     {
         $noticiaActualizar = Noticia::findOrFail($id);
         $categoria = Category::all();
         $vercampaña = DB::select("SELECT * FROM rol WHERE Roles <> 'admin'");
-        return view('admin/noticias/edit', compact('noticiaActualizar','categoria','vercampaña'));
+        return view('admin/noticias/edit', compact('noticiaActualizar', 'categoria', 'vercampaña'));
     }
+
     public function editAd($id)
     {
         $noticiaActualizar = Noticia::findOrFail($id);
         $categoria = Category::all();
         $vercampaña = DB::select("SELECT * FROM rol WHERE Roles <> 'admin'");
-        return view('admin/noticias/editad', compact('noticiaActualizar','categoria','vercampaña'));
+        return view('admin/noticias/editad', compact('noticiaActualizar', 'categoria', 'vercampaña'));
     }
 
     public function update(Request $request, $id)
     {
-            $noticiaUpdate = Noticia::findOrFail($id);
-            $noticiaUpdate->save();
+        $noticiaUpdate = Noticia::findOrFail($id);
+        $noticiaUpdate->title = $request->title;
+        $noticiaUpdate->title = $request->user_id;
+        $noticiaUpdate->campana = $request->campana;
+        $noticiaUpdate->fecha = Carbon::createFromFormat('d/m/Y',$request->fecha);
+        $noticiaUpdate->slug = Str::slug($request->title);
+        $noticiaUpdate->image = $request->image;
+        $noticiaUpdate->save();
 
-            $noticia = Noticia::find($id);
-            $noticia->update($request->all());
+        $noticia = Noticia::find($id);
+        $noticiaUpdate->title = $request->title;
+        $noticiaUpdate->title = $request->user_id;
+        $noticiaUpdate->campana = $request->campana;
+        $noticiaUpdate->fecha = Carbon::createFromFormat('d/m/Y',$request->fecha);
+        $noticiaUpdate->slug = Str::slug($request->title);
+        $noticiaUpdate->image = $request->image;
+        $noticia->update();
 
-           if($request->file('image')){
+        if ($request->file('image')) {
             $nombre = Storage::disk('imaposts')->put('plantilla/img/noticia',  $request->file('image'));
             $noticia->fill(['image' => asset($nombre)])->save();
-          }
+        }
 
-           Session::flash('message','Publicación actualizada correctamente');
-           return redirect()->action('NoticiasController@index')->with('editarnoticia', 'Noticia actualizada correctamente');
+        Session::flash('message', 'Publicación actualizada correctamente');
+        return redirect()->action('NoticiasController@index')->with('editarnoticia', 'Noticia actualizada correctamente');
     }
 
     public function updateUs(Request $request, $id)
@@ -121,23 +131,23 @@ class NoticiasController extends Controller
         $noticiaUpdate = Noticia::findOrFail($id);
         $noticiaUpdate->save();
 
-            $noticia = Noticia::find($id);
-            $noticia->update($request->all());
+        $noticia = Noticia::find($id);
+        $noticia->update($request->all());
 
-           if($request->file('image')){
+        if ($request->file('image')) {
             $nombre = Storage::disk('imaposts')->put('plantilla/img/noticia',  $request->file('image'));
             $noticia->fill(['image' => asset($nombre)])->save();
-          }
+        }
 
-           Session::flash('message','Publicación actualizada correctamente');
-           //return redirect()->action('NoticiasController@directee')->with('editarnoticia', 'Noticia actualizada correctamente');
-           return back()->with('editarnoticia', 'Noticia actualizada correctamente');
+        Session::flash('message', 'Publicación actualizada correctamente');
+        //return redirect()->action('NoticiasController@directee')->with('editarnoticia', 'Noticia actualizada correctamente');
+        return back()->with('editarnoticia', 'Noticia actualizada correctamente');
     }
 
     public function post($slug)
     {
-        $noticia= Noticia::where('slug',$slug)->first();
-    	return view('admin.noticias.post',compact('noticia'));
+        $noticia = Noticia::where('slug', $slug)->first();
+        return view('admin.noticias.post', compact('noticia'));
     }
 
     /**
@@ -150,8 +160,8 @@ class NoticiasController extends Controller
     {
         $noticia = Noticia::findOrFail($id);
         $noticia->delete();
-        Session::flash('message','Publicación borrada  correctamente');
-        return redirect()->action('NoticiasController@index')->with('eliminar','la noticia se elimino correctamente');
+        Session::flash('message', 'Publicación borrada  correctamente');
+        return redirect()->action('NoticiasController@index')->with('eliminar', 'la noticia se elimino correctamente');
     }
 
 

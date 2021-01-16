@@ -36,9 +36,19 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
 </div>
 <!-- /Header -->
 <!-- Page content -->
+@if (session('crearnoticia'))
+            <div class="alert alert-success" role="alert" style="    margin-top: 37px;
+            width: 92%;
+            margin-left: 63px;">
+                {{(session('crearnoticia'))}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @endif
 <div id="articlesPostWrapper">
     <div class="container-fluid">
-        <div class="row">
+        <div class="row">       
             <div id="articlesPostHeading" class="col-md-12">
                 <h2 class="pb-4 m-0">Artículos</h2>
             </div>

@@ -45,7 +45,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                 <div class="card-header d-flex align-items-center">
                         <div class="d-flex align-items-center">
                         <a href="#">
-                            <img src="{{ $noticia->user->photo }}" class="avatar">
+                            <img src="{{$noticia->user->photo }}" class="avatar">
                         </a>
                         <div class="mx-3">
                             <h4 class="mb-0">
@@ -55,7 +55,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                         </div>
                         </div>
                         <div class="text-right ml-auto">
-                            @if($noticia->campana == Auth::User()->username)
+                            @if($noticia->user_id == Auth::User()->id)
                             @if ($campaña->update_status == '1')
                             <a href="{{route('editarnoticia', $noticia->Id_noticia)}}" type="button" class="btn btn-sm btn-primary btn-icon">
                             <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>

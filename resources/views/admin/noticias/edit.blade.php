@@ -18,14 +18,6 @@
         </div>
     </div>
 </div>
-@if (session('editarnoticia'))
-<div class="alert alert-warning" role="alert">
-    {{(session('editarnoticia'))}}
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
-@endif
 <br>
 <br>
 <div class="container-fluid mt--6">
@@ -33,8 +25,16 @@
         <div class="col-lg-8 card-wrapper">
             <!-- Grid system -->
             <div class="card">
+                @if (session('editarnoticia'))
+                    <div class="alert alert-warning" role="alert">
+                        {{(session('editarnoticia'))}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    @endif
                 <div class="card-body">
-                    <form action="{{url('admin/updatenoticiaus',$noticiaActualizar->Id_noticia)}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{url('updatenoticiaus',$noticiaActualizar->Id_noticia)}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                        
@@ -46,10 +46,10 @@
                             @endif
                         </div>
 
-                        @if (Auth::user()->role == 'Admin')
+                        @if (Auth::user()->role == 'admin')
                         <label class="form-control-label">Campaña</label>
                         <select class="form-control"  data-toggle="select" name="campana"> 
-                            <option value="Admin">Todas las campañas</option> 
+                            <option value="admin">Todas las campañas</option> 
                             <option>{{$noticiaActualizar->campana}}</option> 
                             @foreach ($vercampaña as $item)
                               <option value="{{$item->Roles}}">{{$item->Roles}}</option>      
