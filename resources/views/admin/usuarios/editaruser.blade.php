@@ -80,7 +80,7 @@
 									</div>
 									<div class="form-control">
 										<select id="basic" name="ciudad" class="col-md-12" >
-											<option value="">{{$userActualizar->ciudad}}</option>
+											<option value="{{$userActualizar->ciudad}} ">{{$userActualizar->ciudad}}</option>
 											<option value="Bogota">Bogotá</option>
 											<option value="Barranquilla">Barranquilla</option>
 											<option value="Medellin">Medellín</option>
@@ -96,7 +96,7 @@
 											<i class="fas fa-lock"></i>
 										</span>
 									</div>
-									<input class="form-control" placeholder="Contraseña" name="password" type="text">
+									<input class="form-control" placeholder="Contraseña" name="password" value="{{Crypt::decrypt($userActualizar->pass)}}" type="text">
 								</div>
 								@if ($errors->has('password'))
 								<strong class="text-danger tamano">{{ $errors->first('password') }}</strong>
@@ -110,7 +110,7 @@
 											<i class="fas fa-lock"></i>
 										</span>
 									</div>
-									<input class="form-control" placeholder="Confimrar contraseña" name="password_confirmation" type="text">
+									<input class="form-control" placeholder="Confimrar contraseña" name="password_confirmation" value="{{Crypt::decrypt($userActualizar->pass)}}" type="text">
 								</div>
 							</div>
 							<div class="col-sm-10 col-md-9" style="margin-left: 72%;">

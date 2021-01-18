@@ -48,9 +48,9 @@
       <div class="row justify-content-center">
         <div class="col-lg-5 col-md-7">
           <div class="card bg-secondary border-0 mb-0" style="top: -184px;">
-            <div class="card-header bg-transparent pb-5" style="padding-bottom: 1rem !important;">
-              {{-- <img src="{{asset("plantilla/img/theme/isotipo.png")}}" style="height: 70px;margin-left: 150px;"> --}}
-            </div>
+            <div class="card-header bg-transparent pb-5" style="padding-bottom: 1rem !important; margin-left: auto; margin-right:auto;">
+              <img src="{{asset("plantilla/img/theme/cos2.png")}}" style="height: 70px;margin-left: -6px;">   
+          </div>
             <div class="card-body px-lg-5 py-lg-5" >
               <div class="text-center text-muted mb-4">
                 <h3>Ingresa tus datos</h3>
@@ -62,12 +62,10 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                     </div>
-                    <input id="email" name="username" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" placeholder="username" type="text" required autofocus>
-                    
+                    <input id="username" name="username" class="form-control @error('username') is-invalid @enderror" value="{{ old('username') }}" placeholder="username" type="text" required autofocus>
                 </div>
-              
                 </div>
-                @error('email')
+                @error('username')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>

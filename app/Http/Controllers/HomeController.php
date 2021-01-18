@@ -7,8 +7,8 @@ use App\Http\Requests\UsuarioRequest;
 use Illuminate\Http\Request;
 use App\User;
 use App\Permisos;
-use App\Solicitud;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -35,6 +35,7 @@ class HomeController extends Controller
 
         $users = User::all();
         $usuariosregistrados = DB::table('usuario')->count();
+
 
         return view('admin.usuarios.usuario', compact('users','usuariosregistrados'));
     }
@@ -66,7 +67,7 @@ class HomeController extends Controller
             $permisos->create_status = "1";
         } else {
             $permisos->create_status = "0";
-        }
+        } 
         $permisos->update_status = $request->update_status;
         if ($request->has('update_status')) {
             $permisos->update_status = "1";
@@ -86,11 +87,13 @@ class HomeController extends Controller
     
 
     public function store(UsuarioRequest $request)
-    {
+    {   
+        
+        $user = new User();
+        $user->pass = Crypt::encrypt($request->password);
         $request->request->add([
             'password' => Hash::make($request->input('password'))
         ]);
-        $user = new User();
         $user->username = $request->username;
         $user->ciudad = $request->ciudad;
         $user->role = $request->role;
@@ -111,19 +114,19 @@ class HomeController extends Controller
 
     public function update(Request $request, $id)
     {
-
+        $UserUpdate = User::findOrFail($id);
+        $UserUpdate->pass = Crypt::encrypt($request->password);
         $request->merge([
             'password' => Hash::make($request->input('password'))
         ]);
-        $UserUpdate = User::findOrFail($id);
         $UserUpdate->username = $request->username;
         $UserUpdate->ciudad = $request->ciudad;
         $UserUpdate->password = $request->password;
         $UserUpdate->save();
-        $Rol = Permisos::findOrFail($id);
-        $Rol->Roles = $request->username;
-        $Rol->save();
-        return redirect('admin/usuario')->with('editarUsuario', 'Campaña editada correctamente');
+        $RolUpdate = Permisos::findOrFail($id);
+        $RolUpdate->Roles = $request->username;
+        $RolUpdate->save();
+        return redirect()->action('HomeController@index')->with('editarUsuario', 'Campaña editada correctamente');
     }
 
     public function destroy($id)
@@ -131,6 +134,13 @@ class HomeController extends Controller
         $data = User::find($id);
         $data->delete();
         return redirect('admin/usuario')->with('eliminarusuario', 'La campaña se elimino');
+    }
+
+    public function destroypermisos($id)
+    {
+        $data = Permisos::find($id);
+        $data->delete();
+        return redirect()->action('HomeController@permisoslista')->with('eliminarpermiso', 'La campaña se elimino');
     }
 
     public function logout()

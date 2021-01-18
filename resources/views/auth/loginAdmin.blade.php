@@ -49,6 +49,7 @@
                 <div class="col-lg-5 col-md-7">
                     <div class="card bg-secondary border-0 mb-0" style="top: -190px;">
                         <div class="card-header bg-transparent pb-5" style="padding-bottom: 1rem !important; margin-left: auto; margin-right:auto;">
+                            <img src="{{asset("plantilla/img/theme/cos2.png")}}" style="height: 70px;margin-left: -6px;">   
                         </div>
                         <div class="card-body px-lg-5 py-lg-5">
                             <div class="text-center text-muted mb-4">
@@ -61,10 +62,10 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-single-02"></i></span>
                                         </div>
-                                        <input id="email" name="username" class="form-control" value="{{ old('email') }}" placeholder="username-ADMIN" type="text"  pattern="(admin)" title="Solo puede ingresar el administrador" autofocus>
+                                        <input id="username" name="username" class="form-control" value="{{ old('username') }}" placeholder="username-ADMIN" type="text"  pattern="(admin)" title="Solo puede ingresar el administrador" autofocus>
                                     </div>  
-                                    @if ($errors->has('email'))
-                                    <strong class="text-danger tamano">{{ $errors->first('email') }}</strong>
+                                    @if ($errors->has('username'))
+                                    <strong class="text-danger tamano">{{ $errors->first('username') }}</strong>
                                     @endif  
                                 </div>
                                 <div class="form-group">

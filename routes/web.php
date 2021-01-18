@@ -74,7 +74,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::post('crearRol', 'HomeController@CrearRol');
     Route::get('editarpermisos/{id}', 'HomeController@editarpermisos')->name('permisoedit');
     Route::put('updatepermisos/{id}', 'HomeController@updatepermisos')->name('updatepermisos');
-
+    Route::delete('deletepermiso/{id}', 'HomeController@destroypermisos')->name('eliminarpermiso');
     //DASBOARD ADMIN
     Route::get('HomeAdmin', 'InicioController@indexAdmin');
 

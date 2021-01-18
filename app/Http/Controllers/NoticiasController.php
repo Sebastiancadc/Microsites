@@ -100,29 +100,18 @@ class NoticiasController extends Controller
     public function update(Request $request, $id)
     {
         $noticiaUpdate = Noticia::findOrFail($id);
-        $noticiaUpdate->title = $request->title;
-        $noticiaUpdate->title = $request->user_id;
-        $noticiaUpdate->campana = $request->campana;
-        $noticiaUpdate->fecha = Carbon::createFromFormat('d/m/Y',$request->fecha);
-        $noticiaUpdate->slug = Str::slug($request->title);
-        $noticiaUpdate->image = $request->image;
         $noticiaUpdate->save();
 
         $noticia = Noticia::find($id);
-        $noticiaUpdate->title = $request->title;
-        $noticiaUpdate->title = $request->user_id;
-        $noticiaUpdate->campana = $request->campana;
-        $noticiaUpdate->fecha = Carbon::createFromFormat('d/m/Y',$request->fecha);
-        $noticiaUpdate->slug = Str::slug($request->title);
-        $noticiaUpdate->image = $request->image;
-        $noticia->update();
+        $noticia->fecha = Carbon::createFromFormat('Y-m-d',$request->fecha);
+        $noticia->slug =  Str::slug($request->title);
+        $noticia->update($request->all());
 
         if ($request->file('image')) {
             $nombre = Storage::disk('imaposts')->put('plantilla/img/noticia',  $request->file('image'));
             $noticia->fill(['image' => asset($nombre)])->save();
         }
-
-        Session::flash('message', 'Publicación actualizada correctamente');
+        
         return redirect()->action('NoticiasController@index')->with('editarnoticia', 'Noticia actualizada correctamente');
     }
 
@@ -132,6 +121,8 @@ class NoticiasController extends Controller
         $noticiaUpdate->save();
 
         $noticia = Noticia::find($id);
+        $noticia->fecha = Carbon::createFromFormat('Y-m-d',$request->fecha);
+        $noticia->slug =  Str::slug($request->title);
         $noticia->update($request->all());
 
         if ($request->file('image')) {
@@ -140,7 +131,6 @@ class NoticiasController extends Controller
         }
 
         Session::flash('message', 'Publicación actualizada correctamente');
-        //return redirect()->action('NoticiasController@directee')->with('editarnoticia', 'Noticia actualizada correctamente');
         return back()->with('editarnoticia', 'Noticia actualizada correctamente');
     }
 
