@@ -46,8 +46,8 @@ Route::get('admin/pasword', function () {
     return view('admin.pasword');
 });
 
-Route::get('Solicitud', function () {
-    return view('admin.solicitud');
+Route::get('Presentacion', function () {
+    return view('admin.presentaciones.index');
 });
 
 

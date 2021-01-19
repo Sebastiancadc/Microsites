@@ -55,14 +55,13 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
                 max-height: 129px;"></a>
                 </div>
             </li>
-           
           </ul>
           <ul class="navbar-nav ml-lg-auto">
             <li class="nav-item">
               <a class="nav-link" href="{{ url('home')}}">Inicio <span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url('noticiausu')}}">Noticias</a>
+              <a class="nav-link" href="{{url('noticiausu')}}">Presentaciones</a>
             </li>
           </ul>
           <ul class="navbar-nav align-items-center ml-md-auto">
