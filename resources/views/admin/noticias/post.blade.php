@@ -11,11 +11,11 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
         <div class="header-body">
             <div class="row align-items-center py-4">
                 <div class="col-lg-6 col-7">
-                    <h6 class="h2 text-white d-inline-block mb-0">Noticias</h6>
+                    <h6 class="h2 text-white d-inline-block mb-0">Presentacion</h6>
                     <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                         <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                             <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Noticia publicada</li>
+                            <li class="breadcrumb-item active" aria-current="page">Presentacion publicada</li>
                         </ol>
                     </nav>
                 </div>
@@ -40,30 +40,30 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
         <div class="row justify-content-center">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="h3 mb-0">{{ $noticia->title }}</h5>
+                    <h5 class="h3 mb-0">{{$presentacion->title }}</h5>
                 </div>
                 <div class="card-header d-flex align-items-center">
                         <div class="d-flex align-items-center">
-                        <a href="#">
-                            <img src="{{$noticia->user->photo }}" class="avatar">
-                        </a>
+                        {{-- <a href="#">
+                            <img src="{{$presentacion->user->photo }}" class="avatar">
+                        </a> --}}
                         <div class="mx-3">
                             <h4 class="mb-0">
-                                <a>{{$noticia->user->name}} {{$noticia->user->lastname}}</a>
+                                <a>Fecha de publicacion</a>
                             </h4>
-                            <small class="d-block text-muted">{{ $noticia->created_at->format('d/m/Y') }}</small>
+                            <small class="d-block text-muted">{{ $presentacion->created_at->format('d/m/Y') }}</small>
                         </div>
                         </div>
                         <div class="text-right ml-auto">
-                            @if($noticia->user_id == Auth::User()->id)
+                            @if($presentacion->user_id == Auth::User()->id)
                             @if ($campaña->update_status == '1')
-                            <a href="{{route('editarnoticia', $noticia->Id_noticia)}}" type="button" class="btn btn-sm btn-primary btn-icon">
+                            <a href="{{route('editarpresentacion', $presentacion->id)}}" type="button" class="btn btn-sm btn-primary btn-icon">
                             <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
                             <span class="btn-inner--text">Editar</span>
                             @endif
                             @endif
                             @if ($campaña->delete_status == '1')
-                            <a href="" data-toggle="modal" data-target="#deleteNoticia{{$noticia->Id_noticia}}" type="button" class="btn btn-sm btn-danger btn-icon">
+                            <a href="" data-toggle="modal" data-target="#deleteNoticia{{$presentacion->id}}" type="button" class="btn btn-sm btn-danger btn-icon">
                             <span class="btn-inner--icon"><i class="ni ni-fat-remove"></i></span>
                             <span class="btn-inner--text">Eliminar</span>
                             @endif
@@ -71,7 +71,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                         </div>
                     </div>
                                 <!-- Modal -->
-                                <div class="modal fade" id="deleteNoticia{{$noticia->Id_noticia}}" tabindex="-1" role="dialog" aria-labelledby="deleteUsuarioTitle" aria-hidden="true">
+                                <div class="modal fade" id="deleteNoticia{{$presentacion->id}}" tabindex="-1" role="dialog" aria-labelledby="deleteUsuarioTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -80,7 +80,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
-                                            <form role="form" method="POST" action="{{route('eliminarnoticia',$noticia->Id_noticia)}}">
+                                            <form role="form" method="POST" action="{{route('eliminarpresentacion',$presentacion->id)}}">
                                                 @csrf @method('DELETE')
                                                 <div class="modal-body">
                                                     ¡No podrás revertir esto!
@@ -94,10 +94,8 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                                     </div>
                                 </div>
                 <div class="card-body">
-                    <p class="mb-4">
-                        {{ $noticia->body }}
-                    </p>
-                    <img alt="Image placeholder" src="{{ $noticia->image }}" class="img-fluid rounded" style="margin-left: 260px; margin-right: 260px; width: 477px; heightmin-width: ;min-width: 474px;">
+                    {{-- PRESENTACIONN AQUI --}}
+                    <img alt="Image placeholder" src="{{ $presentacion->title }}" class="img-fluid rounded" style="margin-left: 260px; margin-right: 260px; width: 477px; heightmin-width: ;min-width: 474px;">
                     <div class="row align-items-center my-3 pb-3 border-bottom">
                     <div class="col-sm-6">
                     </div>

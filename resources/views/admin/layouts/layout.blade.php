@@ -101,7 +101,7 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
 
                 @if ($user->role=='admin')
                 <a href="{{ url('admin/HomeAdmin')}}" class="dropdown-item">
-                  <i class="ni ni-settings-gear-65"></i>
+                  <i class="ni ni-settings-gear-65" ></i>
                   <span>Administrador</span>
                 </a>
                 @endif
@@ -157,5 +157,4 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
         $('.js-example-basic-single').select2();
       });
     </script>
-
 </body>

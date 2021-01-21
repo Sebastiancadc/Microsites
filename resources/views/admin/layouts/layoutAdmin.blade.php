@@ -135,10 +135,9 @@
 							</div>
 						</li>
 						<li class="nav-item ">
-							<a href="{{url('admin/noticia')}}">
+							<a href="{{url('admin/presentacion')}}">
 								<i class="fas fa-newspaper"></i>
-								<p>Noticias
-								</p>
+								<p>Presentaciones</p>
 							</a>
 					</ul>
 				</div>

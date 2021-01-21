@@ -35,10 +35,10 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Gestión de Noticias</h4>
-                                <a class="btn btn-primary btn-round ml-auto" href="{{ url('crearnoticia') }}">
+                                <h4 class="card-title">Gestión de Presentaciones</h4>
+                                <a class="btn btn-primary btn-round ml-auto" href="{{ url('crearpresentacion') }}">
                                     <i class="fa fa-plus"></i>
-                                    Crear Noticia
+                                    Crear Presentacion
                                 </a>
                             </div>
                         </div>
@@ -48,10 +48,7 @@
                                     <thead>
                                         <tr>
                                             <th>Titulo</th>
-                                            <th>Campaña</th>
-                                            
-                                            <th>Archivo</th>
-                                           
+                                            <th>Campaña</th> 
                                             <th>Fecha de publicacion</th>
                                             <th style="width: 10%">Acciones</th>
                                         </tr>
@@ -61,22 +58,17 @@
                                         <tr>
                                             <td>{{$item->title}}</td>
                                             <td>{{$item->campana}}</td>
-                                           
-                                            <td><a href="#" data-toggle="modal" data-target="#ver{{$item->Id_noticia}}">
-                                                <a src="{{$item->image }}" width="80" height="900" class="img-fluid" </a></a>
-                                            </td>
-                                            
                                             <td>{{$item->fecha}}</td>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="{{route('editarnoticiaad', $item->Id_noticia)}}" class="btn btn-link btn-primary btn-lg" data-original-title="Editar capacitacion">
+                                                    <a href="{{route('editarpresentacionad', $item->id)}}" class="btn btn-link btn-primary btn-lg" data-original-title="Editar capacitacion">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
-                                                    <button href="#" class="btn btn-link btn-danger" data-toggle="modal" data-target="#deleteNoticia{{$item->Id_noticia}}" data-original-title="Eliminar capacitacion">
+                                                    <button href="#" class="btn btn-link btn-danger" data-toggle="modal" data-target="#deleteNoticia{{$item->id}}" data-original-title="Eliminar capacitacion">
                                                         <i class="fa fa-times"></i>
                                                     </button>
                                                     <!-- Modal -->
-                                                    <div class="modal fade" id="deleteNoticia{{$item->Id_noticia}}" tabindex="-1" role="dialog" aria-labelledby="deleteUsuarioTitle" aria-hidden="true">
+                                                    <div class="modal fade" id="deleteNoticia{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="deleteUsuarioTitle" aria-hidden="true">
                                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
@@ -85,7 +77,7 @@
                                                                         <span aria-hidden="true">&times;</span>
                                                                     </button>
                                                                 </div>
-                                                                <form role="form" method="POST" action="{{route('eliminarnoticia',$item->Id_noticia)}}">
+                                                                <form role="form" method="POST" action="{{route('eliminarpresentacionad',$item->id)}}">
                                                                     @csrf @method('DELETE')
                                                                     <div class="modal-body">
                                                                         ¡No podrás revertir esto!
@@ -98,7 +90,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="modal fade" id="ver{{$item->Id_noticia}}" tabindex="-1" role="dialog" aria-hidden="true">
+                                                    <div class="modal fade" id="ver{{$item->id}}" tabindex="-1" role="dialog" aria-hidden="true">
                                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                                             <div class="modal-content" style="width: 655px;">
                                                                 <div class="modal-body" style="width: 655px;">

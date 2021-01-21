@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Diapositivas;
 use App\Http\Requests\SolicitudRequest;
 use Illuminate\Http\Request;
 use App\Noticia;
+use App\Presentaciones;
 use App\Solicitud;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -21,13 +22,15 @@ class InicioController extends Controller
     {
         $usuariologeado = Auth::user();
         $campaña = Auth::user()->username;
-
+        $presentaciones = Presentaciones::all();
+        
         if ($usuariologeado->role  <> 'admin') {
-            $vercampañass = DB::select("SELECT * FROM noticias WHERE campana = '$campaña'");
-            $vercampañas = DB::select("SELECT * FROM noticias WHERE campana = 'admin'");
+            $vercampañass = DB::select("SELECT * FROM presentaciones WHERE campana = '$campaña'");
+            $vercampañas = DB::select("SELECT * FROM presentaciones WHERE campana = 'admin'");
             $vercampaña = array_merge($vercampañass,$vercampañas);
         } else {
-            $vercampaña = Noticia::all();
+            $vercampaña = Presentaciones::all();
+            
         }
 
         return view('admin.dashboards.dashboard', compact('vercampaña'));

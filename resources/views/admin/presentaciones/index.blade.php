@@ -1,21 +1,16 @@
 <!doctype html>
-<html lang="es">
-	
+<html lang="es">	
 	<head>
 		<meta charset="utf-8">
-
 		<title>Presentacion</title>
 		<!-- Flaticon -->
 		<link rel="icon" href="{{asset('plantilla/img/theme/IsotipoCOS.png')}}" type="image/png">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
 		<link rel="stylesheet" href="{{asset("presentaciones/docs/css/reveal.css")}}">
-		
+	
 		<link rel="stylesheet" href="{{asset("presentaciones/docs/css/theme/moon.css")}}" id="theme">
-
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="{{asset("presentaciones/docs/lib/css/zenburn.css")}}">
 	
@@ -30,9 +25,9 @@
 	</head>
 	
 	<body>
-
+		
 		<div class="reveal">
-
+			
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 
@@ -99,7 +94,7 @@
 					</section>
 				</section>
 				
-				<section>
+				{{-- <section>
 					<section>
 						<h2>Fallout 3</h2>
 					</section>
@@ -243,12 +238,12 @@
 				</section>
 				
 				<section data-background="https://media.giphy.com/media/OkYsEFNkbPRZe/giphy.gif">
-				</section>
+				</section> --}}
 
 			</div>
 
 		</div>
-
+	
 		<script src="{{asset("presentaciones/docs/lib/js/head.min.js")}}"></script>
 		
 		<script src="{{asset("presentaciones/docs/js/reveal.js")}}"></script>
@@ -257,11 +252,13 @@
 			
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				controls: true,
+				controls: false,
 				progress: true,
 				history: true,
 				center: true,
-
+				autoSlide: 5000,
+  				loop: true,
+				embedded: true,
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
 				// More info https://github.com/hakimel/reveal.js#dependencies

@@ -27,7 +27,7 @@
 			</div>
 			<div class="col-md-9 ml-auto mr-auto">
 				<div class="card">
-					<form action="{{url('admin/noticia',$noticiaActualizar->Id_noticia)}}" method="POST" enctype="multipart/form-data">
+					<form action="{{url('admin/presentacion',$noticiaActualizar->id)}}" method="POST" enctype="multipart/form-data">
 						@csrf
 						@method('PUT')
 						<div class="card-body">
@@ -67,18 +67,6 @@
 												<br>
 												<h4>Fecha de publicacion</h4>
 												<input class="form-control" placeholder="Fecha" name="fecha"  value="{{$noticiaActualizar->fecha}}" type="date">
-											</div>
-											<div class="col-md-12">
-												<br>
-												<h4>Archivo</h4>
-												<div class="input-group">
-													<div class="input-group-prepend">
-														<span class="input-group-text">
-															<i class="fas fa-image"></i>
-														</span>
-													</div>
-													<input type="file" class="form-control form-control-alternative" placeholder="img" value="{{$noticiaActualizar->image }}" name="image">
-												</div>
 											</div>
 										</div>
 									</div>
