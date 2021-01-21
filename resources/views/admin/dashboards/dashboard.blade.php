@@ -64,14 +64,6 @@ $date =date('m-d')
                             @endif
                             @endforeach
 
-                            <div class="reveal reveal-example reveal-viewport slide embedded center has-horizontal-slides ready focused" data-config="{&quot;slideNumber&quot;: &quot;c/t&quot;}" role="application" data-transition-speed="default" data-background-transition="fade" style="--slide-width:900px; --slide-height:500px;"><div class="slides" style="width: 900px; height: 500px; inset: 50% auto auto 50%; transform: translate(-50%, -50%) scale(0.60096);"><section style="top: 227px; display: block;" class="past" hidden="" aria-hidden="true">Slide 1</section><section style="top: 227px; display: block;" class="present">Slide 3</section></div><div class="backgrounds"><div class="slide-background past" data-loaded="true" style="display: block;"><div class="slide-background-content"></div></div><div class="slide-background present" data-loaded="true" style="display: block;"><div class="slide-background-content"></div></div></div><div class="slide-number" style="display: block;"><a href="#/1">
-                              <span class="slide-number-a">2</span>
-                              <span class="slide-number-delimiter">/</span>
-                              <span class="slide-number-b">2</span>
-                              </a></div><aside class="controls" data-controls-layout="bottom-right" data-controls-back-arrows="faded" style="display: block;"><button class="navigate-left enabled" aria-label="previous slide"><div class="controls-arrow"></div></button>
-                          <button class="navigate-right" aria-label="next slide" disabled="disabled"><div class="controls-arrow"></div></button>
-                          <button class="navigate-up" aria-label="above slide" disabled="disabled"><div class="controls-arrow"></div></button>
-                          <button class="navigate-down" aria-label="below slide" disabled="disabled"><div class="controls-arrow"></div></button></aside><div class="progress" style="display: none;"><span></span></div><div class="speaker-notes" data-prevent-swipe="" tabindex="0"></div><div class="pause-overlay"><button class="resume-button">Resume presentation</button></div><div class="aria-status" aria-live="polite" aria-atomic="true" style="position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px);">Slide 3 </div></div>
                         </div>
                     </div>
                 </div>
