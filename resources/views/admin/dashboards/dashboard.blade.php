@@ -3,11 +3,7 @@
 <?php
 $date =date('m-d')
 ?>
-	<link rel="stylesheet" href="{{asset("presentaciones/docs/css/reveal.css")}}">
-	
-	<link rel="stylesheet" href="{{asset("presentaciones/docs/css/theme/moon.css")}}" id="theme">
-		<!-- Theme used for syntax highlighting of code -->
-	<link rel="stylesheet" href="{{asset("presentaciones/docs/lib/css/zenburn.css")}}">
+
 <link rel="stylesheet" href="{{asset("plantilla/css/gallery.css")}}" type="text/css">
 <div class="header bg-primary pb-6" >
     <div class="container-fluid">
@@ -38,33 +34,40 @@ $date =date('m-d')
                             </div>
                         </div>
                     </div>
+                
                     <div class="row align-items-center">
-                        <div class="col sm-4">
-                           <?php
-                            $fechahoy = new \DateTime();
-                            $fechas = $fechahoy->format('d-m-Y');
-                           ?>
-                            @foreach ($vercampaña as $item)
-                            @if(App\Helpers\Helpers::formatearFechahoy($item->fecha) == $fechas)
-                            <a href="{{'presentacion'}}/{{$item->title}}">
-                                <div class="gallery-item " data-width="1" data-height="1" style="padding-left: 10px; width: auto;">
-                                    <h4 style="color:white;">{{$item->title}}</h4>
-                                    <div class="overlayer bottom-left full-width"  style="margin-top: -127px;margin-left: 16px;">
-                                    <div class="overlayer-wrapper item-info ">
-                                            <div class="gradient-grey p-l-20 p-r-20 p-t-20 p-b-5">
-                                                <div class="">
-                                                    <p class="pull-left bold text-white fs-14 p-t-10">{{$item->title}}</p>                                            
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                            </div>
-                                    </div>
-                                    </div>
-                                </div>
+                   
+                      <div class="col sm-4">
+                        <?php
+                         $fechahoy = new \DateTime();
+                         $fechas = $fechahoy->format('d-m-Y');
+                        ?>
+                         @foreach ($vercampaña as $item)
+                         @if(App\Helpers\Helpers::formatearFechahoy($item->fecha) == $fechas)
+                         <a href="{{'presentacion'}}/{{$item->title}}">
+                             <div style="overflow: hidden;
+                             cursor: default;
+                             background-color: {{$item->color}};
+                             margin-bottom: 10px;
+                             position: relative;
+                             width: 960px;
+                             height: 240px;" data-width="1" data-height="1" style="padding-left: 10px; width: auto;">
+                                 <h4 class="titulodash">{{$item->title}}</h4>
+                                 <div class="overlayer bottom-left full-width"  style="margin-top: -127px;margin-left: 16px;">
+                                 <div class="overlayer-wrapper item-info ">
+                                         <div class="gradient-grey p-l-20 p-r-20 p-t-20 p-b-5">
+                                             <div class="">
+                                                 <p class="pull-left bold text-white fs-14 p-t-10">{{$item->color}}</p>                                            
+                                                 <div class="clearfix"></div>
+                                             </div>
+                                         </div>
+                                 </div>
+                                 </div>
+                             </div>
                             </a>
-                            @endif
-                            @endforeach
-
-                        </div>
+                         @endif
+                         @endforeach
+                     </div>
                     </div>
                 </div>
             </div>               
@@ -73,37 +76,6 @@ $date =date('m-d')
     @include('admin.layouts.footer')
   </div>
 </div>
-	
-<script src="{{asset("presentaciones/docs/lib/js/head.min.js")}}"></script>
-		
-<script src="{{asset("presentaciones/docs/js/reveal.js")}}"></script>
-
-<script>
-  
-  // More info https://github.com/hakimel/reveal.js#configuration
-  Reveal.initialize({
-    controls: false,
-    progress: true,
-    history: true,
-    center: true,
-    autoSlide: 5000,
-      loop: true,
-    embedded: true,
-    transition: 'slide', // none/fade/slide/convex/concave/zoom
-
-    // More info https://github.com/hakimel/reveal.js#dependencies
-    dependencies: [
-      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-      { src: '{{asset("presentaciones/docs/plugin/markdown/marked.js")}}', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-      { src: '{{asset("presentaciones/docs/plugin/markdown/markdown.js")}}', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-      { src: '{{asset("presentaciones/docs/plugin/highlight/highlight.js")}}', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-      { src: '{{asset("presentaciones/docs/plugin/zoom-js/zoom.js")}}', async: true },
-      { src: '{{asset("presentaciones/docs/plugin/notes/notes.js")}}', async: true }
-      
-    ]
-  });
-
-</script>
 @section('js')
 <script src="{{asset("plantilla/vendor/fullcalendar/dist/locale/es.js")}}"></script>
 <script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>

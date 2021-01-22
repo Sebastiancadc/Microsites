@@ -103,14 +103,13 @@
                 </div>
             </div>
        @foreach ($titulo1 as $item)
-       @if (json_encode($item->titulo) == "null")
+       @if (json_encode($item->titulo) == "null") 
        @else
         <div id="accordion" style="margin-top: -5px;">
             <div class="card">
                 <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                     <div class="span-title">
                         <h3 class="text-section">Pagina - 1</h3>
-                        
                     </div>
                     <div class="span-mode"></div>
                 </div>  
@@ -120,9 +119,7 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
                                 <h4 class="colorsito">Titulo</h4>
-                                
                                 @foreach ($titulo1 as $item)
-                                
                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]" value="{{$item->titulo}}">
                                 @endforeach
                             </li>
@@ -130,6 +127,13 @@
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                 @foreach ($imagen1 as $item)
                                 <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen[]" value="{{$item->imagen}}">
+                                @endforeach
+                            </li>
+
+                            <li class="list-group-item">
+                                <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
+                                @foreach ($imagen_fondo1 as $item)
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
@@ -174,6 +178,13 @@
                                 @endforeach
                             </li>
                             <li class="list-group-item">
+                                <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
+                                @foreach ($imagen_fondo2 as $item)
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen[]" value="{{$item->imagen_fondo}}">
+                                @endforeach
+                            </li>
+
+                            <li class="list-group-item">
                                 <h4 class="colorsito">Contenido</h4>
                                 @foreach ($contenido2 as $item)
                                 <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4">{{$item->contenido}}</textarea>
@@ -208,10 +219,18 @@
                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]" value="{{$item->titulo}}">
                                 @endforeach
                             </li>
+
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                 @foreach ($imagen3 as $item)
                                 <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen[]" value="{{$item->imagen}}">
+                                @endforeach
+                            </li>
+
+                            <li class="list-group-item">
+                                <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
+                                @foreach ($imagen_fondo3 as $item)
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
@@ -258,6 +277,12 @@
                                 @endforeach
                             </li>
                             <li class="list-group-item">
+                                <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
+                                @foreach ($imagen_fondo4 as $item)
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen[]" value="{{$item->imagen_fondo}}">
+                                @endforeach
+                            </li>
+                            <li class="list-group-item">
                                 <h4 class="colorsito">Contenido</h4>
                                  @foreach ($contenido4 as $item)
                                 <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4">{{$item->contenido}}</textarea>
@@ -298,6 +323,12 @@
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                 @foreach ($imagen5 as $item)
                                 <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="imagen[]" value="{{$item->imagen}}">
+                                @endforeach
+                            </li>
+                            <li class="list-group-item">
+                                <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
+                                @foreach ($imagen_fondo5 as $item)
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
@@ -343,6 +374,13 @@
                                 <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="imagen[]" value="{{$item->imagen}}">
                                 @endforeach
                             </li>
+
+                            <li class="list-group-item">
+                                <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
+                                @foreach ($imagen_fondo7 as $item)
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen[]" value="{{$item->imagen_fondo}}">
+                                @endforeach
+                            </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Contenido</h4>
                                 @foreach ($contenido6 as $item)
@@ -386,6 +424,13 @@
                                 <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="imagen[]" value="{{$item->imagen}}">
                                 @endforeach
                             </li>
+
+                            <li class="list-group-item">
+                                <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
+                                @foreach ($imagen_fondo7 as $item)
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen[]" value="{{$item->imagen_fondo}}">
+                                @endforeach
+                            </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Contenido</h4>
                                 @foreach ($contenido7 as $item)
@@ -427,6 +472,12 @@
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                 @foreach ($imagen8 as $item)
                                 <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="imagen[]" value="{{$item->imagen}}">
+                                @endforeach
+                            </li>
+                            <li class="list-group-item">
+                                <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
+                                @foreach ($imagen_fondo8 as $item)
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
@@ -474,6 +525,12 @@
                                 @endforeach
                             </li>
                             <li class="list-group-item">
+                                <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
+                                @foreach ($imagen_fondo9 as $item)
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen[]" value="{{$item->imagen_fondo}}">
+                                @endforeach
+                            </li>
+                            <li class="list-group-item">
                                 <h4 class="colorsito">Contenido</h4>
                                 @foreach ($contenido9 as $item)
                                 <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"> {{$item->contenido}}</textarea>
@@ -515,6 +572,12 @@
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                 @foreach ($imagen10 as $item)
                                 <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="imagen[]" value="{{$item->imagen}}">
+                                @endforeach
+                            </li>
+                            <li class="list-group-item">
+                                <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
+                                @foreach ($imagen_fondo10 as $item)
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
@@ -562,6 +625,12 @@
                                 @endforeach
                             </li>
                             <li class="list-group-item">
+                                <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
+                                @foreach ($imagen_fondo11 as $item)
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen[]" value="{{$item->imagen_fondo}}">
+                                @endforeach
+                            </li>
+                            <li class="list-group-item">
                                 <h4 class="colorsito">Contenido</h4>
                                 @foreach ($contenido11 as $item)
                                 <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"> {{$item->contenido}}</textarea>
@@ -603,6 +672,12 @@
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                 @foreach ($imagen12 as $item)
                                 <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="imagen[]" value="{{$item->imagen}}">
+                                @endforeach
+                            </li>
+                            <li class="list-group-item">
+                                <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
+                                @foreach ($imagen_fondo12 as $item)
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
@@ -650,6 +725,12 @@
                                 @endforeach
                             </li>
                             <li class="list-group-item">
+                                <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
+                                @foreach ($imagen_fondo13 as $item)
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen[]" value="{{$item->imagen_fondo}}">
+                                @endforeach
+                            </li>
+                            <li class="list-group-item">
                                 <h4 class="colorsito">Contenido</h4>
                                 @foreach ($contenido13 as $item)
                                 <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"> {{$item->contenido}}</textarea>
@@ -691,6 +772,12 @@
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                 @foreach ($imagen14 as $item)
                                 <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="imagen[]" value="{{$item->imagen}}">
+                                @endforeach
+                            </li>
+                            <li class="list-group-item">
+                                <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
+                                @foreach ($imagen_fondo14 as $item)
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
@@ -738,6 +825,12 @@
                                 @endforeach
                             </li>
                             <li class="list-group-item">
+                                <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
+                                @foreach ($imagen_fondo15 as $item)
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen[]" value="{{$item->imagen_fondo}}">
+                                @endforeach
+                            </li>
+                            <li class="list-group-item">
                                 <h4 class="colorsito">Contenido</h4>
                                 @foreach ($contenido15 as $item)
                                 <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"> {{$item->contenido}}</textarea>
@@ -782,6 +875,12 @@
                                 @endforeach
                             </li>
                             <li class="list-group-item">
+                                <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
+                                @foreach ($imagen_fondo16 as $item)
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen[]" value="{{$item->imagen_fondo}}">
+                                @endforeach
+                            </li>
+                            <li class="list-group-item">
                                 <h4 class="colorsito">Contenido</h4>
                                 @foreach ($contenido16 as $item)
                                 <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"> {{$item->contenido}}</textarea>
@@ -822,6 +921,11 @@
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                 @foreach ($imagen17 as $item)
                                 <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="imagen[]" value="{{$item->imagen}}">
+                                @endforeach
+                            </li><li class="list-group-item">
+                                <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
+                                @foreach ($imagen_fondo17 as $item)
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
@@ -865,6 +969,12 @@
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                 @foreach ($imagen18 as $item)
                                 <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="imagen[]" value="{{$item->imagen}}">
+                                @endforeach
+                            </li>
+                            <li class="list-group-item">
+                                <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
+                                @foreach ($imagen_fondo18 as $item)
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
@@ -912,6 +1022,12 @@
                                 @endforeach
                             </li>
                             <li class="list-group-item">
+                                <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
+                                @foreach ($imagen_fondo19 as $item)
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen[]" value="{{$item->imagen_fondo}}">
+                                @endforeach
+                            </li>
+                            <li class="list-group-item">
                                 <h4 class="colorsito">Contenido</h4>
                                 @foreach ($contenido19 as $item)
                                 <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"> {{$item->contenido}}</textarea>
@@ -953,6 +1069,12 @@
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                 @foreach ($imagen20 as $item)
                                 <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="imagen[]" value="{{$item->imagen}}">
+                                @endforeach
+                            </li>
+                            <li class="list-group-item">
+                                <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
+                                @foreach ($imagen_fondo20 as $item)
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">

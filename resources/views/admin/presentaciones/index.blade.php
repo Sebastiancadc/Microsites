@@ -1,278 +1,149 @@
-<!doctype html>
-<html lang="es">	
-	<head>
-		<meta charset="utf-8">
-		<title>Presentacion</title>
-		<!-- Flaticon -->
-		<link rel="icon" href="{{asset('plantilla/img/theme/IsotipoCOS.png')}}" type="image/png">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<link rel="stylesheet" href="{{asset("presentaciones/docs/css/reveal.css")}}">
-	
-		<link rel="stylesheet" href="{{asset("presentaciones/docs/css/theme/moon.css")}}" id="theme">
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="{{asset("presentaciones/docs/lib/css/zenburn.css")}}">
-	
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? '{{asset("presentaciones/docs/css/print/pdf.css")}}' : '{{asset("presentaciones/docs/css/print/paper.css")}}';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	
-	<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sequence.js - The responsive CSS animation framework</title>
+  <link href="{{asset('presentaciones/css/sequence-theme.basic.css')}}" rel="stylesheet" media="all">
 		
-		<div class="reveal">
-			
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
+</head>
+<body>
+  <div id="sequence">
+    <ul class="seq-canvas">
+  
+      <li class="step1">
+        <div class="content">
+          <h2 data-seq>Powered by Sequence.js</h2>
+          <h3 data-seq>The open-source CSS animation framework.</h3>
+        </div>
+      </li>
+  
+      <li class="step2">
+        <div class="content">
+          <h2 data-seq>Create Unique Animated Themes</h2>
+          <h3 data-seq>For responsive sliders, presentations, <br />banners, and other step-based applications.</h3>
+        </div>
+      </li>
+  
+      <li class="step3">
+        <div class="content">
+          <h2 data-seq>No Restrictions, Endless Possibilities</h2>
+          <h3 data-seq>Use the HTML and CSS syntax you're used to. <br />No JavaScript knowledge required.</h3>
+        </div>
+      </li>
+  
+    </ul>
+  </div>
 
-				<section>
-					<h1>Micro sites</h1>
-					<h4>La representación de los archivos en Fallout 3 y Guild Wars 2</h4>
-					
-				</section>
+  <style>
+/* Style the Sequence container */
+#sequence {
+  position: relative;
+  width: 100%;
+  height: 585px;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0;
+  font-family: sans-serif;
+}
 
-				<section>
-					<section>
-						<h2>Introducción</h2>
-					</section>
-					<section>
-						<h2>Objetivo</h2>
-						<p>
-							Estudiar la representación de los documentos, los archivos y los archiveros en los videojuegos <i>Fallout 3</i> y <i>Guild Wars 2</i>.
-						</p>
-					</section>
-					<section>
-						<h2>Precedentes</h2>
-						<ul>
-							<li><a href="https://www.arxivers.com/index.php/documents/publicacions/revista-lligall-1/lligall-24-1/96-04-els-arxius-i-el-cinema-ombres-i-llums-d-una-relacio-dificil-1/file">"Els arxius i el cinema, ombres i llums d’una relació difícil"</a> (Margarida Gómez y Jordi Amigó).</li>
-							<li><a href="https://turbulentlondon.com/2015/06/09/undying-archivists-representations-of-archives-in-video-games/">"Undying archivists: Representation of archives in video games"</a> (Hannah Awcock).</li>
-							<li>Blog <a href="https://librariesinvideogames.tumblr.com/"><i>Libraries in Video Games</i></a>.</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Justificación</h2>
-						<ul>
-							<li>La imagen de los profesionales de la información repercute en su estatus profesional y sueldo.</li>
-							<li>Los videojuegos lideran la industria del entretenimiento y cada vez más académicos subrayan la necesidad de analizarlos (Henry Lewood, Frans Mäyrä, Rafael Rodríguez Prieto).</li>
-							<li>Los videojuegos contribuyen a asentar o modificar estereotipos.</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Videojuegos persuasivos</h2>
-						<p>
-							Ian Bogost explica que el enorme poder de persuasión de los videojuegos obedece a su retórica procedimental. Un claro ejemplo es el uso de los videojuegos para obtener más reclutas, aunque también encontramos títulos que promueven el el ecologismo y la cultura de paz.
-						</p>
-					</section>
-					<section data-background="{{asset("presentaciones/docs/img/us-army-controller.jpg")}}">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff;position:relative;top:600px">
-							<p>Periférico oficial del Ejército de Estados Unidos</p>
-						</div>
-					</section>
-					<section data-background="{{asset("presentaciones/docs/img/americas-army.jpg")}}">
-						
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff;position:relative;top:600px">
-							<p>Pantallazo de <i>America's Army</i></p>
-						</div>
-					</section>
-					<section data-background="{{asset("presentaciones/docs/img/ffvii.jpg")}}">
-						
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff;position:relative;top:600px">
-							<p><i>Final Fantasy VII</i></p>
-						</div>
-					</section>
-					<section data-background="{{asset("presentaciones/docs/img/undertale.jpg")}}">
-						
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff;position:relative;top:600px">
-							<p>Pantallazo de <i>Undertale</i></p>
-						</div>
-					</section>
-				</section>
-				
-				{{-- <section>
-					<section>
-						<h2>Fallout 3</h2>
-					</section>
-					<section>
-						<h2>9,88 millones de copias vendidas</h2>
-						<p>
-							Esta tercera entrega supuso el punto de inflexión de la saga <i>Fallout</i>, hoy considerada un referente obligado en la historia de los videojuegos de temática postapocalíptica.
-						</p>
-					</section>
-					<section>
-						<h2>Bienvenidos a Yermo Capital</h2>
-						<p>
-							La trama se desarrolla en Yermo Capital doscientos años después de la guerra nuclear entre Estados Unidos y China. El jugador encarna a un habitante del refugio 101 que escapa en busca de su padre.
-						</p>
-					</section>
-					<section data-background="img/sociedad-conservacion-capital-02-fallout-3.jpg">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff;position:relative;top:600px">
-							<p>Sociedad para la Conservación de Capital</p>
-						</div>
-					</section>
-					<section data-background="img/sociedad-conservacion-capital-01-fallout-3.jpg">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff;position:relative;top:600px">
-							<p>Sociedad para la Conservación de Capital</p>
-						</div>
-					</section>
-					<section data-background="img/national-archives-fallout-3.jpg">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff;position:relative;top:600px">
-							<p>Fachada de los Archivos Nacionales</p>
-						</div>
-					</section>
-					<section data-background="img/national-archives-us.jpg">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff;position:relative;top:600px">
-							<p>Fachada de los Archivos Nacionales</p>
-						</div>
-					</blockquote>
-					</section>
-					<section data-background="img/rotunda-fallout-3.jpg">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff;position:relative;top:600px">
-							<p>Rotonda de las Cartas de la Libertad</p>
-						</div>
-					</section>
-					<section data-background="img/rotunda.jpg">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff;position:relative;top:600px">
-							<p>Rotonda de las Cartas de la Libertad</p>
-						</div>
-					</section>
-					<section data-background="img/microfilm-fallout-3.jpg">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff;position:relative;top:600px">
-							<p>Archivo Multimedia de la Biblioteca de Arlington</p>
-						</div>
-					</section>
-					<section data-background="img/menu-principal-fallout-3.jpg">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff;position:relative;top:600px">
-							<p>Menú principal</p>
-						</div>
-					</section>
-					<section>
-						<h2>Conclusiones</h2>
-						<ul>
-							<li>La finalidad de los archivos en <i>Fallout 3</i> es preservar la historia de las instituciones: son un "instrumento de hegemonía" (Terry Cook).</li>
-							<li>Desaparición de las fronteras entre el archivo, la biblioteca y el museo.</li>
-							<li>Mayor durabilidad de las microformas con respecto al papel y los soportes ópticos o magnéticos.</li>
-							<li>Funciones propias del archivero como la clasificación, la eliminación y la difusión no están representadas.</li>
-						</ul>
-					</section>
-				</section>
-				
-				<section>
-					<section>
-						<h2>Guild Wars 2</h2>
-					</section>
-					<section>
-						<h2>Un videojuego multijugador masivo</h2>
-						<img src="img/google-trends-mmorpg.png">
-					</section>
-					<section>
-						<h2>Suenan tambores de guerra</h2>
-						<p>
-							Cinco años después de que el Filo del Destino se enfrentara a Kralkatorrik, el jugador tiene que unir a las cinco razas principales de Tyria contra la amenaza del dragón antiguo Zhaitan.
-						</p>
-					</section>
-					<section data-background="img/gw-01.jpg">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff;position:relative;top:600px">
-							<p>Archivo del Priorato de Durmand</p>
-						</div>
-					</section>
-					<section data-background="img/gw-03.jpg">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff;position:relative;top:600px">
-							<p>Colecciones especiales del Priorato de Durmand</p>
-						</div>
-					</section>
-					<section data-background="img/gw-04.jpg">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff;position:relative;top:600px">
-							<p>Colecciones especiales del Priorato de Durmand</p>
-						</div>
-					</section>
-					<section data-background="img/gw-02.jpg">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff;position:relative;top:600px">
-							<p>Archivo del Instituto de Sinergética</p>
-						</div>
-					</section>
-					<section>
-						<h2>Conclusiones</h2>
-						<ul>
-							<li>El archivo en <i>Guild Wars 2</i> es cualquier lugar donde se almacena huellas del pasado.</li>
-							<li>Tenemos documentación histórica y administrativa.</li>
-							<li>Referencia a la gestión de documentos electrónicos y sus ventajas.</li>
-							<li>Los archiveros aparecen como guardianes de la documentación en vez de como facilitadores del acceso.</li>
-						</ul>
-					</section>
-				</section>
-				
-				<section>
-					<section>
-						<h2>Conclusiones</h2>
-					</section>
-					<section>
-						<h2>Archivos</h2>
-						<p>
-							Hay un enfoque historicista que subraya la importancia de los archivos para la preservación de la memoria colectiva, pero invisibiliza el trabajo que los archiveros realizan fuera de los archivos históricos. Se echa en falta un tratamiento diferenciado del archivo, la biblioteca y el museo.
-						</p>
-					</section>
-					<section>
-						<h2>Documentos</h2>
-						<p>
-							Un tema que los dos juegos abordan de manera muy lograda es la variedad de soportes que se trabaja en los archivos y los problemas de conservación planteados por cada uno de ellos.
-						</p>
-					</section>
-					<section>
-						<h2>Archiveros</h2>
-						<p>
-							Los archiveros no existen en <i>Fallout 3</i> y, en <i>Guild Wars 2</i>, cumplen bastantes de los estereotipos negativos sobre la profesión. La sociedad continúa viendo a los archiveros como una barrera entre el usuario y el documento y esto se refleja en los videojuegos.
-						</p>
-					</section>
-					<section>
-						<h2>Algo más que un decorado</h2>
-						<p>
-							Los archivos son escenarios elaborados con los que el jugador debe interactuar para avanzar en la trama y para obtener más información sobre el trasfondo del juego. Se muestran ante él como una institución fundamental para comprender mejor su realidad.
-						</p>
-					</section>
-				</section>
-				
-				<section data-background="https://media.giphy.com/media/OkYsEFNkbPRZe/giphy.gif">
-				</section> --}}
+/* Reset */
+#sequence .seq-canvas,
+#sequence .seq-canvas > * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
-			</div>
+/* Make the canvas the same dimensions as the container and prevent lines from
+   wrapping so each step can sit side-by-side */
+#sequence .seq-canvas {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  white-space: nowrap;
+  font-size: 0;
+}
 
-		</div>
-	
-		<script src="{{asset("presentaciones/docs/lib/js/head.min.js")}}"></script>
-		
-		<script src="{{asset("presentaciones/docs/js/reveal.js")}}"></script>
-		
-		<script>
-			
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: false,
-				progress: true,
-				history: true,
-				center: true,
-				autoSlide: 5000,
-  				loop: true,
-				embedded: true,
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+/* Make the steps the same size as the container and sit side-by-side */
+#sequence .seq-canvas > * {
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  height: 100%;
+  white-space: normal;
+  text-align: center;
+  color: white;
+}
 
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: '{{asset("presentaciones/docs/plugin/markdown/marked.js")}}', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '{{asset("presentaciones/docs/plugin/markdown/markdown.js")}}', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '{{asset("presentaciones/docs/plugin/highlight/highlight.js")}}', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: '{{asset("presentaciones/docs/plugin/zoom-js/zoom.js")}}', async: true },
-					{ src: '{{asset("presentaciones/docs/plugin/notes/notes.js")}}', async: true }
-					
-				]
-			});
+/* Used to vertically center align the .content element */
+#sequence .seq-canvas > li:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
 
-		</script>
-	</body>
+/* Vertically center align the .content element */
+#sequence .content {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 4%;
+  font-size: 16px;
+}
+
+#sequence .step1 {
+  background-color: #279fe5;
+}
+
+#sequence .step2 {
+  background-color: #f96852;
+}
+
+#sequence .step3 {
+  background-color: #2bbf8e;
+}
+
+#sequence h2,
+#sequence h3 {
+  margin: 0;
+  display: block;
+  line-height: 120%;
+}
+
+#sequence h2 {
+  margin-bottom: .5em;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.6em;
+}
+
+#sequence h3 {
+  font-size: 1.4em;
+}
+  </style>
+ 
+<script src="{{asset("presentaciones/scripts/imagesloaded.pkgd.min.js")}}"></script>
+<script src="{{asset("presentaciones/scripts/hammer.min.js")}}"></script>
+<script src="{{asset("presentaciones/scripts/sequence.min.js")}}"></script>
+<script src="{{asset("presentaciones/scripts/sequence-theme.basic.js")}}"></script>
+
+<script>
+	// Get the Sequence element
+	var sequenceElement = document.getElementById("sequence");
+  
+	var options = {
+	  // Place your Sequence options here to override defaults
+	  // See: https://sequencejs.com/documentation/#options
+	  keyNavigation: true,
+	  fadeStepWhenSkipped: false,
+	  autoPlay: true,
+	  autoPlayInterval: 4000,
+	}
+  
+	// Launch Sequence on the element, and with the options we specified above
+	var mySequence = sequence(sequenceElement, options);
+  </script>
+</body>
 </html>

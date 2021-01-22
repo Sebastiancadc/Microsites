@@ -10,7 +10,7 @@ class Presentaciones extends Model
     protected $guarded = ['id'];
 	protected $primaryKey = 'id';
     protected $fillable = [
-        'user_id','title','campana','fecha','color'
+        'user_id','title','campana','fecha','color','colortitulos','colocontenido'
     ];
 
 }

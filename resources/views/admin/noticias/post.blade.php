@@ -40,13 +40,11 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
         <div class="row justify-content-center">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="h3 mb-0">{{$presentacion->title }}</h5>
+                    <h5 class="h3 mb-0">{{$presentacion->title }} </h5>
                 </div>
                 <div class="card-header d-flex align-items-center">
                         <div class="d-flex align-items-center">
-                        {{-- <a href="#">
-                            <img src="{{$presentacion->user->photo }}" class="avatar">
-                        </a> --}}
+                
                         <div class="mx-3">
                             <h4 class="mb-0">
                                 <a>Fecha de publicacion</a>
@@ -70,6 +68,17 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                         </a>
                         </div>
                     </div>
+                    <style>
+                          #sequence .step1 {
+                        background-color:   {{$presentacion->color}};
+                        } 
+                        .color {
+                        color:  {{$presentacion->colortitulos}};
+                        }
+                        .colorcont {
+                        color:  {{$presentacion->colorcontenido}};
+                        }
+                    </style>
                                 <!-- Modal -->
                                 <div class="modal fade" id="deleteNoticia{{$presentacion->id}}" tabindex="-1" role="dialog" aria-labelledby="deleteUsuarioTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -94,15 +103,362 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                                     </div>
                                 </div>
                 <div class="card-body">
-                    {{-- PRESENTACIONN AQUI --}}
-                    <img alt="Image placeholder" src="{{ $presentacion->title }}" class="img-fluid rounded" style="margin-left: 260px; margin-right: 260px; width: 477px; heightmin-width: ;min-width: 474px;">
-                    <div class="row align-items-center my-3 pb-3 border-bottom">
-                    <div class="col-sm-6">
-                    </div>
-                    </div>
+                   
+                    <div id="sequence">
+                        <ul class="seq-canvas">
+                            @foreach ($titulo1 as $item)
+                            @if (json_encode($item->titulo) == "null")
+                            @else
+                          <li class="step1">
+                            <div class="content">  
+                                @foreach ($titulo1 as $item)
+                              <h2 data-seq class="color">{{$item->titulo}}</h2>
+                              @endforeach
+                              @foreach ($contenido1 as $item)
+                              <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                            </div>
+                          </li>
+                          @endif
+                          @endforeach
+                        
+                          @foreach ($titulo2 as $item)
+                          @if (json_encode($item->titulo) == "null")
+                          @else
+                          <li class="step1">
+                            <div class="content">
+                                @foreach ($titulo2 as $item)
+                              <h2 data-seq  class="color">{{$item->titulo}}</h2>
+                              @endforeach
+                              @foreach ($contenido2 as $item)
+                              <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                            </div>
+                          </li>
+                          @endif
+                          @endforeach
+                         
+                          @foreach ($titulo3 as $item)
+                          @if (json_encode($item->titulo) == "null")
+                          @else
+                          <li class="step1">
+                            <div class="content">
+                                @foreach ($titulo3 as $item)
+                              <h2 data-seq  class="color">{{$item->titulo}}</h2>
+                              @endforeach
+                              @foreach ($contenido3 as $item)
+                              <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                            </div>
+                          </li>
+                          @endif
+                          @endforeach
+
+
+                          @foreach ($titulo4 as $item)
+                          @if (json_encode($item->titulo) == "null")
+                          @else
+                          <li class="step1">
+                            <div class="content">
+                                @foreach ($titulo4 as $item)
+                              <h2 data-seq  class="color">{{$item->titulo}}</h2>
+                              @endforeach
+                              @foreach ($contenido4 as $item)
+                              <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                            </div>
+                          </li>
+                          @endif
+                          @endforeach
+
+                          @foreach ($titulo5 as $item)
+                          @if (json_encode($item->titulo) == "null")
+                          @else
+                          <li class="step1">
+                            <div class="content">
+                                @foreach ($titulo5 as $item)
+                              <h2 data-seq  class="color">{{$item->titulo}}</h2>
+                              @endforeach
+                              @foreach ($contenido5 as $item)
+                              <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                            </div>
+                          </li>
+                          @endif
+                          @endforeach
+
+                          @foreach ($titulo6 as $item)
+                          @if (json_encode($item->titulo) == "null")
+                          @else
+                          <li class="step1">
+                            <div class="content">
+                                @foreach ($titulo6 as $item)
+                              <h2 data-seq  class="color">{{$item->titulo}}</h2>
+                              @endforeach
+                              @foreach ($contenido6 as $item)
+                              <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                            </div>
+                          </li>
+                          @endif
+                          @endforeach
+
+                          @foreach ($titulo7 as $item)
+                          @if (json_encode($item->titulo) == "null")
+                          @else
+                          <li class="step1">
+                            <div class="content">
+                                @foreach ($titulo7 as $item)
+                              <h2 data-seq  class="color">{{$item->titulo}}</h2>
+                              @endforeach
+                              @foreach ($contenido7 as $item)
+                              <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                            </div>
+                          </li>
+                          @endif
+                          @endforeach
+
+                          @foreach ($titulo8 as $item)
+                          @if (json_encode($item->titulo) == "null")
+                          @else
+                          <li class="step1">
+                            <div class="content">
+                                @foreach ($titulo8 as $item)
+                              <h2 data-seq  class="color">{{$item->titulo}}</h2>
+                              @endforeach
+                              @foreach ($contenido8 as $item)
+                              <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                            </div>
+                          </li>
+                          @endif
+                          @endforeach
+
+                          @foreach ($titulo9 as $item)
+                          @if (json_encode($item->titulo) == "null")
+                          @else
+                          <li class="step1">
+                            <div class="content">
+                                @foreach ($titulo9 as $item)
+                              <h2 data-seq  class="color">{{$item->titulo}}</h2>
+                              @endforeach
+                              @foreach ($contenido9 as $item)
+                              <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                            </div>
+                          </li>
+                          @endif
+                          @endforeach
+
+                          @foreach ($titulo10 as $item)
+                          @if (json_encode($item->titulo) == "null")
+                          @else
+                          <li class="step1">
+                            <div class="content">
+                                @foreach ($titulo10 as $item)
+                              <h2 data-seq  class="color">{{$item->titulo}}</h2>
+                              @endforeach
+                              @foreach ($contenido10 as $item)
+                              <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                            </div>
+                          </li>
+                          @endif
+                          @endforeach
+
+                          @foreach ($titulo11 as $item)
+                          @if (json_encode($item->titulo) == "null")
+                          @else
+                          <li class="step1">
+                            <div class="content">
+                                @foreach ($titulo11 as $item)
+                              <h2 data-seq  class="color">{{$item->titulo}}</h2>
+                              @endforeach
+                              @foreach ($contenido11 as $item)
+                              <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                            </div>
+                          </li>
+                          @endif
+                          @endforeach
+
+                          @foreach ($titulo12 as $item)
+                          @if (json_encode($item->titulo) == "null")
+                          @else
+                          <li class="step1">
+                            <div class="content">
+                                @foreach ($titulo12 as $item)
+                              <h2 data-seq  class="color">{{$item->titulo}}</h2>
+                              @endforeach
+                              @foreach ($contenido12 as $item)
+                              <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                            </div>
+                          </li>
+                          @endif
+                          @endforeach
+
+                          @foreach ($titulo13 as $item)
+                          @if (json_encode($item->titulo) == "null")
+                          @else
+                          <li class="step1">
+                            <div class="content">
+                                @foreach ($titulo13 as $item)
+                              <h2 data-seq  class="color">{{$item->titulo}}</h2>
+                              @endforeach
+                              @foreach ($contenido13 as $item)
+                              <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                            </div>
+                          </li>
+                          @endif
+                          @endforeach
+
+                          @foreach ($titulo14 as $item)
+                          @if (json_encode($item->titulo) == "null")
+                          @else
+                          <li class="step1">
+                            <div class="content">
+                                @foreach ($titulo14 as $item)
+                              <h2 data-seq  class="color">{{$item->titulo}}</h2>
+                              @endforeach
+                              @foreach ($contenido14 as $item)
+                              <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                            </div>
+                          </li>
+                          @endif
+                          @endforeach
+
+                          @foreach ($titulo15 as $item)
+                          @if (json_encode($item->titulo) == "null")
+                          @else
+                          <li class="step1">
+                            <div class="content">
+                                @foreach ($titulo15 as $item)
+                              <h2 data-seq  class="color">{{$item->titulo}}</h2>
+                              @endforeach
+                              @foreach ($contenido15 as $item)
+                              <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                            </div>
+                          </li>
+                          @endif
+                          @endforeach
+
+                          @foreach ($titulo16 as $item)
+                          @if (json_encode($item->titulo) == "null")
+                          @else
+                          <li class="step1">
+                            <div class="content">
+                                @foreach ($titulo16 as $item)
+                              <h2 data-seq  class="color">{{$item->titulo}}</h2>
+                              @endforeach
+                              @foreach ($contenido16 as $item)
+                              <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                            </div>
+                          </li>
+                          @endif
+                          @endforeach
+
+                          @foreach ($titulo17 as $item)
+                          @if (json_encode($item->titulo) == "null")
+                          @else
+                          <li class="step1">
+                            <div class="content">
+                                @foreach ($titulo17 as $item)
+                              <h2 data-seq  class="color">{{$item->titulo}}</h2>
+                              @endforeach
+                              @foreach ($contenido17 as $item)
+                              <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                            </div>
+                          </li>
+                          @endif
+                          @endforeach
+
+                          @foreach ($titulo18 as $item)
+                          @if (json_encode($item->titulo) == "null")
+                          @else
+                          <li class="step1">
+                            <div class="content">
+                                @foreach ($titulo18 as $item)
+                              <h2 data-seq  class="color">{{$item->titulo}}</h2>
+                              @endforeach
+                              @foreach ($contenido18 as $item)
+                              <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                            </div>
+                          </li>
+                          @endif
+                          @endforeach
+
+                          @foreach ($titulo19 as $item)
+                          @if (json_encode($item->titulo) == "null")
+                          @else
+                          <li class="step1">
+                            <div class="content">
+                                @foreach ($titulo19 as $item)
+                              <h2 data-seq  class="color">{{$item->titulo}}</h2>
+                              @endforeach
+                              @foreach ($contenido19 as $item)
+                              <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                            </div>
+                          </li>
+                          @endif
+                          @endforeach
+
+                          @foreach ($titulo20 as $item)
+                          @if (json_encode($item->titulo) == "null")
+                          @else
+                          <li class="step1">
+                            <div class="content">
+                                @foreach ($titulo20 as $item)
+                              <h2 data-seq  class="color">{{$item->titulo}}</h2>
+                              @endforeach
+                              @foreach ($contenido20 as $item)
+                              <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                            </div>
+                          </li>
+                          @endif
+                          @endforeach
+
+ 
+                          
+
+
+                        </ul>
+                      </div>
+                    @include('admin.presentaciones.csspresentaciones')
                 </div>
            </div>
         </div>
     </div>
 </div>
+
+<script src="{{asset("presentaciones/scripts/imagesloaded.pkgd.min.js")}}"></script>
+<script src="{{asset("presentaciones/scripts/hammer.min.js")}}"></script>
+<script src="{{asset("presentaciones/scripts/sequence.min.js")}}"></script>
+<script src="{{asset("presentaciones/scripts/sequence-theme.basic.js")}}"></script>
+
+<script>
+	// Get the Sequence element
+	var sequenceElement = document.getElementById("sequence");
+  
+	var options = {
+	  // Place your Sequence options here to override defaults
+	  // See: https://sequencejs.com/documentation/#options
+	  keyNavigation: true,
+	  fadeStepWhenSkipped: false,
+	  autoPlay: true,
+	  autoPlayInterval: 4000,
+	}
+  
+	// Launch Sequence on the element, and with the options we specified above
+	var mySequence = sequence(sequenceElement, options);
+  </script>
 @endsection
