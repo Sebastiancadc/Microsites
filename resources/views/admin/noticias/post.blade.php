@@ -70,7 +70,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                     </div>
                     <style>
                           #sequence .step1 {
-                        background-color:   {{$presentacion->color}};
+                        background-color:{{$presentacion->color}};
                         } 
                         .color {
                         color:  {{$presentacion->colortitulos}};
@@ -454,11 +454,13 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
 	  // See: https://sequencejs.com/documentation/#options
 	  keyNavigation: true,
 	  fadeStepWhenSkipped: false,
-	  autoPlay: true,
-	  autoPlayInterval: 4000,
+      autoPlay: true,
+	  autoPlayInterval: {{$presentacion->time}},
 	}
   
 	// Launch Sequence on the element, and with the options we specified above
 	var mySequence = sequence(sequenceElement, options);
   </script>
+
+ 
 @endsection

@@ -12,8 +12,7 @@
     height: 240px;
   }
   .titulodash{
-                    
-    color: white;
+                  
     margin-bottom: .5em;
     font-family: 'Roboto', sans-serif;
     font-size: 2.3em;
@@ -21,7 +20,7 @@
     margin-top: 33px;
     margin-left: -7%;
 
-                  }
+  }
   .gallery-item:hover {
     cursor: pointer;
   }

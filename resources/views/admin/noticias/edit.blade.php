@@ -80,6 +80,28 @@
                             </div>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label class="form-control-label" for="exampleFormControlTextarea1">Color de los títulos</label>
+                            <div class="col-md-12">
+                             <div class='input-group date' id='datetime1'>
+                                <span class="input-group-addon input-group-append">
+                                    <input class="form-control" type="color" name="color" value="{{$noticiaActualizar->colortitulos}}" style="height: 47px; 
+                                    width: 771px;">
+                                  </span>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label" for="exampleFormControlTextarea1">Color del contenido</label>
+                            <div class="col-md-12">
+                             <div class='input-group date' id='datetime1'>
+                                <span class="input-group-addon input-group-append">
+                                    <input class="form-control" type="color" name="color" value="{{$noticiaActualizar->colorcontenido}}" style="height: 47px; 
+                                    width: 771px;">
+                                  </span>
+                            </div>
+                            </div>
+                        </div>
                         
                         <div class="form-group">
                             <label class="form-control-label" for="exampleFormControlTextarea1">Tiempo de transicion</label>

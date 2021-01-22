@@ -198,6 +198,7 @@ class PresentacionesController extends Controller
             $diapositiva = new Diapositivas();
             $diapositiva->user_id = $request->user_id;
             $diapositiva->number = $request->id;
+            $diapositiva->id = $request->id;
             $diapositiva->numero_pg = $request->numero_pg[$key];
             $diapositiva->titulo = $request->titulo[$key];
             $diapositiva->imagen = $request->imagen[$key];

@@ -52,19 +52,17 @@ $date =date('m-d')
                              position: relative;
                              width: 960px;
                              height: 240px;" data-width="1" data-height="1" style="padding-left: 10px; width: auto;">
-                                 <h4 class="titulodash">{{$item->title}}</h4>
+                                 <h4 class="titulodash" style=" color: {{$item->colortitulos}};">{{$item->title}} </h4>
                                  <div class="overlayer bottom-left full-width"  style="margin-top: -127px;margin-left: 16px;">
                                  <div class="overlayer-wrapper item-info ">
                                          <div class="gradient-grey p-l-20 p-r-20 p-t-20 p-b-5">
-                                             <div class="">
-                                                 <p class="pull-left bold text-white fs-14 p-t-10">{{$item->color}}</p>                                            
-                                                 <div class="clearfix"></div>
-                                             </div>
+                                            
                                          </div>
                                  </div>
                                  </div>
                              </div>
                             </a>
+
                          @endif
                          @endforeach
                      </div>
@@ -75,6 +73,7 @@ $date =date('m-d')
     </div>
     @include('admin.layouts.footer')
   </div>
+
 </div>
 @section('js')
 <script src="{{asset("plantilla/vendor/fullcalendar/dist/locale/es.js")}}"></script>
