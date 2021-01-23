@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class PresentacionesController extends Controller
 {
@@ -335,8 +336,12 @@ class PresentacionesController extends Controller
             $diapositiva->id = $request->id;
             $diapositiva->numero_pg = $request->numero_pg[$key];
             $diapositiva->titulo = $request->titulo[$key];
-            $diapositiva->imagen = $request->imagen[$key];
-            $diapositiva->imagen_fondo = $request->imagen_fondo[$key];
+            if(isset($diapositiva->imagen)){
+                $diapositiva->imagen = $request->imagen[$key];
+            }
+            if(isset($diapositiva->imagen_fondo)){
+                $diapositiva->imagen_fondo = $request->imagen_fondo[$key];
+            }
             $diapositiva->contenido = $request->contenido[$key];
             $diapositiva->campana = $request->campana;
             $diapositiva->save();
