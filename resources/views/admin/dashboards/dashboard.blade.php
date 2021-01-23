@@ -18,7 +18,6 @@ $date =date('m-d')
             </nav>
           </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -62,7 +61,6 @@ $date =date('m-d')
                                  </div>
                              </div>
                             </a>
-
                          @endif
                          @endforeach
                      </div>

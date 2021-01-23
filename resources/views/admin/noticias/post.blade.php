@@ -58,6 +58,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                             <a href="{{route('editarpresentacion', $presentacion->id)}}" type="button" class="btn btn-sm btn-primary btn-icon">
                             <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
                             <span class="btn-inner--text">Editar</span>
+                          </a>
                             @endif
                             @endif
                             @if ($campaña->delete_status == '1')
@@ -102,6 +103,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                                         </div>
                                     </div>
                                 </div>
+                <a href="{{route('presentacionf', $presentacion->id)}}" target="_blank">
                 <div class="card-body">
                    
                     <div id="sequence">
@@ -109,13 +111,28 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                             @foreach ($titulo1 as $item)
                             @if (json_encode($item->titulo) == "null")
                             @else
-                          <li class="step1">
+                            
+                          <li @foreach ($imagen_fondo1 as $item)                     
+                           @if (json_encode($item->imagen_fondo) == "null" )
+                            class="step1"
+                            @else
+                            style="background-image: url('{{$item->imagen_fondo}}');
+                             background-repeat: no-repeat;background-size:cover;"
+                          @endif 
+                          @endforeach>
                             <div class="content">  
                                 @foreach ($titulo1 as $item)
                               <h2 data-seq class="color">{{$item->titulo}}</h2>
                               @endforeach
                               @foreach ($contenido1 as $item)
                               <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                              
+                              @foreach ($imagen1 as $item)
+                              @if (json_encode($item->imagen) == "null")
+                              @else
+                              <img src="{{$item->imagen}}" height="300" width="500">
+                              @endif
                               @endforeach
                             </div>
                           </li>
@@ -125,13 +142,27 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @foreach ($titulo2 as $item)
                           @if (json_encode($item->titulo) == "null")
                           @else
-                          <li class="step1">
+                          <li @foreach ($imagen_fondo2 as $item)                     
+                          @if (json_encode($item->imagen_fondo) == "null" )
+                           class="step1"
+                           @else
+                           style="background-image: url('{{$item->imagen_fondo}}');
+                            background-repeat: no-repeat;background-size:cover;"
+                         @endif 
+                         @endforeach>
                             <div class="content">
                                 @foreach ($titulo2 as $item)
                               <h2 data-seq  class="color">{{$item->titulo}}</h2>
                               @endforeach
                               @foreach ($contenido2 as $item)
                               <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+
+                              @foreach ($imagen2 as $item)
+                              @if (json_encode($item->imagen) == "null")
+                              @else
+                              <img src="{{$item->imagen}}" height="300" width="500">
+                              @endif
                               @endforeach
                             </div>
                           </li>
@@ -141,13 +172,27 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @foreach ($titulo3 as $item)
                           @if (json_encode($item->titulo) == "null")
                           @else
-                          <li class="step1">
+                          <li @foreach ($imagen_fondo3 as $item)                     
+                          @if (json_encode($item->imagen_fondo) == "null" )
+                           class="step1"
+                           @else
+                           style="background-image: url('{{$item->imagen_fondo}}');
+                            background-repeat: no-repeat;background-size:cover;"
+                         @endif 
+                         @endforeach>
                             <div class="content">
                                 @foreach ($titulo3 as $item)
                               <h2 data-seq  class="color">{{$item->titulo}}</h2>
                               @endforeach
                               @foreach ($contenido3 as $item)
                               <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+
+                              @foreach ($imagen3 as $item)
+                              @if (json_encode($item->imagen) == "null")
+                              @else
+                              <img src="{{$item->imagen}}" height="300" width="500">
+                              @endif
                               @endforeach
                             </div>
                           </li>
@@ -158,13 +203,27 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @foreach ($titulo4 as $item)
                           @if (json_encode($item->titulo) == "null")
                           @else
-                          <li class="step1">
+                          <li @foreach ($imagen_fondo4 as $item)                     
+                          @if (json_encode($item->imagen_fondo) == "null" )
+                           class="step1"
+                           @else
+                           style="background-image: url('{{$item->imagen_fondo}}');
+                            background-repeat: no-repeat;background-size:cover;"
+                         @endif 
+                         @endforeach>
                             <div class="content">
                                 @foreach ($titulo4 as $item)
                               <h2 data-seq  class="color">{{$item->titulo}}</h2>
                               @endforeach
                               @foreach ($contenido4 as $item)
                               <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+
+                              @foreach ($imagen4 as $item)
+                              @if (json_encode($item->imagen) == "null")
+                              @else
+                              <img src="{{$item->imagen}}" height="300" width="500">
+                              @endif
                               @endforeach
                             </div>
                           </li>
@@ -174,13 +233,26 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @foreach ($titulo5 as $item)
                           @if (json_encode($item->titulo) == "null")
                           @else
-                          <li class="step1">
+                          <li @foreach ($imagen_fondo5 as $item)                     
+                          @if (json_encode($item->imagen_fondo) == "null" )
+                           class="step1"
+                           @else
+                           style="background-image: url('{{$item->imagen_fondo}}');
+                            background-repeat: no-repeat;background-size:cover;"
+                         @endif 
+                         @endforeach>
                             <div class="content">
                                 @foreach ($titulo5 as $item)
                               <h2 data-seq  class="color">{{$item->titulo}}</h2>
                               @endforeach
                               @foreach ($contenido5 as $item)
                               <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                              @foreach ($imagen5 as $item)
+                              @if (json_encode($item->imagen) == "null")
+                              @else
+                              <img src="{{$item->imagen}}" height="300" width="500">
+                              @endif
                               @endforeach
                             </div>
                           </li>
@@ -190,13 +262,26 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @foreach ($titulo6 as $item)
                           @if (json_encode($item->titulo) == "null")
                           @else
-                          <li class="step1">
+                          <li @foreach ($imagen_fondo6 as $item)                     
+                          @if (json_encode($item->imagen_fondo) == "null" )
+                           class="step1"
+                           @else
+                           style="background-image: url('{{$item->imagen_fondo}}');
+                            background-repeat: no-repeat;background-size:cover;"
+                         @endif 
+                         @endforeach>
                             <div class="content">
                                 @foreach ($titulo6 as $item)
                               <h2 data-seq  class="color">{{$item->titulo}}</h2>
                               @endforeach
                               @foreach ($contenido6 as $item)
                               <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                              @foreach ($imagen6 as $item)
+                              @if (json_encode($item->imagen) == "null")
+                              @else
+                              <img src="{{$item->imagen}}" height="300" width="500">
+                              @endif
                               @endforeach
                             </div>
                           </li>
@@ -206,13 +291,26 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @foreach ($titulo7 as $item)
                           @if (json_encode($item->titulo) == "null")
                           @else
-                          <li class="step1">
+                          <li @foreach ($imagen_fondo7 as $item)                     
+                          @if (json_encode($item->imagen_fondo) == "null" )
+                           class="step1"
+                           @else
+                           style="background-image: url('{{$item->imagen_fondo}}');
+                            background-repeat: no-repeat;background-size:cover;"
+                         @endif 
+                         @endforeach>
                             <div class="content">
                                 @foreach ($titulo7 as $item)
                               <h2 data-seq  class="color">{{$item->titulo}}</h2>
                               @endforeach
                               @foreach ($contenido7 as $item)
                               <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                              @foreach ($imagen7 as $item)
+                              @if (json_encode($item->imagen) == "null")
+                              @else
+                              <img src="{{$item->imagen}}" height="300" width="500">
+                              @endif
                               @endforeach
                             </div>
                           </li>
@@ -222,13 +320,26 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @foreach ($titulo8 as $item)
                           @if (json_encode($item->titulo) == "null")
                           @else
-                          <li class="step1">
+                          <li @foreach ($imagen_fondo8 as $item)                     
+                          @if (json_encode($item->imagen_fondo) == "null" )
+                           class="step1"
+                           @else
+                           style="background-image: url('{{$item->imagen_fondo}}');
+                            background-repeat: no-repeat;background-size:cover;"
+                         @endif 
+                         @endforeach>
                             <div class="content">
                                 @foreach ($titulo8 as $item)
                               <h2 data-seq  class="color">{{$item->titulo}}</h2>
                               @endforeach
                               @foreach ($contenido8 as $item)
                               <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                              @foreach ($imagen8 as $item)
+                              @if (json_encode($item->imagen) == "null")
+                              @else
+                              <img src="{{$item->imagen}}" height="300" width="500">
+                              @endif
                               @endforeach
                             </div>
                           </li>
@@ -238,13 +349,26 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @foreach ($titulo9 as $item)
                           @if (json_encode($item->titulo) == "null")
                           @else
-                          <li class="step1">
+                          <li @foreach ($imagen_fondo9 as $item)                     
+                          @if (json_encode($item->imagen_fondo) == "null" )
+                           class="step1"
+                           @else
+                           style="background-image: url('{{$item->imagen_fondo}}');
+                            background-repeat: no-repeat;background-size:cover;"
+                         @endif 
+                         @endforeach>
                             <div class="content">
                                 @foreach ($titulo9 as $item)
                               <h2 data-seq  class="color">{{$item->titulo}}</h2>
                               @endforeach
                               @foreach ($contenido9 as $item)
                               <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                              @foreach ($imagen9 as $item)
+                              @if (json_encode($item->imagen) == "null")
+                              @else
+                              <img src="{{$item->imagen}}" height="300" width="500">
+                              @endif
                               @endforeach
                             </div>
                           </li>
@@ -254,13 +378,26 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @foreach ($titulo10 as $item)
                           @if (json_encode($item->titulo) == "null")
                           @else
-                          <li class="step1">
+                          <li @foreach ($imagen_fondo10 as $item)                     
+                          @if (json_encode($item->imagen_fondo) == "null" )
+                           class="step1"
+                           @else
+                           style="background-image: url('{{$item->imagen_fondo}}');
+                            background-repeat: no-repeat;background-size:cover;"
+                         @endif 
+                         @endforeach>
                             <div class="content">
                                 @foreach ($titulo10 as $item)
                               <h2 data-seq  class="color">{{$item->titulo}}</h2>
                               @endforeach
                               @foreach ($contenido10 as $item)
                               <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                              @foreach ($imagen10 as $item)
+                              @if (json_encode($item->imagen) == "null")
+                              @else
+                              <img src="{{$item->imagen}}" height="300" width="500">
+                              @endif
                               @endforeach
                             </div>
                           </li>
@@ -270,13 +407,26 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @foreach ($titulo11 as $item)
                           @if (json_encode($item->titulo) == "null")
                           @else
-                          <li class="step1">
+                          <li @foreach ($imagen_fondo11 as $item)                     
+                          @if (json_encode($item->imagen_fondo) == "null" )
+                           class="step1"
+                           @else
+                           style="background-image: url('{{$item->imagen_fondo}}');
+                            background-repeat: no-repeat;background-size:cover;"
+                         @endif 
+                         @endforeach>
                             <div class="content">
                                 @foreach ($titulo11 as $item)
                               <h2 data-seq  class="color">{{$item->titulo}}</h2>
                               @endforeach
                               @foreach ($contenido11 as $item)
                               <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                              @foreach ($imagen11 as $item)
+                              @if (json_encode($item->imagen) == "null")
+                              @else
+                              <img src="{{$item->imagen}}" height="300" width="500">
+                              @endif
                               @endforeach
                             </div>
                           </li>
@@ -286,13 +436,26 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @foreach ($titulo12 as $item)
                           @if (json_encode($item->titulo) == "null")
                           @else
-                          <li class="step1">
+                          <li @foreach ($imagen_fondo12 as $item)                     
+                          @if (json_encode($item->imagen_fondo) == "null" )
+                           class="step1"
+                           @else
+                           style="background-image: url('{{$item->imagen_fondo}}');
+                            background-repeat: no-repeat;background-size:cover;"
+                         @endif 
+                         @endforeach>
                             <div class="content">
                                 @foreach ($titulo12 as $item)
                               <h2 data-seq  class="color">{{$item->titulo}}</h2>
                               @endforeach
                               @foreach ($contenido12 as $item)
                               <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                              @foreach ($imagen12 as $item)
+                              @if (json_encode($item->imagen) == "null")
+                              @else
+                              <img src="{{$item->imagen}}" height="300" width="500">
+                              @endif
                               @endforeach
                             </div>
                           </li>
@@ -302,13 +465,26 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @foreach ($titulo13 as $item)
                           @if (json_encode($item->titulo) == "null")
                           @else
-                          <li class="step1">
+                          <li @foreach ($imagen_fondo13 as $item)                     
+                          @if (json_encode($item->imagen_fondo) == "null" )
+                           class="step1"
+                           @else
+                           style="background-image: url('{{$item->imagen_fondo}}');
+                            background-repeat: no-repeat;background-size:cover;"
+                         @endif 
+                         @endforeach>
                             <div class="content">
                                 @foreach ($titulo13 as $item)
                               <h2 data-seq  class="color">{{$item->titulo}}</h2>
                               @endforeach
                               @foreach ($contenido13 as $item)
                               <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                              @foreach ($imagen13 as $item)
+                              @if (json_encode($item->imagen) == "null")
+                              @else
+                              <img src="{{$item->imagen}}" height="300" width="500">
+                              @endif
                               @endforeach
                             </div>
                           </li>
@@ -318,13 +494,26 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @foreach ($titulo14 as $item)
                           @if (json_encode($item->titulo) == "null")
                           @else
-                          <li class="step1">
+                          <li @foreach ($imagen_fondo14 as $item)                     
+                          @if (json_encode($item->imagen_fondo) == "null" )
+                           class="step1"
+                           @else
+                           style="background-image: url('{{$item->imagen_fondo}}');
+                            background-repeat: no-repeat;background-size:cover;"
+                         @endif 
+                         @endforeach>
                             <div class="content">
                                 @foreach ($titulo14 as $item)
                               <h2 data-seq  class="color">{{$item->titulo}}</h2>
                               @endforeach
                               @foreach ($contenido14 as $item)
                               <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                              @foreach ($imagen14 as $item)
+                              @if (json_encode($item->imagen) == "null")
+                              @else
+                              <img src="{{$item->imagen}}" height="300" width="500">
+                              @endif
                               @endforeach
                             </div>
                           </li>
@@ -334,13 +523,26 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @foreach ($titulo15 as $item)
                           @if (json_encode($item->titulo) == "null")
                           @else
-                          <li class="step1">
+                          <li @foreach ($imagen_fondo15 as $item)                     
+                          @if (json_encode($item->imagen_fondo) == "null" )
+                           class="step1"
+                           @else
+                           style="background-image: url('{{$item->imagen_fondo}}');
+                            background-repeat: no-repeat;background-size:cover;"
+                         @endif 
+                         @endforeach>
                             <div class="content">
                                 @foreach ($titulo15 as $item)
                               <h2 data-seq  class="color">{{$item->titulo}}</h2>
                               @endforeach
                               @foreach ($contenido15 as $item)
                               <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                              @foreach ($imagen15 as $item)
+                              @if (json_encode($item->imagen) == "null")
+                              @else
+                              <img src="{{$item->imagen}}" height="300" width="500">
+                              @endif
                               @endforeach
                             </div>
                           </li>
@@ -350,13 +552,26 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @foreach ($titulo16 as $item)
                           @if (json_encode($item->titulo) == "null")
                           @else
-                          <li class="step1">
+                          <li @foreach ($imagen_fondo16 as $item)                     
+                          @if (json_encode($item->imagen_fondo) == "null" )
+                           class="step1"
+                           @else
+                           style="background-image: url('{{$item->imagen_fondo}}');
+                            background-repeat: no-repeat;background-size:cover;"
+                         @endif 
+                         @endforeach>
                             <div class="content">
                                 @foreach ($titulo16 as $item)
                               <h2 data-seq  class="color">{{$item->titulo}}</h2>
                               @endforeach
                               @foreach ($contenido16 as $item)
                               <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                              @foreach ($imagen16 as $item)
+                              @if (json_encode($item->imagen) == "null")
+                              @else
+                              <img src="{{$item->imagen}}" height="300" width="500">
+                              @endif
                               @endforeach
                             </div>
                           </li>
@@ -366,13 +581,26 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @foreach ($titulo17 as $item)
                           @if (json_encode($item->titulo) == "null")
                           @else
-                          <li class="step1">
+                          <li @foreach ($imagen_fondo17 as $item)                     
+                          @if (json_encode($item->imagen_fondo) == "null" )
+                           class="step1"
+                           @else
+                           style="background-image: url('{{$item->imagen_fondo}}');
+                            background-repeat: no-repeat;background-size:cover;"
+                         @endif 
+                         @endforeach>
                             <div class="content">
                                 @foreach ($titulo17 as $item)
                               <h2 data-seq  class="color">{{$item->titulo}}</h2>
                               @endforeach
                               @foreach ($contenido17 as $item)
                               <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                              @foreach ($imagen17 as $item)
+                              @if (json_encode($item->imagen) == "null")
+                              @else
+                              <img src="{{$item->imagen}}" height="300" width="500">
+                              @endif
                               @endforeach
                             </div>
                           </li>
@@ -382,13 +610,26 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @foreach ($titulo18 as $item)
                           @if (json_encode($item->titulo) == "null")
                           @else
-                          <li class="step1">
+                          <li @foreach ($imagen_fondo18 as $item)                     
+                          @if (json_encode($item->imagen_fondo) == "null" )
+                           class="step1"
+                           @else
+                           style="background-image: url('{{$item->imagen_fondo}}');
+                            background-repeat: no-repeat;background-size:cover;"
+                         @endif 
+                         @endforeach>
                             <div class="content">
                                 @foreach ($titulo18 as $item)
                               <h2 data-seq  class="color">{{$item->titulo}}</h2>
                               @endforeach
                               @foreach ($contenido18 as $item)
                               <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                              @foreach ($imagen18 as $item)
+                              @if (json_encode($item->imagen) == "null")
+                              @else
+                              <img src="{{$item->imagen}}" height="300" width="500">
+                              @endif
                               @endforeach
                             </div>
                           </li>
@@ -398,13 +639,26 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @foreach ($titulo19 as $item)
                           @if (json_encode($item->titulo) == "null")
                           @else
-                          <li class="step1">
+                          <li @foreach ($imagen_fondo19 as $item)                     
+                          @if (json_encode($item->imagen_fondo) == "null" )
+                           class="step1"
+                           @else
+                           style="background-image: url('{{$item->imagen_fondo}}');
+                            background-repeat: no-repeat;background-size:cover;"
+                         @endif 
+                         @endforeach>
                             <div class="content">
                                 @foreach ($titulo19 as $item)
                               <h2 data-seq  class="color">{{$item->titulo}}</h2>
                               @endforeach
                               @foreach ($contenido19 as $item)
                               <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
+                              @endforeach
+                              @foreach ($imagen19 as $item)
+                              @if (json_encode($item->imagen) == "null")
+                              @else
+                              <img src="{{$item->imagen}}" height="300" width="500">
+                              @endif
                               @endforeach
                             </div>
                           </li>
@@ -414,7 +668,14 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @foreach ($titulo20 as $item)
                           @if (json_encode($item->titulo) == "null")
                           @else
-                          <li class="step1">
+                          <li @foreach ($imagen_fondo20 as $item)                     
+                          @if (json_encode($item->imagen_fondo) == "null" )
+                           class="step1"
+                           @else
+                           style="background-image: url('{{$item->imagen_fondo}}');
+                            background-repeat: no-repeat;background-size:cover;"
+                         @endif 
+                         @endforeach>
                             <div class="content">
                                 @foreach ($titulo20 as $item)
                               <h2 data-seq  class="color">{{$item->titulo}}</h2>
@@ -422,19 +683,21 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($contenido20 as $item)
                               <h3 data-seq class="colorcont">{{$item->contenido}}</h3>
                               @endforeach
+                              @foreach ($imagen20 as $item)
+                              @if (json_encode($item->imagen) == "null")
+                              @else
+                              <img src="{{$item->imagen}}" height="300" width="500">
+                              @endif
+                              @endforeach
                             </div>
                           </li>
                           @endif
                           @endforeach
-
- 
-                          
-
-
                         </ul>
                       </div>
                     @include('admin.presentaciones.csspresentaciones')
                 </div>
+              </a>
            </div>
         </div>
     </div>
@@ -450,8 +713,6 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
 	var sequenceElement = document.getElementById("sequence");
   
 	var options = {
-	  // Place your Sequence options here to override defaults
-	  // See: https://sequencejs.com/documentation/#options
 	  keyNavigation: true,
 	  fadeStepWhenSkipped: false,
       autoPlay: true,

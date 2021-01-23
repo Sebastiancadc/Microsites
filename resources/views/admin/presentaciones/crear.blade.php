@@ -81,6 +81,7 @@
                                         <button class="btn btn-outline-primary" type="button" id="button-addon2"> <span class="fa fa-calendar"></span></button>
                                       </span>
                                     <input type='text' class="form-control" name="fecha">
+                               
                                 </div>
                                 </div>
                                 @if ($errors->has('fecha'))
@@ -97,6 +98,9 @@
                                         width: 771px;">
                                       </span>
                                 </div>
+                                @if ($errors->has('color'))
+                                 <strong class="text-danger tamano">{{$errors->first('color')}}</strong>
+                                 @endif
                                 </div>
                             </div>
                             <div class="form-group">
@@ -108,6 +112,9 @@
                                         width: 771px;">
                                       </span>
                                 </div>
+                                @if ($errors->has('colortitulos'))
+                                <strong class="text-danger tamano">{{$errors->first('colortitulos')}}</strong>
+                                @endif
                                 </div>
                             </div>
                             <div class="form-group">
@@ -119,12 +126,16 @@
                                         width: 771px;">
                                       </span>
                                 </div>
+                                @if ($errors->has('colorcontenido'))
+                                <strong class="text-danger tamano">{{$errors->first('colorcontenido')}}</strong>
+                                @endif
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="form-control-label" for="exampleFormControlTextarea1">Tiempo de transicion</label>
                                 <div class="col-md-12">
                                 <select class="form-control" name="time">
+                                    <option ></option>
                                     <option value="1000">1 segundo</option>
                                     <option value="2000">2 segundos</option>
                                     <option value="3000">3 segundos</option>
@@ -138,6 +149,9 @@
                                     <option value="100000">1 minuto</option>
                                 </select>
                                 </div>
+                                @if ($errors->has('time'))
+                                <strong class="text-danger tamano">{{$errors->first('time')}}</strong>
+                                @endif
                             </div>
                 </div>
             </div>
@@ -173,11 +187,11 @@
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen_fondo[]">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]">
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen[]" >
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen[]" >
                             </li>
                             
                             <li class="list-group-item">
@@ -211,11 +225,11 @@
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen_fondo[]">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]">
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen[]">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen[]">
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Contenido</h4>
@@ -245,15 +259,15 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
                                 <h4 class="colorsito">Titulo</h4>
-                               <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
+                               <input class="form-control form-control-alternative" placeholder="Titulo..." type="file" name="titulo[]">
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen_fondo[]">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]">
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen[]">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen[]">
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Contenido</h4>
@@ -287,11 +301,11 @@
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen_fondo[]">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]">
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen[]">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen[]">
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Contenido</h4>
@@ -326,11 +340,11 @@
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen_fondo[]">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]">
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
-                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="imagen[]">
+                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="file" name="imagen[]">
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Contenido</h4>
@@ -366,11 +380,11 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen_fondo[]">
+                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="imagen[]">
+                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="file" name="imagen[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>
@@ -404,11 +418,11 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen_fondo[]">
+                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="imagen[]">
+                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="file" name="imagen[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>
@@ -442,11 +456,11 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen_fondo[]">
+                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="imagen[]">
+                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="file" name="imagen[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>
@@ -480,11 +494,11 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen_fondo[]">
+                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="imagen[]">
+                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="file" name="imagen[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>
@@ -518,11 +532,11 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen_fondo[]">
+                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="imagen[]">
+                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="file" name="imagen[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>
@@ -556,11 +570,11 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen_fondo[]">
+                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="imagen[]">
+                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="file" name="imagen[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>
@@ -594,11 +608,11 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen_fondo[]">
+                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="imagen[]">
+                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="file" name="imagen[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>
@@ -632,11 +646,11 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen_fondo[]">
+                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="imagen[]">
+                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="file" name="imagen[]">
                                 </li>
                                 
                                 <li class="list-group-item">
@@ -671,11 +685,11 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen_fondo[]">
+                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="imagen[]">
+                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="file" name="imagen[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>
@@ -709,11 +723,11 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen_fondo[]">
+                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="imagen[]">
+                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="file" name="imagen[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>
@@ -747,11 +761,11 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen_fondo[]">
+                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="imagen[]">
+                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="file" name="imagen[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>
@@ -785,11 +799,11 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen_fondo[]">
+                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="imagen[]">
+                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="file" name="imagen[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>
@@ -823,11 +837,11 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen_fondo[]">
+                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="imagen[]">
+                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="file" name="imagen[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>
@@ -861,11 +875,11 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen_fondo[]">
+                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="imagen[]">
+                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="file" name="imagen[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>
@@ -899,11 +913,11 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="text" name="imagen_fondo[]">
+                                    <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Imagen (Opcional)</h4>
-                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="imagen[]">
+                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="file" name="imagen[]">
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>

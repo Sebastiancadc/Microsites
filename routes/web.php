@@ -126,6 +126,8 @@ Route::group(['auth', 'prefix' => ''], function () {
     Route::get('crearpresentacion', 'PresentacionesController@crearpresentacion')->name('crearpresentacion');
     Route::post('crearpresentaciones', 'PresentacionesController@store')->name('crearpresentaciones');
     Route::get('presentacion/{title}', 'PresentacionesController@post')->name('presentacion');
+    Route::get('presentacionFull/{id}', 'PresentacionesController@full')->name('presentacionf');
+
     Route::get('editarpresentacion/{id}', 'PresentacionesController@edit')->name('editarpresentacion');
     Route::get('editarpresentacionad/{id}', 'PresentacionesController@editAd')->name('editarpresentacionad');
     Route::put('updatepresentacion/{id}', 'PresentacionesController@update')->name('update');

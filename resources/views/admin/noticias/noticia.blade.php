@@ -5,7 +5,7 @@
 $rol = auth()->user()->username;
 $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Roles', '=', $rol)->first();
 
-?>
+?><link rel="stylesheet" href="{{asset("plantilla/css/gallery.css")}}" type="text/css">
 <link rel="stylesheet" href="{{asset("plantilla/css/blog.css")}}" type="text/css">
 <link rel="stylesheet" href="{{asset("plantilla/css/landing.css")}}" type="text/css">
 <div id="headerWrapper" class="container-fluid navHeaderWrapper header-image">
@@ -77,15 +77,32 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
             </div>
             <div id="articlesPostContent" class="col-md-12 mt-5 pt-4">
                 @foreach ($vercampaña as $item)
+               
                 <article class="mb-5 pb-5">
                     <div class="row">
                         <div class="col-md-4 text-center">
-                            {{-- <div class="thumbnail-img">
-                                <img alt="blog-image" src="{{ $item->image }}" class="img-fluid  mb-md-0 mb-4">
-                            </div> --}}
+                            <div class="thumbnail-img">
+                                <a href="{{'presentacion'}}/{{$item->title}}">
+                                    <div style="overflow: hidden;
+                                    cursor: default;
+                                    background-color: {{$item->color}};
+                                    margin-bottom: 10px;
+                                    position: relative;
+                                    width: 520px;
+                                    height: 240px;" data-width="1" data-height="1" style="padding-left: 10px; width: auto;">
+                                        <h4 class="titulodash" style=" color: {{$item->colortitulos}};">{{$item->title}} </h4>
+                                        <div class="overlayer bottom-left full-width"  style="margin-top: -127px;margin-left: 16px;">
+                                        <div class="overlayer-wrapper item-info ">
+                                                <div class="gradient-grey p-l-20 p-r-20 p-t-20 p-b-5">
+                                                   
+                                                </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                   </a>
+                            </div>
                         </div>
                         <div class="col-md-8 text-md-left text-center">
-                            <h4 class="post-heading">{{$item->title }}</h4>                       
                             <div class="row mt-5">                 
                                 <div class="col-md-4 col-sm-4 col-12 text-center text-sm-right">
                                     <a href="{{'presentacion'}}/{{$item->title}}" class="btn btn-outline-info btn-rounded">Ver Presentacion</a>
