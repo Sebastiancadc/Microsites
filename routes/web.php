@@ -9,7 +9,7 @@ Auth::routes(['verify' => true]);
 Route::get('/', function () {
 
     return view('admin.login');
-}); 
+});
 
 Route::get('/home', 'InicioController@index');
 
@@ -62,7 +62,7 @@ Route::resource('Solitudcrear', 'SolicitudControlller');
 
 // <<<<<<<<<<<<<<-----------------------------ADMINISTRADOR------------------->>>>>>>>>>
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
-    
+
     //Usuarios
     Route::resource('usuario', 'HomeController');
     Route::post('Crearcampaña', 'HomeController@store');
@@ -101,7 +101,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('editarcategoria/{id}', 'CategoryController@edit')->name('editar');
     Route::delete('deletecategoria/{id}', 'CategoryController@destroy')->name('eliminarcategoria');
 
-
+    //Acrhivos
+    Route::resource('archivos', 'ArchivosController');
+    Route::get('archivos', 'ArchivosController@index2');
+    Route::post('/store', 'ArchivosController@store')->name('store');
+    Route::get('/editar/{id}', 'ArchivosController@editadmin')->name('editaradmin');
+    Route::put('/update/{id}', 'ArchivosController@updateadmin')->name('updateadmin');
+    Route::delete('/eliminar/{id}', 'ArchivosController@destroy')->name('eliminar');
+    route::get('/download', 'NotasController@download');
 });
 
 Route::get('repositoriocola', function () {
@@ -129,4 +136,12 @@ Route::group(['auth', 'prefix' => ''], function () {
     //Manual
     Route::get('ayuda', 'ManualController@index');
 
+    //ARCHIVOS
+    Route::resource('archivos', 'ArchivosController');
+    Route::get('archivos', 'ArchivosController@index')->name('archivos');
+    Route::post('/store', 'ArchivosController@store')->name('store');
+    Route::get('/editar/{id}', 'ArchivosController@edit')->name('editar');
+    Route::put('/update/{id}', 'ArchivosController@update')->name('update');
+    Route::delete('/eliminar/{id}', 'ArchivosController@destroy')->name('eliminar');
+    route::get('/download', 'NotasController@download');
 });

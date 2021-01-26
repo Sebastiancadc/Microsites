@@ -8,8 +8,8 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
 ?>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
   <!-- Flaticon -->
   <link rel="icon" href="{{asset('plantilla/img/theme/IsotipoCOS.png')}}" type="image/png">
 
@@ -23,7 +23,7 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
   <link rel="stylesheet" href="{{asset("plantilla/vendor/fullcalendar/dist/fullcalendar.min.css")}}">
   <link rel="stylesheet" href="{{asset("plantilla/vendor/sweetalert2/dist/sweetalert2.min.css")}}">
   <link rel="stylesheet" href="../../assets/vendor/quill/dist/quill.core.css">
-  <!-- Argon CSS -->  
+  <!-- Argon CSS -->
   <link rel="stylesheet" href="{{asset("plantilla/vendor/select2/dist/css/select2.min.css")}}" type="text/css">
   <link rel="stylesheet" href="{{asset("plantilla/css/argon.css?v=1.1.0")}}" type="text/css">
   <link rel="stylesheet" href="{{asset("plantilla/endor/quill/dist/quill.core.css")}}" type="text/css">
@@ -50,12 +50,12 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
             <li class="nav-item">
               <div style="margin-top: 7px;">
               <a class="nav-link" href="{{url("home")}}" style="margin-top: -24px;">
-                <img src="{{asset('plantilla/img/theme/logoCOS.png')}}" class="navbar-brand-img" 
+                <img src="{{asset('plantilla/img/theme/logoCOS.png')}}" class="navbar-brand-img"
                 style="max-width: 60%;
                 max-height: 129px;"></a>
                 </div>
             </li>
-           
+
           </ul>
           <ul class="navbar-nav ml-lg-auto">
             <li class="nav-item">
@@ -64,6 +64,9 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
             <li class="nav-item">
               <a class="nav-link" href="{{url('noticiausu')}}">Noticias</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('archivos')}}">Archivos</a>
+              </li>
           </ul>
           <ul class="navbar-nav align-items-center ml-md-auto">
             <li class="nav-item d-xl-none">
@@ -81,8 +84,8 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
                 <i class="ni ni-zoom-split-in"></i>
               </a>
             </li>
-            
-         
+
+
           <ul class="navbar-nav align-items-center ml-auto ml-md-0">
             <li class="nav-item dropdown">
               <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -147,12 +150,12 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
     @yield('jss')
     <script src="{{asset("plantilla/vendor/date/bootstrap-datetimepicker.js")}}"></script>
     <!-- Argon JS -->
-    <script src="{{asset("plantilla/js/dark.js")}}"></script>   
+    <script src="{{asset("plantilla/js/dark.js")}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <script src="{{asset("plantilla/js/argon.js?v=1.1.0")}}"></script>
     <script src="{{asset("plantilla/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")}}"></script>
     @yield('js')
-    
+
     <script>
       $(document).ready(function() {
         $('.js-example-basic-single').select2();
