@@ -55,14 +55,14 @@
             <nav class="navbar navbar-header navbar-expand-lg">
                 <div class="container-fluid">
                     <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
-                        <li class="nav-item active">
+                        {{--  <li class="nav-item active">
                             <a href="{{url('home')}}">
                                 <i class="fas fa-home" style="font-size: 17px;
                                 margin-right: 9px;
                                 margin-top: 8px;
                                 color: aliceblue;"></i>
                             </a>
-                        </li>
+                        </li>  --}}
                         <li class="nav-item dropdown hidden-caret">
                             <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"
                                 aria-expanded="false">
