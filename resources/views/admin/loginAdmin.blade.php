@@ -86,8 +86,8 @@
                                 </div>
 
 
-                               <div class="copyright text-center text-lg-left text-muted">
-                               <a style="color: #C01A24;" class="font-weight-bold ml-1" >Creado por grupo 3 Sena Montechelo.</a>
+                               <div class="copyright text-center text-lg-left text-muted" style="margin-left: 28px;">
+                               <a style="color: #808080;" class="font-weight-bold ml-1" >Creado por grupo 3 Sena Montechelo.</a>
                               </div>
                             </form>
                         </div>

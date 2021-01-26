@@ -3,6 +3,7 @@
 <?php
 $date =date('m-d')
 ?>
+
 <link rel="stylesheet" href="{{asset("plantilla/css/gallery.css")}}" type="text/css">
 <div class="header bg-primary pb-6" >
     <div class="container-fluid">
@@ -17,7 +18,6 @@ $date =date('m-d')
             </nav>
           </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -29,41 +29,41 @@ $date =date('m-d')
                     <div class="card-header bg-transparent">
                         <div class="row align-items-center">
                             <div class="col">
-                                <h2 class="mb-0">Noticias de interes</h5>
+                                <h2 class="mb-0">Presentaciones de interes</h5>
                             </div>
                         </div>
                     </div>
-                    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vScqL2bmb6NLER-m_ci6ee2mBN5selCN_X1Bvii0H2IXaCKJWTMDw9OLlcEECQEnQ/embed?start=false&loop=false&delayms=3000"
-                  frameborder="0" width="960" height="569" allowfullscreen="true" 
-                    mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                
                     <div class="row align-items-center">
-                        <div class="col sm-4">
-                           <?php
-                            $fechahoy = new \DateTime();
-                            $fechas = $fechahoy->format('d-m-Y');
-                           ?>
-                            @foreach ($vercampaña as $item)
-                            @if(App\Helpers\Helpers::formatearFechahoy($item->fecha) == $fechas)
-                            <a href="{{'post'}}/{{ $item->slug }}">
-                                <div class="gallery-item " data-width="1" data-height="1" style="padding-left: 10px; width: auto;">
-                                    <h4 style="color:white;">{{$item->title}}</h4>
-                                    <div class="overlayer bottom-left full-width"  style="margin-top: -127px;margin-left: 16px;">
-                                    <div class="overlayer-wrapper item-info ">
-                                            <div class="gradient-grey p-l-20 p-r-20 p-t-20 p-b-5">
-                                                <div class="">
-                                                    <p class="pull-left bold text-white fs-14 p-t-10">{{$item->title}}</p>                                            
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                            </div>
-                                    </div>
-                                    </div>
-                                </div>
+                   
+                      <div class="col sm-4">
+                        <?php
+                         $fechahoy = new \DateTime();
+                         $fechas = $fechahoy->format('d-m-Y');
+                        ?>
+                         @foreach ($vercampaña as $item)
+                         @if(App\Helpers\Helpers::formatearFechahoy($item->fecha) == $fechas)
+                         <a href="{{'presentacion'}}/{{$item->title}}">
+                             <div style="overflow: hidden;
+                             cursor: default;
+                             background-color: {{$item->color}};
+                             margin-bottom: 10px;
+                             position: relative;
+                             width: 960px;
+                             height: 240px;" data-width="1" data-height="1" style="padding-left: 10px; width: auto;">
+                                 <h4 class="titulodash" style=" color: {{$item->colortitulos}};">{{$item->title}} </h4>
+                                 <div class="overlayer bottom-left full-width"  style="margin-top: -127px;margin-left: 16px;">
+                                 <div class="overlayer-wrapper item-info ">
+                                         <div class="gradient-grey p-l-20 p-r-20 p-t-20 p-b-5">
+                                            
+                                         </div>
+                                 </div>
+                                 </div>
+                             </div>
                             </a>
-                            {{-- @else
-                            Aun no esta disponible la noticia --}}
-                            @endif
-                            @endforeach
-                        </div>
+                         @endif
+                         @endforeach
+                     </div>
                     </div>
                 </div>
             </div>               
@@ -71,8 +71,8 @@ $date =date('m-d')
     </div>
     @include('admin.layouts.footer')
   </div>
-</div>
 
+</div>
 @section('js')
 <script src="{{asset("plantilla/vendor/fullcalendar/dist/locale/es.js")}}"></script>
 <script src="https://cdn.rawgit.com/jackmoore/colorbox/master/jquery.colorbox-min.js"></script>

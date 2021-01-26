@@ -5,7 +5,7 @@
 $rol = auth()->user()->username;
 $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Roles', '=', $rol)->first();
 
-?>
+?><link rel="stylesheet" href="{{asset("plantilla/css/gallery.css")}}" type="text/css">
 <link rel="stylesheet" href="{{asset("plantilla/css/blog.css")}}" type="text/css">
 <link rel="stylesheet" href="{{asset("plantilla/css/landing.css")}}" type="text/css">
 <div id="headerWrapper" class="container-fluid navHeaderWrapper header-image">
@@ -13,10 +13,13 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
         <div class="row">
             <div class="col-lg-6 col-md-12 col-sm-12 col-12 order-lg-1 order-2 align-self-center  mb-lg-0 mb-5">
                 <div class="site-header-inner  mt-lg-0 mt-5">
-                    <h2 style="color:white;">Noticias de intéres</h2>
+                    <h2 style="color:white;">Presentaciones de intéres</h2>
                     <p style="color:white;">Descubre lo último en actualidad y mantente conectado.</p>
-                    @if ($campaña->create_status == '1')
+                    {{-- @if ($campaña->create_status == '1')
                     <a href="{{ url('crearnoticia') }}" class="btn btn-sm btn-neutral mt-5">Agregar</a>
+                    @endif --}}
+                    @if ($campaña->create_status == '1')
+                    <a href="{{ url('crearpresentacion') }}" class="btn btn-sm btn-neutral mt-5">Crear presentacion</a>
                     @endif
                 </div>
             </div>
@@ -46,6 +49,26 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                 </button>
             </div>
             @endif
+            @if (session('eliminar'))
+            <div class="alert alert-danger" role="alert" style="    margin-top: 37px;
+            width: 92%;
+            margin-left: 63px;">
+                {{(session('eliminar'))}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @endif
+            @if (session('editarnoticia'))
+            <div class="alert alert-warning" role="alert" style="    margin-top: 37px;
+            width: 92%;
+            margin-left: 63px;">
+                {{(session('editarnoticia'))}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @endif 
 <div id="articlesPostWrapper">
     <div class="container-fluid">
         <div class="row">       
@@ -54,19 +77,35 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
             </div>
             <div id="articlesPostContent" class="col-md-12 mt-5 pt-4">
                 @foreach ($vercampaña as $item)
+               
                 <article class="mb-5 pb-5">
                     <div class="row">
                         <div class="col-md-4 text-center">
                             <div class="thumbnail-img">
-                                <img alt="blog-image" src="{{ $item->image }}" class="img-fluid  mb-md-0 mb-4">
+                                <a href="{{'presentacion'}}/{{$item->title}}">
+                                    <div style="overflow: hidden;
+                                    cursor: default;
+                                    background-color: {{$item->color}};
+                                    margin-bottom: 10px;
+                                    position: relative;
+                                    width: 520px;
+                                    height: 240px;" data-width="1" data-height="1" style="padding-left: 10px; width: auto;">
+                                        <h4 class="titulodash" style=" color: {{$item->colortitulos}};">{{$item->title}} </h4>
+                                        <div class="overlayer bottom-left full-width"  style="margin-top: -127px;margin-left: 16px;">
+                                        <div class="overlayer-wrapper item-info ">
+                                                <div class="gradient-grey p-l-20 p-r-20 p-t-20 p-b-5">
+                                                   
+                                                </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                   </a>
                             </div>
                         </div>
                         <div class="col-md-8 text-md-left text-center">
-                            <h4 class="post-heading">{{$item->title }}</h4>                       
-                            <p class="post-text text-justify">{{ substr($item->body, 0,90) }}...</p>
                             <div class="row mt-5">                 
                                 <div class="col-md-4 col-sm-4 col-12 text-center text-sm-right">
-                                    <a href="{{'post'}}/{{ $item->slug }}" class="btn btn-outline-info btn-rounded">Ver artículo</a>
+                                    <a href="{{'presentacion'}}/{{$item->title}}" class="btn btn-outline-info btn-rounded">Ver Presentacion</a>
                                 </div>
                             </div>
                         </div>

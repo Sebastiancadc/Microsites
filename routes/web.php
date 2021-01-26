@@ -46,8 +46,8 @@ Route::get('admin/pasword', function () {
     return view('admin.pasword');
 });
 
-Route::get('Solicitud', function () {
-    return view('admin.solicitud');
+Route::get('Presentacion', function () {
+    return view('admin.presentaciones.index');
 });
 
 
@@ -93,22 +93,23 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::put('updatenoticia/{id}', 'NoticiasController@update')->name('update');
     Route::put('updatenoticiaus/{id}', 'NoticiasController@updateUs');
     Route::delete('deletenoticia/{id}', 'NoticiasController@destroy')->name('eliminarnoticia');
-
-    //Categorias
-    Route::resource('categoria', 'CategoryController');
-    Route::get('crearcategoria', 'CategoryController@crearbuzon')->name('crearcategoria');
-    Route::post('crearcategorias', 'CategoryController@crearsugerencias')->name('crearcategorias');
-    Route::get('editarcategoria/{id}', 'CategoryController@edit')->name('editar');
-    Route::delete('deletecategoria/{id}', 'CategoryController@destroy')->name('eliminarcategoria');
-
-    //Acrhivos
-    Route::resource('archivos', 'ArchivosController');
-    Route::get('archivos', 'ArchivosController@index2');
-    Route::post('/store', 'ArchivosController@store')->name('store');
-    Route::get('/editar/{id}', 'ArchivosController@editadmin')->name('editaradmin');
-    Route::put('/update/{id}', 'ArchivosController@updateadmin')->name('updateadmin');
-    Route::delete('/eliminar/{id}', 'ArchivosController@destroy')->name('eliminar');
-    route::get('/download', 'NotasController@download');
+     
+     //Acrhivos
+     Route::resource('archivos', 'ArchivosController');
+     Route::get('archivos', 'ArchivosController@index2');
+     Route::post('/store', 'ArchivosController@store')->name('store');
+     Route::get('/editar/{id}', 'ArchivosController@editadmin')->name('editaradmin');
+     Route::put('/update/{id}', 'ArchivosController@updateadmin')->name('updateadmin');
+     Route::delete('/eliminar/{id}', 'ArchivosController@destroy')->name('eliminar');
+     route::get('/download', 'NotasController@download');
+     
+    //PRESENTACION
+    Route::resource('presentacion', 'PresentacionesController');
+    Route::get('editarpresentacionad/{id}', 'PresentacionesController@editAd')->name('editarpresentacionad');
+    Route::put('updatepresentacionad/{id}', 'PresentacionesController@update')->name('update');
+    Route::delete('deletepresentacion/{id}', 'PresentacionesController@destroyUs')->name('eliminarpresentacion');
+    Route::delete('deletepresentacionad/{id}', 'PresentacionesController@destroy')->name('eliminarpresentacionad');
+    
 });
 
 Route::get('repositoriocola', function () {
@@ -129,12 +130,18 @@ Route::group(['auth', 'prefix' => ''], function () {
     Route::put('updatenoticiaus/{id}', 'NoticiasController@updateUs');
     Route::delete('deletenoticia/{id}', 'NoticiasController@destroy')->name('eliminarnoticia');
 
-    //NOTICIA
-    Route::get('editarnoticia/{id}', 'NoticiasController@edit')->name('editarnoticia');
-    Route::put('updatenoticia/{id}', 'NoticiasController@update')->name('update');
+    //Presentaciones 
+    Route::get('noticiausu', 'PresentacionesController@index2')->name('index2');
+    Route::get('crearpresentacion', 'PresentacionesController@crearpresentacion')->name('crearpresentacion');
+    Route::post('crearpresentaciones', 'PresentacionesController@store')->name('crearpresentaciones');
+    Route::get('presentacion/{title}', 'PresentacionesController@post')->name('presentacion');
+    Route::get('presentacionFull/{id}', 'PresentacionesController@full')->name('presentacionf');
 
-    //Manual
-    Route::get('ayuda', 'ManualController@index');
+    Route::get('editarpresentacion/{id}', 'PresentacionesController@edit')->name('editarpresentacion');
+    Route::get('editarpresentacionad/{id}', 'PresentacionesController@editAd')->name('editarpresentacionad');
+    Route::put('updatepresentacion/{id}', 'PresentacionesController@update')->name('update');
+    Route::put('updatepresentacionus/{id}', 'PresentacionesController@updateUs');
+    Route::delete('deletepresentacion/{id}', 'PresentacionesController@destroyUs')->name('eliminarpresentacion');
 
     //ARCHIVOS
     Route::resource('archivos', 'ArchivosController');

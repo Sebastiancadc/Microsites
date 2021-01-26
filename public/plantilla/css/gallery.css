@@ -11,7 +11,16 @@
     width: 280px;
     height: 240px;
   }
+  .titulodash{
+                  
+    margin-bottom: .5em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.3em;
+    text-align: center;
+    margin-top: 33px;
+    margin-left: -7%;
 
+  }
   .gallery-item:hover {
     cursor: pointer;
   }
