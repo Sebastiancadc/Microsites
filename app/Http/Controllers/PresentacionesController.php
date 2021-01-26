@@ -169,7 +169,7 @@ class PresentacionesController extends Controller
         'titulo17','contenido17','imagen17','imagen_fondo17',
         'titulo18','contenido18','imagen18','imagen_fondo18',
         'titulo19','contenido19','imagen19','imagen_fondo19',
-        'titulo20','contenido20','imagen20','imagen_fondo20',
+        'titulo20','contenido20','imagen20','imagen_fondo20'
 
 
     ));
@@ -299,7 +299,7 @@ class PresentacionesController extends Controller
         'titulo17','contenido17','imagen17','imagen_fondo17',
         'titulo18','contenido18','imagen18','imagen_fondo18',
         'titulo19','contenido19','imagen19','imagen_fondo19',
-        'titulo20','contenido20','imagen20','imagen_fondo20',
+        'titulo20','contenido20','imagen20','imagen_fondo20'
     ));
     }
 
@@ -475,7 +475,7 @@ class PresentacionesController extends Controller
          'titulo17','imagen17','imagen_fondo17','contenido17',
          'titulo18','imagen18','imagen_fondo18', 'contenido18',
          'titulo19','imagen19','imagen_fondo19','contenido19',
-         'titulo20','imagen20','imagen_fondo20', 'contenido20',
+         'titulo20','imagen20','imagen_fondo20', 'contenido20'
         ));
     }
 
@@ -604,7 +604,7 @@ class PresentacionesController extends Controller
          'titulo17','imagen17', 'imagen_fondo17','contenido17',
          'titulo18','imagen18', 'imagen_fondo18','contenido18',
          'titulo19','imagen19', 'imagen_fondo19','contenido19',
-         'titulo20','imagen20', 'imagen_fondo20','contenido20',
+         'titulo20','imagen20', 'imagen_fondo20','contenido20'
         ));
     }
 
