@@ -11,6 +11,8 @@ Route::get('/', function () {
     return view('admin.login');
 });
 
+Route::get('/admin', 'AdminController@index')->name('admin');
+
 Route::get('/home', 'InicioController@index');
 
 
@@ -76,6 +78,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::put('updatepermisos/{id}', 'HomeController@updatepermisos')->name('updatepermisos');
     Route::delete('deletepermiso/{id}', 'HomeController@destroypermisos')->name('eliminarpermiso');
     //DASBOARD ADMIN
+    Route::get('/admin/HomeAdmin', 'AdminController@index')->name('admin');
     Route::get('HomeAdmin', 'InicioController@indexAdmin');
 
     //Solicitud
@@ -93,14 +96,23 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::put('updatenoticia/{id}', 'NoticiasController@update')->name('update');
     Route::put('updatenoticiaus/{id}', 'NoticiasController@updateUs');
     Route::delete('deletenoticia/{id}', 'NoticiasController@destroy')->name('eliminarnoticia');
-        
+
+     //Acrhivos
+     Route::resource('archivos', 'ArchivosController');
+     Route::get('archivos', 'ArchivosController@index2');
+     Route::post('/store', 'ArchivosController@store')->name('store');
+     Route::get('/editar/{id}', 'ArchivosController@editadmin')->name('editaradmin');
+     Route::put('/update/{id}', 'ArchivosController@updateadmin')->name('updateadmin');
+     Route::delete('/eliminar/{id}', 'ArchivosController@destroy')->name('eliminar');
+     route::get('/download', 'NotasController@download');
+
     //PRESENTACION
     Route::resource('presentacion', 'PresentacionesController');
     Route::get('editarpresentacionad/{id}', 'PresentacionesController@editAd')->name('editarpresentacionad');
     Route::put('updatepresentacionad/{id}', 'PresentacionesController@update')->name('update');
     Route::delete('deletepresentacion/{id}', 'PresentacionesController@destroyUs')->name('eliminarpresentacion');
     Route::delete('deletepresentacionad/{id}', 'PresentacionesController@destroy')->name('eliminarpresentacionad');
-    
+
 });
 
 Route::get('repositoriocola', function () {
@@ -121,7 +133,7 @@ Route::group(['auth', 'prefix' => ''], function () {
     Route::put('updatenoticiaus/{id}', 'NoticiasController@updateUs');
     Route::delete('deletenoticia/{id}', 'NoticiasController@destroy')->name('eliminarnoticia');
 
-    //Presentaciones 
+    //Presentaciones
     Route::get('noticiausu', 'PresentacionesController@index2')->name('index2');
     Route::get('crearpresentacion', 'PresentacionesController@crearpresentacion')->name('crearpresentacion');
     Route::post('crearpresentaciones', 'PresentacionesController@store')->name('crearpresentaciones');
@@ -134,4 +146,12 @@ Route::group(['auth', 'prefix' => ''], function () {
     Route::put('updatepresentacionus/{id}', 'PresentacionesController@updateUs');
     Route::delete('deletepresentacion/{id}', 'PresentacionesController@destroyUs')->name('eliminarpresentacion');
 
+    //ARCHIVOS
+    Route::resource('archivos', 'ArchivosController');
+    Route::get('archivos', 'ArchivosController@index')->name('archivos');
+    Route::post('/store', 'ArchivosController@store')->name('store');
+    Route::get('/editar/{id}', 'ArchivosController@edit')->name('editar');
+    Route::put('/update/{id}', 'ArchivosController@update')->name('update');
+    Route::delete('/eliminar/{id}', 'ArchivosController@destroy')->name('eliminar');
+    route::get('/download', 'NotasController@download');
 });

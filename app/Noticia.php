@@ -13,8 +13,8 @@ class Noticia extends Model
     use Notifiable;
 
     protected $table = 'noticias';
-    protected $guarded = ['Id_noticia'];
-    protected $primaryKey = 'Id_noticia';
+    protected $guarded = ['id'];
+    protected $primaryKey = 'id';
 
     protected $fillable = ['user_id','category_id','campana','title','slug','fecha','image','created_at','updated_at'];
 
