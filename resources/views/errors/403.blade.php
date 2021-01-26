@@ -18,7 +18,7 @@
             <img alt="image-404" src="{{asset("images/errores/prohibido.png")}}" class="img-cartoon">
             <h1 class="error-number">403</h1>
             <p class="error-des mb-0">Prohibido</p>
-            <p class="error-text mb-4 mt-1">Usted no tiene permiso para acceder a / en este servidor</p>
+            <p class="error-text mb-4 mt-1">Usted no tiene permiso para acceder a este servidor</p>
             <a href="{{url('home')}}" class="btn btn-gradient-info btn-rounded mt-4">Volver</a>
         </div>
     </div>    

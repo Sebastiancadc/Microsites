@@ -29,7 +29,7 @@ $date =date('m-d')
                     <div class="card-header bg-transparent">
                         <div class="row align-items-center">
                             <div class="col">
-                                <h2 class="mb-0">Presentaciones de interes</h5>
+                                <h2 class="mb-0">Presentaciones de interés</h5>
                             </div>
                         </div>
                     </div>

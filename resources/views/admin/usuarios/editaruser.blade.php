@@ -46,7 +46,7 @@
 						@method('PUT')
 						@csrf
 						<div class="card-body">
-							<h3 class="card-header">Edita la campaña</h3>
+							<h3 class="card-header">Editar campaña</h3>
 							<div class="row">
 								<div class="col-md-12">
 									<div class="card-body">

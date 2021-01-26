@@ -62,7 +62,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                     </div>
-                    <input id="username" name="username" class="form-control @error('username') is-invalid @enderror" value="{{ old('username') }}" placeholder="username" type="text" required autofocus>
+                    <input id="username" name="username" class="form-control @error('username') is-invalid @enderror" value="{{ old('username') }}" placeholder="Username" type="text" required autofocus>
                 </div>
                 </div>
                 @error('username')
@@ -88,7 +88,7 @@
                   <button type="submit" class="btn btn-primary my-4">Ingresar</button>
                 </div>
                 <div class="copyright text-center text-lg-left text-muted" style="margin-left: 28px;">
-                  <a style="color: #808080;" class="font-weight-bold ml-1" >Creado por grupo 3 Sena Montechelo.</a>
+                  <a style="color: #808080;" class="font-weight-bold ml-1" >Creado por grupo 3 SENA Montechelo.</a>
                  </div>
               </form>
             </div>

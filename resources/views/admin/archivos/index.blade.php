@@ -51,7 +51,7 @@
                                 <table id="add-row" class="display table table-striped table-hover">
                                     <thead>
                                         <tr>
-                                            <th style="width: 25%">Titulo</th>
+                                            <th style="width: 25%">Título</th>
                                             <th>Tipo de archivo</th>
                                             <th>Archivo</th>
                                             <th style="width: 10%">Acciones</th>

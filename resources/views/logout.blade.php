@@ -7,7 +7,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cerrando sesion</title>
+    <title>Cerrando sesión</title>
       <!-- Favicon -->
   <link rel="icon" href="{{$page->logoisotipo}}" type="image/png">
   <link rel="stylesheet" href="{{asset("css/logout.css")}}" type="text/css">
@@ -31,7 +31,7 @@ $page = Illuminate\Support\Facades\DB::table('settings-page')->select('*')->firs
     <span></span>
     <span></span>
   </div>
-  <h1>Cerrando sesion...</h1>
+  <h1>Cerrando sesión...</h1>
  <script>
      function redireccionar(){
   window.location.href = "http://localhost/Montechelo/public/";

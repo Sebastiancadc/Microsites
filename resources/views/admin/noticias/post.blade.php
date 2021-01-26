@@ -11,11 +11,11 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
         <div class="header-body">
             <div class="row align-items-center py-4">
                 <div class="col-lg-6 col-7">
-                    <h6 class="h2 text-white d-inline-block mb-0">Presentacion</h6>
+                    <h6 class="h2 text-white d-inline-block mb-0">Presentación</h6>
                     <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                         <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                             <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Presentacion publicada</li>
+                            <li class="breadcrumb-item active" aria-current="page">Presentación publicada</li>
                         </ol>
                     </nav>
                 </div>
@@ -47,7 +47,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                 
                         <div class="mx-3">
                             <h4 class="mb-0">
-                                <a>Fecha de publicacion</a>
+                                <a>Fecha de publicación</a>
                             </h4>
                             <small class="d-block text-muted">{{ $presentacion->created_at->format('d/m/Y') }}</small>
                         </div>
@@ -130,7 +130,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen1 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="350" width="660">
                               @endif
                               @endforeach
                             </div>
@@ -160,7 +160,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen2 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="350" width="660">
                               @endif
                               @endforeach
                             </div>
@@ -190,7 +190,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen3 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="350" width="660">
                               @endif
                               @endforeach
                             </div>
@@ -221,7 +221,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen4 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="350" width="660">
                               @endif
                               @endforeach
                             </div>
@@ -250,7 +250,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen5 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="350" width="660">
                               @endif
                               @endforeach
                             </div>
@@ -279,7 +279,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen6 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="350" width="660">
                               @endif
                               @endforeach
                             </div>
@@ -308,7 +308,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen7 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="350" width="660">
                               @endif
                               @endforeach
                             </div>
@@ -337,7 +337,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen8 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="350" width="660">
                               @endif
                               @endforeach
                             </div>
@@ -366,7 +366,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen9 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="350" width="660">
                               @endif
                               @endforeach
                             </div>
@@ -395,7 +395,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen10 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="350" width="660">
                               @endif
                               @endforeach
                             </div>
@@ -424,7 +424,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen11 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="350" width="660">
                               @endif
                               @endforeach
                             </div>
@@ -453,7 +453,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen12 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="350" width="660">
                               @endif
                               @endforeach
                             </div>
@@ -482,7 +482,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen13 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="350" width="660">
                               @endif
                               @endforeach
                             </div>
@@ -511,7 +511,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen14 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="350" width="660">
                               @endif
                               @endforeach
                             </div>
@@ -540,7 +540,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen15 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="350" width="660">
                               @endif
                               @endforeach
                             </div>
@@ -569,7 +569,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen16 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="350" width="660">
                               @endif
                               @endforeach
                             </div>
@@ -598,7 +598,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen17 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="350" width="660">
                               @endif
                               @endforeach
                             </div>
@@ -627,7 +627,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen18 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="350" width="660">
                               @endif
                               @endforeach
                             </div>
@@ -656,7 +656,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen19 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="350" width="660">
                               @endif
                               @endforeach
                             </div>
@@ -685,7 +685,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen20 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="350" width="660">
                               @endif
                               @endforeach
                             </div>

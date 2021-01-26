@@ -24,7 +24,7 @@ class PresentacionRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|min:4|max:30',
+            'title' => 'required|min:4|max:300',
             'campana' => 'required',
             'fecha' => 'required',
             'color' => 'required',

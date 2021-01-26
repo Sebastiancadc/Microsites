@@ -26,7 +26,7 @@
                         <input type="hidden" name="campana" value="{{Auth::user()->username}}">
                         <div class="col-sm-12">
                             <div class="form-group form-group-default">
-                                <label class="form-control-label">Titulo<i class="ii">*</i></label>
+                                <label class="form-control-label">Título<i class="ii">*</i></label>
                                 <input type="text" class="form-control" placeholder="Titulo" name="titulo" id="titulo"
                                     required>
                             </div>

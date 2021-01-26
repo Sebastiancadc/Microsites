@@ -15,7 +15,7 @@
 						<i class="flaticon-right-arrow"></i>
 					</li>
 					<li class="nav-item">
-						<a href="#">Presentacion</a>
+						<a href="#">Presentación</a>
 					</li>
 					<li class="separator">
 						<i class="flaticon-right-arrow"></i>
@@ -43,7 +43,7 @@
                         <div class="form-group">
                             
                             <div class="form-group"> 
-                                <h3 class="form-control-label" for="exampleFormControlInput1">Nombre de la Presentacion</h3>
+                                <h3 class="form-control-label" for="exampleFormControlInput1">Nombre de la Presentación</h3>
                                 <input type="text" class="form-control form-control-alternative" placeholder="titulo" value="{{ old('title') }}" name="title" maxlength="30" >
                                 @if ($errors->has('title'))
                                 <strong class="text-danger tamano">{{$errors->first('title') }}</strong>
@@ -65,7 +65,7 @@
                             <input type="hidden" name="id" value="{{json_encode($item->id)}}">
                             @endforeach
                             <div class="form-group">
-                                <h3 class="form-control-label" for="exampleFormControlTextarea1">Fecha de publicacion</h3>
+                                <h3 class="form-control-label" for="exampleFormControlTextarea1">Fecha de publicación</h3>
                                 <div class="col-md-12">
                                  <div class='input-group date' id='datetime1'>
                                     <input type='date' class="form-control" name="fecha">
@@ -91,7 +91,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <h3 class="form-control-label" for="exampleFormControlTextarea1">Color de los titulos</h3>
+                                <h3 class="form-control-label" for="exampleFormControlTextarea1">Color de los títulos</h3>
                                 <div class="col-md-12">
                                  <div class='input-group date' id='datetime1'>
                                     <span class="input-group-addon input-group-append">
@@ -119,7 +119,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <h3 class="form-control-label" for="exampleFormControlTextarea1">Tiempo de transicion</h3>
+                                <h3 class="form-control-label" for="exampleFormControlTextarea1">Tiempo de transición</h3>
                                 <div class="col-md-16">
                                 <select class="form-control" name="time">
                                     <option ></option>
@@ -151,7 +151,7 @@
 					<div class="card">
 						<div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
 							<div class="span-title">
-								<h3 class="text-section">Pagina - 1</h3>
+								<h3 class="text-section">Página - 1</h3>
 								
 							</div>
 							<div class="span-mode"></div>
@@ -160,7 +160,7 @@
 							<div class="card-body">
 								<input type="hidden" name="numero_pg[]" value="1">
 
-										<h4 class="colorsito">Titulo</h4>
+										<h4 class="colorsito">Título</h4>
 									   <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]" >
 									  	<br>
 										<h4 class="colorsito">Imagen de fondo (Opcional)</h4>
@@ -170,7 +170,7 @@
 										<input class="form-control form-control-alternative"  type="file"  name="imagen[]">
 										<br>
 										<h4 class="colorsito">Contenido</h4>
-										<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+										<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
 							</div>
 						</div>
 						
@@ -182,7 +182,7 @@
 					<div class="card">
 						<div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collapsedos" aria-expanded="false" aria-controls="collapsedos">
 							<div class="span-title">
-								<h3 class="text-section">Pagina - 2</h3>
+								<h3 class="text-section">Página - 2</h3>
 							</div>
 							<div class="span-mode"></div>
 						</div>
@@ -190,7 +190,7 @@
 							<div class="card-body">
 								<input type="hidden" name="numero_pg[]" value="2">
 							   
-										<h4 class="colorsito">Titulo</h4>
+										<h4 class="colorsito">Título</h4>
 									   <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
 									   <br>
 										<h4 class="colorsito">Imagen de fondo (Opcional)</h4>
@@ -200,7 +200,7 @@
 										<input class="form-control form-control-alternative" type="file"   name="imagen[]">
 										<br>
 										<h4 class="colorsito">Contenido</h4>
-										<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+										<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
 
 								
 							</div>
@@ -214,7 +214,7 @@
 					<div class="card">
 						<div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collapsetres" aria-expanded="false" aria-controls="collapsetres">
 							<div class="span-title">
-								<h3 class="text-section">Pagina - 3</h3>
+								<h3 class="text-section">Página - 3</h3>
 							</div>
 							<div class="span-mode"></div>
 						</div>
@@ -223,7 +223,7 @@
 								<input type="hidden" name="numero_pg[]" value="3">
 								
 
-										<h4 class="colorsito">Titulo</h4>
+										<h4 class="colorsito">Título</h4>
 									   <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
 									   <br>
 										<h4 class="colorsito">Imagen de fondo (Opcional)</h4>
@@ -233,7 +233,7 @@
 										<input class="form-control form-control-alternative"  type="file"  name="imagen[]">
 										<br>
 										<h4 class="colorsito">Contenido</h4>
-										<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+										<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
 
 							</div>
 						</div>
@@ -246,7 +246,7 @@
 					<div class="card">
 						<div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collapsecuatro" aria-expanded="false" aria-controls="collapsecuatro">
 							<div class="span-title">
-								<h3 class="text-section">Pagina - 4</h3>
+								<h3 class="text-section">Página - 4</h3>
 								
 							</div>
 							<div class="span-mode"></div>
@@ -255,7 +255,7 @@
 							<div class="card-body">
 								<input type="hidden" name="numero_pg[]" value="4">
 
-										<h4 class="colorsito">Titulo</h4>
+										<h4 class="colorsito">Título</h4>
 									   <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
 									   <br>
 										<h4 class="colorsito">Imagen de fondo (Opcional)</h4>
@@ -265,7 +265,7 @@
 										<input class="form-control form-control-alternative"  type="file"  name="imagen[]">
 										<br>
 										<h4 class="colorsito">Contenido</h4>
-										<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+										<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"maxlength="420"></textarea>
 
 								
 							</div>
@@ -280,7 +280,7 @@
 					<div class="card">
 						<div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap5" aria-expanded="false" aria-controls="collap5">
 							<div class="span-title">
-								<h3 class="text-section">Pagina - 5</h3>
+								<h3 class="text-section">Página - 5</h3>
 								
 							</div>
 							<div class="span-mode"></div>
@@ -289,7 +289,7 @@
 							<div class="card-body">
 								<input type="hidden" name="numero_pg[]" value="5">
 
-										<h4 class="colorsito">Titulo</h4>
+										<h4 class="colorsito">Título</h4>
 									   <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
 									   <br>
 										<h4 class="colorsito">Imagen de fondo (Opcional)</h4>
@@ -299,7 +299,7 @@
 										<input class="form-control form-control-alternative" type="file"  name="imagen[]">
 										<br>
 										<h4 class="colorsito">Contenido</h4>
-										<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+										<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
 
 								
 							</div>
@@ -315,7 +315,7 @@
 							<i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
 							<div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap6" aria-expanded="false" aria-controls="collap6">
 								<div class="span-title">
-									<h3 class="text-section">Pagina - 6</h3>
+									<h3 class="text-section">Página - 6</h3>
 									
 								</div>
 								<div class="span-mode"></div>
@@ -324,7 +324,7 @@
 								<div class="card-body">
 									<input type="hidden" name="numero_pg[]" value="6">
 
-											<h4 class="colorsito">Titulo</h4>
+											<h4 class="colorsito">Título</h4>
 										   <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
 										   <br>
 											<h4 class="colorsito">Imagen de fondo (Opcional)</h4>
@@ -334,7 +334,7 @@
 											<input class="form-control form-control-alternative"  type="file"  name="imagen[]">
 											<br>
 											<h4 class="colorsito">Contenido</h4>
-											<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+											<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
 
 									
 								</div>
@@ -348,7 +348,7 @@
 							<i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
 							<div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap7" aria-expanded="false" aria-controls="collap7">
 								<div class="span-title">
-									<h3 class="text-section">Pagina - 7</h3>
+									<h3 class="text-section">Página - 7</h3>
 									
 								</div>
 								<div class="span-mode"></div>
@@ -358,7 +358,7 @@
 									<input type="hidden" name="numero_pg[]" value="7">
 									<ul class="list-group list-group-flush">
 
-											<h4 class="colorsito">Titulo</h4>
+											<h4 class="colorsito">Título</h4>
 										   <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
 										   <br>
 											<h4 class="colorsito">Imagen de fondo (Opcional)</h4>
@@ -368,7 +368,7 @@
 											<input class="form-control form-control-alternative" type="file"  name="imagen[]">
 											<br>
 											<h4 class="colorsito">Contenido</h4>
-											<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+											<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
 
 									
 								</div>
@@ -382,7 +382,7 @@
 							<i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
 							<div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap8" aria-expanded="false" aria-controls="collap8">
 								<div class="span-title">
-									<h3 class="text-section">Pagina - 8</h3>
+									<h3 class="text-section">Página - 8</h3>
 									
 								</div>
 								<div class="span-mode"></div>
@@ -392,7 +392,7 @@
 									<input type="hidden" name="numero_pg[]" value="8">
 									<ul class="list-group list-group-flush">
 
-											<h4 class="colorsito">Titulo</h4>
+											<h4 class="colorsito">Título</h4>
 										   <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
 										   <br>
 											<h4 class="colorsito">Imagen de fondo (Opcional)</h4>
@@ -402,7 +402,7 @@
 											<input class="form-control form-control-alternative" type="file"  name="imagen[]">
 											<br>
 											<h4 class="colorsito">Contenido</h4>
-											<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+											<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
 
 									
 								</div>
@@ -416,7 +416,7 @@
 							<i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
 							<div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap9" aria-expanded="false" aria-controls="collap9">
 								<div class="span-title">
-									<h3 class="text-section">Pagina - 9</h3>
+									<h3 class="text-section">Página - 9</h3>
 									
 								</div>
 								<div class="span-mode"></div>
@@ -425,7 +425,7 @@
 								<div class="card-body">
 									<input type="hidden" name="numero_pg[]" value="9">
 								
-											<h4 class="colorsito">Titulo</h4>
+											<h4 class="colorsito">Título</h4>
 										   <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
 										   <br>
 											<h4 class="colorsito">Imagen de fondo (Opcional)</h4>
@@ -435,7 +435,7 @@
 											<input class="form-control form-control-alternative"  type="file"  name="imagen[]">
 											<br>
 											<h4 class="colorsito">Contenido</h4>
-											<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+											<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
 
 									
 								</div>
@@ -449,7 +449,7 @@
 							<i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
 							<div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap10" aria-expanded="false" aria-controls="collap10">
 								<div class="span-title">
-									<h3 class="text-section">Pagina - 10</h3>
+									<h3 class="text-section">Página - 10</h3>
 									
 								</div>
 								<div class="span-mode"></div>
@@ -458,7 +458,7 @@
 								<div class="card-body">
 									<input type="hidden" name="numero_pg[]" value="10">
 
-											<h4 class="colorsito">Titulo</h4>
+											<h4 class="colorsito">Título</h4>
 										   <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
 										   	<br>
 											<h4 class="colorsito">Imagen de fondo (Opcional)</h4>
@@ -468,7 +468,7 @@
 											<input class="form-control form-control-alternative"  type="file"  name="imagen[]">
 											<br>
 											<h4 class="colorsito">Contenido</h4>
-											<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+											<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
 
 									
 								</div>
@@ -482,7 +482,7 @@
 							<i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
 							<div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap11" aria-expanded="false" aria-controls="collap11">
 								<div class="span-title">
-									<h3 class="text-section">Pagina - 11</h3>
+									<h3 class="text-section">Página - 11</h3>
 									
 								</div>
 								<div class="span-mode"></div>
@@ -491,7 +491,7 @@
 								<div class="card-body">
 									<input type="hidden" name="numero_pg[]" value="11">
 
-											<h4 class="colorsito">Titulo</h4>
+											<h4 class="colorsito">Título</h4>
 										   <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
 										   <br>
 											<h4 class="colorsito">Imagen de fondo (Opcional)</h4>
@@ -515,7 +515,7 @@
 							<i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
 							<div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap12" aria-expanded="false" aria-controls="collap12">
 								<div class="span-title">
-									<h3 class="text-section">Pagina - 12</h3>
+									<h3 class="text-section">Página - 12</h3>
 									
 								</div>
 								<div class="span-mode"></div>
@@ -524,7 +524,7 @@
 								<div class="card-body">
 									<input type="hidden" name="numero_pg[]" value="12">
 
-											<h4 class="colorsito">Titulo</h4>
+											<h4 class="colorsito">Título</h4>
 										   <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
 										  	<br>
 											<h4 class="colorsito">Imagen de fondo (Opcional)</h4>
@@ -535,7 +535,7 @@
 											<br>
 
 											<h4 class="colorsito">Contenido</h4>
-											<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+											<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
 
 								</div>
 							</div>
@@ -548,7 +548,7 @@
 							<i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
 							<div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap13" aria-expanded="false" aria-controls="collap13">
 								<div class="span-title">
-									<h3 class="text-section">Pagina - 13</h3>
+									<h3 class="text-section">Página - 13</h3>
 									
 								</div>
 								<div class="span-mode"></div>
@@ -557,7 +557,7 @@
 								<div class="card-body">
 									<input type="hidden" name="numero_pg[]" value="13">
 
-											<h4 class="colorsito">Titulo</h4>
+											<h4 class="colorsito">Título</h4>
 										   <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
 										   <br>
 											<h4 class="colorsito">Imagen de fondo (Opcional)</h4>
@@ -568,7 +568,7 @@
 											<input class="form-control form-control-alternative" type="file"  name="imagen[]">
 											<br>
 											<h4 class="colorsito">Contenido</h4>
-											<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+											<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
 
 									
 								</div>
@@ -582,16 +582,16 @@
 							<i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
 							<div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap14" aria-expanded="false" aria-controls="collap14">
 								<div class="span-title">
-									<h3 class="text-section">Pagina - 14</h3>
+									<h3 class="text-section">Página - 14</h3>
 									
-								</div15
+								</div>
 								<div class="span-mode"></div>
 							</div>
 							<div id="collap14" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
 								<div class="card-body">
 									<input type="hidden" name="numero_pg[]" value="14">
 
-											<h4 class="colorsito">Titulo</h4>
+											<h4 class="colorsito">Título</h4>
 										   <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
 										   <br>
 											<h4 class="colorsito">Imagen de fondo (Opcional)</h4>
@@ -601,7 +601,7 @@
 											<input class="form-control form-control-alternative" type="file"  name="imagen[]">
 											<br>
 											<h4 class="colorsito">Contenido</h4>
-											<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+											<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
 
 									
 								</div>
@@ -615,7 +615,7 @@
 							<i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
 							<div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap15" aria-expanded="false" aria-controls="collap15">
 								<div class="span-title">
-									<h3 class="text-section">Pagina - 15</h3>
+									<h3 class="text-section">Página - 15</h3>
 									
 								</div>
 								<div class="span-mode"></div>
@@ -624,7 +624,7 @@
 								<div class="card-body">
 									<input type="hidden" name="numero_pg[]" value="15">
 
-											<h4 class="colorsito">Titulo</h4>
+											<h4 class="colorsito">Título</h4>
 										   <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
 										   <br>
 											<h4 class="colorsito">Imagen de fondo (Opcional)</h4>
@@ -634,7 +634,7 @@
 											<input class="form-control form-control-alternative" type="file"  name="imagen[]">
 											<br>
 											<h4 class="colorsito">Contenido</h4>
-											<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+											<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
 
 									
 								</div>
@@ -648,7 +648,7 @@
 							<i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
 							<div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap16" aria-expanded="false" aria-controls="collap16">
 								<div class="span-title">
-									<h3 class="text-section">Pagina - 16</h3>
+									<h3 class="text-section">Página - 16</h3>
 									
 								</div>
 								<div class="span-mode"></div>
@@ -657,7 +657,7 @@
 								<div class="card-body">
 									<input type="hidden" name="numero_pg[]" value="16">
 
-											<h4 class="colorsito">Titulo</h4>
+											<h4 class="colorsito">Título</h4>
 										   <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
 										   <br>
 											<h4 class="colorsito">Imagen de fondo (Opcional)</h4>
@@ -667,7 +667,7 @@
 											<input class="form-control form-control-alternative"  type="file"  name="imagen[]">
 											<br>
 											<h4 class="colorsito">Contenido</h4>
-											<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+											<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
 
 									
 								</div>
@@ -681,7 +681,7 @@
 							<i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
 							<div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap17" aria-expanded="false" aria-controls="collap17">
 								<div class="span-title">
-									<h3 class="text-section">Pagina - 17</h3>
+									<h3 class="text-section">Página - 17</h3>
 									
 								</div>
 								<div class="span-mode"></div>
@@ -690,7 +690,7 @@
 								<div class="card-body">
 									<input type="hidden" name="numero_pg[]" value="17">
 
-											<h4 class="colorsito">Titulo</h4>
+											<h4 class="colorsito">Título</h4>
 										   <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
 										   <br>
 											<h4 class="colorsito">Imagen de fondo (Opcional)</h4>
@@ -700,7 +700,7 @@
 											<input class="form-control form-control-alternative" type="file"   name="imagen[]">
 											<br>
 											<h4 class="colorsito">Contenido</h4>
-											<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+											<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
 
 									
 								</div>
@@ -714,7 +714,7 @@
 							<i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
 							<div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap18" aria-expanded="false" aria-controls="collap18">
 								<div class="span-title">
-									<h3 class="text-section">Pagina - 18</h3>
+									<h3 class="text-section">Página - 18</h3>
 									
 								</div>
 								<div class="span-mode"></div>
@@ -724,7 +724,7 @@
 									<input type="hidden" name="numero_pg[]" value="18">
 
 
-											<h4 class="colorsito">Titulo</h4>
+											<h4 class="colorsito">Título</h4>
 										   <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
 										   <br>
 											<h4 class="colorsito">Imagen de fondo (Opcional)</h4> 
@@ -734,7 +734,7 @@
 											<input class="form-control form-control-alternative" type="file"  name="imagen[]">
 											<br>
 											<h4 class="colorsito">Contenido</h4>
-											<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+											<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
 									
 								</div>
 							</div>
@@ -747,7 +747,7 @@
 							<i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
 							<div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap19" aria-expanded="false" aria-controls="collap19">
 								<div class="span-title">
-									<h3 class="text-section">Pagina - 19</h3>
+									<h3 class="text-section">Página - 19</h3>
 									
 								</div>
 								<div class="span-mode"></div>
@@ -756,7 +756,7 @@
 								<div class="card-body">
 									<input type="hidden" name="numero_pg[]" value="19">
 								
-											<h4 class="colorsito">Titulo</h4>
+											<h4 class="colorsito">Título</h4>
 										    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
 										    <br>
 
@@ -769,7 +769,7 @@
 											<br>
 
 											<h4 class="colorsito">Contenido</h4>
-											<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+											<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
 								</div>
 							</div>
 							
@@ -781,7 +781,7 @@
 							<i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
 							<div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap20" aria-expanded="false" aria-controls="collap20">
 								<div class="span-title">
-									<h3 class="text-section">Pagina - 20</h3>
+									<h3 class="text-section">Página - 20</h3>
 									
 								</div>
 								<div class="span-mode"></div>
@@ -789,7 +789,7 @@
 							<div id="collap20" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
 								<div class="card-body">
 									<input type="hidden" name="numero_pg[]" value="20">
-											<h4 class="colorsito">Titulo</h4>
+											<h4 class="colorsito">Título</h4>
 										  	 <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
 										   	<br>
 											<h4 class="colorsito">Imagen de fondo (Opcional)</h4>
@@ -799,7 +799,7 @@
 											<input class="form-control form-control-alternative"   type="file"  name="imagen[]">
 											<br>
 											<h4 class="colorsito">Contenido</h4>
-											<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+											<textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
 								</div>
 							</div>
 							

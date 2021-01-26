@@ -32,7 +32,7 @@
 						@method('PUT')
 						@csrf
 						<div class="card-body">
-							<h3 class="card-header">Edita el rol {{$permisoActualizar->Roles}}</h3>
+							<h3 class="card-header">Editar rol {{$permisoActualizar->Roles}}</h3>
 							<div class="row">
 								<div class="col-md-12">
 									<div class="card-body">

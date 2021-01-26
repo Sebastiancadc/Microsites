@@ -38,7 +38,7 @@
                                 <h4 class="card-title">Gestión de Presentaciones</h4>
                                 <a class="btn btn-primary btn-round ml-auto" href="{{ url('admin/crearpresentacionAdmin') }}">
                                     <i class="fa fa-plus"></i>
-                                    Crear Presentacion
+                                    Crear Presentación
                                 </a>
                             </div>
                         </div>
@@ -47,9 +47,9 @@
                                 <table id="add-row" class="display table table-striped table-hover">
                                     <thead>
                                         <tr>
-                                            <th>Titulo</th>
+                                            <th>Tìtulo</th>
                                             <th>Campaña</th> 
-                                            <th>Fecha de publicacion</th>
+                                            <th>Fecha de publicación</th>
                                             <th style="width: 10%">Acciones</th>
                                         </tr>
                                     </thead>
@@ -61,10 +61,10 @@
                                             <td>{{$item->fecha}}</td>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="{{route('editarpresentacionad', $item->id)}}" class="btn btn-link btn-primary btn-lg" data-original-title="Editar capacitacion">
+                                                    <a href="{{route('editarpresentacionad', $item->id)}}" class="btn btn-link btn-primary btn-lg" data-original-title="Editar capacitación">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
-                                                    <button href="#" class="btn btn-link btn-danger" data-toggle="modal" data-target="#deleteNoticia{{$item->id}}" data-original-title="Eliminar capacitacion">
+                                                    <button href="#" class="btn btn-link btn-danger" data-toggle="modal" data-target="#deleteNoticia{{$item->id}}" data-original-title="Eliminar capacitación">
                                                         <i class="fa fa-times"></i>
                                                     </button>
                                                     <!-- Modal -->
@@ -72,7 +72,7 @@
                                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h3>¿Estás seguro de eliminar esta capacitacion?</h3>
+                                                                    <h3>¿Estás seguro de eliminar esta capacitación?</h3>
                                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
                                                                     </button>

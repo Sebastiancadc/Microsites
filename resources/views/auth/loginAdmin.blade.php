@@ -62,7 +62,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-single-02"></i></span>
                                         </div>
-                                        <input id="username" name="username" class="form-control" value="{{ old('username') }}" placeholder="username-ADMIN" type="text"  pattern="(admin)" title="Solo puede ingresar el administrador" autofocus>
+                                        <input id="username" name="username" class="form-control" value="{{ old('username') }}" placeholder="Username-Admin" type="text"  pattern="(admin)" title="Solo puede ingresar el administrador" autofocus>
                                     </div>  
                                     @if ($errors->has('username'))
                                     <strong class="text-danger tamano">{{ $errors->first('username') }}</strong>
@@ -85,7 +85,7 @@
 
                                 </div>
                                <div class="copyright text-center text-lg-left text-muted" style="margin-left: 28px;">
-                               <a style="color: #808080;" class="font-weight-bold ml-1" >Creado por grupo 3 Sena Montechelo.</a>
+                               <a style="color: #808080;" class="font-weight-bold ml-1" >Creado por grupo 3 SENA Montechelo.</a>
                               </div>
                             </form>
                         </div>
@@ -94,7 +94,7 @@
                     <div class="row" style="margin-top: -185px;">
                         <div class="col-6">
 
-                            <a href="{{ route('password.request')}}" class="text-light"><small>Olvidaste la contraseña?</small></a>
+                            <a href="{{ route('password.request')}}" class="text-light"><small>¿Olvidaste tu contraseña?</small></a>
                         </div>
                         <div class="col-6 text-right">
                             <a href="{{ route('login') }}" class="text-light"><small>Login usuarios</small></a>

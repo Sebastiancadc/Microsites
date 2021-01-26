@@ -21,7 +21,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                     <a href="{{ url('crearnoticia') }}" class="btn btn-sm btn-neutral mt-5">Agregar</a>
                     @endif --}}
                     @if ($campaña->create_status == '1')
-                    <a href="{{ url('crearpresentacion') }}" class="btn btn-sm btn-neutral mt-5">Crear presentacion</a>
+                    <a href="{{ url('crearpresentacion') }}" class="btn btn-sm btn-neutral mt-5">Crear presentación</a>
                     @endif
                 </div>
             </div>
@@ -108,7 +108,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                         <div class="col-md-8 text-md-left text-center">
                             <div class="row mt-5">                 
                                 <div class="col-md-4 col-sm-4 col-12 text-center text-sm-right">
-                                    <a href="{{'presentacion'}}/{{$item->title}}" class="btn btn-outline-info btn-rounded">Ver Presentacion</a>
+                                    <a href="{{'presentacion'}}/{{$item->title}}" class="btn btn-outline-info btn-rounded">Ver Presentación</a>
                                 </div>
                             </div>
                         </div>

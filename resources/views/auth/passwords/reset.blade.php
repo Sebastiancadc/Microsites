@@ -72,7 +72,7 @@
                                         </div>
                                         <input id="email" type="email"
                                             class="form-control @error('email') is-invalid @enderror" name=""
-                                            placeholder="tucorreo@example.com" value="{{ $email ?? old('email') }}"
+                                            placeholder="Tucorreo@example.com" value="{{ $email ?? old('email') }}"
                                             required autocomplete="email" autofocus>
 
                                         @error('email')
@@ -88,7 +88,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                             </div>
-                                            <input id="password" type="password" placeholder="contraseña"
+                                            <input id="password" type="password" placeholder="Contraseña"
                                                 class="form-control @error('password') is-invalid @enderror"
                                                 name="password" required autocomplete="new-password">
 

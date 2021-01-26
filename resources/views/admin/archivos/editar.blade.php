@@ -38,7 +38,7 @@
                             <div class="col-sm-12">
                                 <div class="form-group form-group-default">
                                     <label class="form-control-label">Titulo<i class="ii">*</i></label>
-                                    <input type="text" class="form-control" placeholder="Titulo" name="titulo"
+                                    <input type="text" class="form-control" placeholder="Título" name="titulo"
                                         id="titulo" required value="{{$ArchivoActualizar->titulo}}">
                                 </div>
                             </div>

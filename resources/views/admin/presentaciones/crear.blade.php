@@ -11,9 +11,9 @@
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Crear presentacion</li>
+                                <li class="breadcrumb-item active" aria-current="page">Crear presentación</li>
                             </ol>
-                        </nav>
+                        </nav> 
                 </div>
             </div>
         </div>
@@ -47,8 +47,8 @@
                         <div class="form-group">
                             
                             <div class="form-group"> 
-                                <label class="form-control-label" for="exampleFormControlInput1">Nombre de la Presentacion</label>
-                                <input type="text" class="form-control form-control-alternative" placeholder="titulo" value="{{ old('title') }}" name="title" maxlength="30" >
+                                <label class="form-control-label" for="exampleFormControlInput1">Nombre de la Presentación</label>
+                                <input type="text" class="form-control form-control-alternative" placeholder="titulo" value="{{ old('title') }}" name="title" maxlength="300" >
                                 @if ($errors->has('title'))
                                 <strong class="text-danger tamano">{{$errors->first('title') }}</strong>
                                 @endif
@@ -74,7 +74,7 @@
                             <input type="hidden" name="id" value="{{json_encode($item->id)}}">
                             @endforeach
                             <div class="form-group">
-                                <label class="form-control-label" for="exampleFormControlTextarea1">Fecha de publicacion</label>
+                                <label class="form-control-label" for="exampleFormControlTextarea1">Fecha de publicación</label>
                                 <div class="col-md-12">
                                  <div class='input-group date' id='datetime1'>
                                     <span class="input-group-addon input-group-append">
@@ -104,7 +104,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="form-control-label" for="exampleFormControlTextarea1">Color de los titulos</label>
+                                <label class="form-control-label" for="exampleFormControlTextarea1">Color de los títulos</label>
                                 <div class="col-md-12">
                                  <div class='input-group date' id='datetime1'>
                                     <span class="input-group-addon input-group-append">
@@ -132,7 +132,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="form-control-label" for="exampleFormControlTextarea1">Tiempo de transicion</label>
+                                <label class="form-control-label" for="exampleFormControlTextarea1">Tiempo de transición</label>
                                 <div class="col-md-12">
                                 <select class="form-control" name="time">
                                     <option ></option>
@@ -164,7 +164,7 @@
             <div class="card">
                 <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                     <div class="span-title">
-                        <h3 class="text-section">Pagina - 1</h3>
+                        <h3 class="text-section">Página - 1</h3>
                         
                     </div>
                     <div class="span-mode"></div>
@@ -176,7 +176,7 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
                                 
-                                <h4 class="colorsito">Titulo</h4>
+                                <h4 class="colorsito">Título</h4>
                                 
                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]" >
                               
@@ -192,7 +192,7 @@
                             
                             <li class="list-group-item">
                                 <h4 class="colorsito">Contenido</h4>
-                                <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+                                <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
                             </li>         
                         </ul>
                         
@@ -206,7 +206,7 @@
             <div class="card">
                 <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collapsedos" aria-expanded="false" aria-controls="collapsedos">
                     <div class="span-title">
-                        <h3 class="text-section">Pagina - 2</h3>
+                        <h3 class="text-section">Página - 2</h3>
                     </div>
                     <div class="span-mode"></div>
                 </div>
@@ -216,7 +216,7 @@
                        
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                                <h4 class="colorsito">Titulo</h4>
+                                <h4 class="colorsito">Título</h4>
                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
                             </li>
                             <li class="list-group-item">
@@ -229,7 +229,7 @@
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Contenido</h4>
-                                <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+                                <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
                             </li>         
                         </ul>
                         
@@ -244,7 +244,7 @@
             <div class="card">
                 <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collapsetres" aria-expanded="false" aria-controls="collapsetres">
                     <div class="span-title">
-                        <h3 class="text-section">Pagina - 3</h3>
+                        <h3 class="text-section">Página - 3</h3>
                     </div>
                     <div class="span-mode"></div>
                 </div>
@@ -254,7 +254,7 @@
                         
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                                <h4 class="colorsito">Titulo</h4>
+                                <h4 class="colorsito">Título</h4>
                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
                             </li>
                             <li class="list-group-item">
@@ -267,7 +267,7 @@
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Contenido</h4>
-                                <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+                                <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
                             </li>         
                         </ul>
                         
@@ -282,7 +282,7 @@
             <div class="card">
                 <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collapsecuatro" aria-expanded="false" aria-controls="collapsecuatro">
                     <div class="span-title">
-                        <h3 class="text-section">Pagina - 4</h3>
+                        <h3 class="text-section">Página - 4</h3>
                         
                     </div>
                     <div class="span-mode"></div>
@@ -292,7 +292,7 @@
                         <input type="hidden" name="numero_pg[]" value="4">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                                <h4 class="colorsito">Titulo</h4>
+                                <h4 class="colorsito">Título</h4>
                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
                             </li>
                             <li class="list-group-item">
@@ -305,7 +305,7 @@
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Contenido</h4>
-                                <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+                                <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
                             </li>         
                         </ul>
                         
@@ -321,7 +321,7 @@
             <div class="card">
                 <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap5" aria-expanded="false" aria-controls="collap5">
                     <div class="span-title">
-                        <h3 class="text-section">Pagina - 5</h3>
+                        <h3 class="text-section">Página - 5</h3>
                         
                     </div>
                     <div class="span-mode"></div>
@@ -331,7 +331,7 @@
                         <input type="hidden" name="numero_pg[]" value="5">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                                <h4 class="colorsito">Titulo</h4>
+                                <h4 class="colorsito">Título</h4>
                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
                             </li>
                             <li class="list-group-item">
@@ -344,7 +344,7 @@
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Contenido</h4>
-                                <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+                                <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
                             </li>         
                         </ul>
                         
@@ -361,7 +361,7 @@
                     <i class="far fa-times-circle close" style="margin-left: 98%;"></i>
                     <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap6" aria-expanded="false" aria-controls="collap6">
                         <div class="span-title">
-                            <h3 class="text-section">Pagina - 6</h3>
+                            <h3 class="text-section">Página - 6</h3>
                             
                         </div>
                         <div class="span-mode"></div>
@@ -371,7 +371,7 @@
                             <input type="hidden" name="numero_pg[]" value="6">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <h4 class="colorsito">Titulo</h4>
+                                    <h4 class="colorsito">Título</h4>
                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
                                 </li>
                                 <li class="list-group-item">
@@ -384,7 +384,7 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>
-                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
                                 </li>         
                             </ul>
                             
@@ -399,7 +399,7 @@
                     <i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
                     <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap7" aria-expanded="false" aria-controls="collap7">
                         <div class="span-title">
-                            <h3 class="text-section">Pagina - 7</h3>
+                            <h3 class="text-section">Página - 7</h3>
                             
                         </div>
                         <div class="span-mode"></div>
@@ -409,7 +409,7 @@
                             <input type="hidden" name="numero_pg[]" value="7">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <h4 class="colorsito">Titulo</h4>
+                                    <h4 class="colorsito">Título</h4>
                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
                                 </li>
                                 <li class="list-group-item">
@@ -422,7 +422,7 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>
-                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
                                 </li>         
                             </ul>
                             
@@ -437,7 +437,7 @@
                     <i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
                     <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap8" aria-expanded="false" aria-controls="collap8">
                         <div class="span-title">
-                            <h3 class="text-section">Pagina - 8</h3>
+                            <h3 class="text-section">Página - 8</h3>
                             
                         </div>
                         <div class="span-mode"></div>
@@ -447,7 +447,7 @@
                             <input type="hidden" name="numero_pg[]" value="8">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <h4 class="colorsito">Titulo</h4>
+                                    <h4 class="colorsito">Título</h4>
                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
                                 </li>
                                 <li class="list-group-item">
@@ -460,7 +460,7 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>
-                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
                                 </li>         
                             </ul>
                             
@@ -475,7 +475,7 @@
                     <i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
                     <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap9" aria-expanded="false" aria-controls="collap9">
                         <div class="span-title">
-                            <h3 class="text-section">Pagina - 9</h3>
+                            <h3 class="text-section">Página - 9</h3>
                             
                         </div>
                         <div class="span-mode"></div>
@@ -485,7 +485,7 @@
                             <input type="hidden" name="numero_pg[]" value="9">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <h4 class="colorsito">Titulo</h4>
+                                    <h4 class="colorsito">Título</h4>
                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
                                 </li>
                                 <li class="list-group-item">
@@ -498,7 +498,7 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>
-                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
                                 </li>         
                             </ul>
                             
@@ -513,7 +513,7 @@
                     <i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
                     <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap10" aria-expanded="false" aria-controls="collap10">
                         <div class="span-title">
-                            <h3 class="text-section">Pagina - 10</h3>
+                            <h3 class="text-section">Página - 10</h3>
                             
                         </div>
                         <div class="span-mode"></div>
@@ -523,7 +523,7 @@
                             <input type="hidden" name="numero_pg[]" value="10">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <h4 class="colorsito">Titulo</h4>
+                                    <h4 class="colorsito">Título</h4>
                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
                                 </li>
                                 <li class="list-group-item">
@@ -536,7 +536,7 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>
-                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
                                 </li>         
                             </ul>
                             
@@ -551,7 +551,7 @@
                     <i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
                     <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap11" aria-expanded="false" aria-controls="collap11">
                         <div class="span-title">
-                            <h3 class="text-section">Pagina - 11</h3>
+                            <h3 class="text-section">Página - 11</h3>
                             
                         </div>
                         <div class="span-mode"></div>
@@ -561,7 +561,7 @@
                             <input type="hidden" name="numero_pg[]" value="11">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <h4 class="colorsito">Titulo</h4>
+                                    <h4 class="colorsito">Título</h4>
                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
                                 </li>
                                 <li class="list-group-item">
@@ -574,7 +574,7 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>
-                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
                                 </li>         
                             </ul>
                             
@@ -589,7 +589,7 @@
                     <i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
                     <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap12" aria-expanded="false" aria-controls="collap12">
                         <div class="span-title">
-                            <h3 class="text-section">Pagina - 12</h3>
+                            <h3 class="text-section">Página - 12</h3>
                             
                         </div>
                         <div class="span-mode"></div>
@@ -599,7 +599,7 @@
                             <input type="hidden" name="numero_pg[]" value="12">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <h4 class="colorsito">Titulo</h4>
+                                    <h4 class="colorsito">Título</h4>
                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
                                 </li>
                                 <li class="list-group-item">
@@ -612,7 +612,7 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>
-                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
                                 </li>         
                             </ul>
                             
@@ -627,7 +627,7 @@
                     <i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
                     <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap13" aria-expanded="false" aria-controls="collap13">
                         <div class="span-title">
-                            <h3 class="text-section">Pagina - 13</h3>
+                            <h3 class="text-section">Página - 13</h3>
                             
                         </div>
                         <div class="span-mode"></div>
@@ -637,7 +637,7 @@
                             <input type="hidden" name="numero_pg[]" value="13">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <h4 class="colorsito">Titulo</h4>
+                                    <h4 class="colorsito">Título</h4>
                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
                                 </li>
                                 <li class="list-group-item">
@@ -651,7 +651,7 @@
                                 
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>
-                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
                                 </li>         
                             </ul>
                             
@@ -666,7 +666,7 @@
                     <i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
                     <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap14" aria-expanded="false" aria-controls="collap14">
                         <div class="span-title">
-                            <h3 class="text-section">Pagina - 14</h3>
+                            <h3 class="text-section">Página - 14</h3>
                             
                         </div15
                         <div class="span-mode"></div>
@@ -676,7 +676,7 @@
                             <input type="hidden" name="numero_pg[]" value="14">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <h4 class="colorsito">Titulo</h4>
+                                    <h4 class="colorsito">Título</h4>
                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
                                 </li>
                                 <li class="list-group-item">
@@ -689,7 +689,7 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>
-                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
                                 </li>         
                             </ul>
                             
@@ -704,7 +704,7 @@
                     <i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
                     <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap15" aria-expanded="false" aria-controls="collap15">
                         <div class="span-title">
-                            <h3 class="text-section">Pagina - 15</h3>
+                            <h3 class="text-section">Página - 15</h3>
                             
                         </div>
                         <div class="span-mode"></div>
@@ -714,7 +714,7 @@
                             <input type="hidden" name="numero_pg[]" value="15">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <h4 class="colorsito">Titulo</h4>
+                                    <h4 class="colorsito">Título</h4>
                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
                                 </li>
                                 <li class="list-group-item">
@@ -727,7 +727,7 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>
-                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
                                 </li>         
                             </ul>
                             
@@ -742,7 +742,7 @@
                     <i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
                     <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap16" aria-expanded="false" aria-controls="collap16">
                         <div class="span-title">
-                            <h3 class="text-section">Pagina - 16</h3>
+                            <h3 class="text-section">Página - 16</h3>
                             
                         </div>
                         <div class="span-mode"></div>
@@ -752,7 +752,7 @@
                             <input type="hidden" name="numero_pg[]" value="16">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <h4 class="colorsito">Titulo</h4>
+                                    <h4 class="colorsito">Título</h4>
                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
                                 </li>
                                 <li class="list-group-item">
@@ -765,7 +765,7 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>
-                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
                                 </li>         
                             </ul>
                             
@@ -780,7 +780,7 @@
                     <i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
                     <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap17" aria-expanded="false" aria-controls="collap17">
                         <div class="span-title">
-                            <h3 class="text-section">Pagina - 17</h3>
+                            <h3 class="text-section">Página - 17</h3>
                             
                         </div>
                         <div class="span-mode"></div>
@@ -790,7 +790,7 @@
                             <input type="hidden" name="numero_pg[]" value="17">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <h4 class="colorsito">Titulo</h4>
+                                    <h4 class="colorsito">Título</h4>
                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
                                 </li>
                                 <li class="list-group-item">
@@ -803,7 +803,7 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>
-                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
                                 </li>         
                             </ul>
                             
@@ -818,7 +818,7 @@
                     <i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
                     <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap18" aria-expanded="false" aria-controls="collap18">
                         <div class="span-title">
-                            <h3 class="text-section">Pagina - 18</h3>
+                            <h3 class="text-section">Página - 18</h3>
                             
                         </div>
                         <div class="span-mode"></div>
@@ -828,7 +828,7 @@
                             <input type="hidden" name="numero_pg[]" value="18">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <h4 class="colorsito">Titulo</h4>
+                                    <h4 class="colorsito">Título</h4>
                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
                                 </li>
                                 <li class="list-group-item">
@@ -841,7 +841,7 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>
-                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
                                 </li>         
                             </ul>
                             
@@ -856,7 +856,7 @@
                     <i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
                     <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap19" aria-expanded="false" aria-controls="collap19">
                         <div class="span-title">
-                            <h3 class="text-section">Pagina - 19</h3>
+                            <h3 class="text-section">Página - 19</h3>
                             
                         </div>
                         <div class="span-mode"></div>
@@ -866,7 +866,7 @@
                             <input type="hidden" name="numero_pg[]" value="19">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <h4 class="colorsito">Titulo</h4>
+                                    <h4 class="colorsito">Título</h4>
                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
                                 </li>
                                 <li class="list-group-item">
@@ -879,7 +879,7 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>
-                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
                                 </li>         
                             </ul>
                             
@@ -894,7 +894,7 @@
                     <i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
                     <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap20" aria-expanded="false" aria-controls="collap20">
                         <div class="span-title">
-                            <h3 class="text-section">Pagina - 20</h3>
+                            <h3 class="text-section">Página - 20</h3>
                             
                         </div>
                         <div class="span-mode"></div>
@@ -904,7 +904,7 @@
                             <input type="hidden" name="numero_pg[]" value="20">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <h4 class="colorsito">Titulo</h4>
+                                    <h4 class="colorsito">Título</h4>
                                    <input class="form-control form-control-alternative" placeholder="Titulo..." type="text" name="titulo[]">
                                 </li>
                                 <li class="list-group-item">
@@ -917,7 +917,7 @@
                                 </li>
                                 <li class="list-group-item">
                                     <h4 class="colorsito">Contenido</h4>
-                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4"></textarea>
+                                    <textarea class="form-control form-control-alternative" placeholder="Contenido..." name="contenido[]" id="" cols="10" rows="4" maxlength="420"></textarea>
                                 </li>         
                             </ul>
                             

@@ -56,9 +56,10 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
                 </div>
             </li>
           </ul>
+          @if ($user->role <> 'admin')
           <ul class="navbar-nav ml-lg-auto">
             <li class="nav-item">
-              <a class="nav-link" href="{{ url('home')}}">Inicio <span class="sr-only"></span></a>
+              <a class="nav-link" href="{{ url('home')}}">Inicio<span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{url('noticiausu')}}">Presentaciones</a>
@@ -67,6 +68,13 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
                 <a class="nav-link" href="{{url('archivos')}}">Archivos</a>
               </li>
           </ul>
+          @else
+          <ul class="navbar-nav ml-lg-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{{url('admin/HomeAdmin')}}">Administrador</a>
+          </li>
+        </ul>
+          @endif
           <ul class="navbar-nav align-items-center ml-md-auto">
             <li class="nav-item d-xl-none">
               <!-- Sidenav toggler -->
@@ -99,7 +107,7 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
               </a>
               <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-header noti-title">
-                  <h6 class="text-overflow m-0">Bienvenido!</h6>
+                  <h6 class="text-overflow m-0">¡Bienvenido!</h6>
                 </div>
 
                 @if ($user->role=='admin')
@@ -112,7 +120,7 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
                 <a href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();" class="dropdown-item">
                   <i class="ni ni-user-run"></i>
-                  <span>Cerrar sesión </span>
+                  <span>Cerrar sesión</span>
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                   @csrf
