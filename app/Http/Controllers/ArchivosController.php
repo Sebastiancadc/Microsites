@@ -38,6 +38,7 @@ class ArchivosController extends Controller
 
         $CapacitacionAgregar = new Noticia();
         $CapacitacionAgregar->titulo = $request->titulo;
+        $CapacitacionAgregar->campana = $request->campana;
         $CapacitacionAgregar->tipo_archivo = $request->tipo_archivo;
         $CapacitacionAgregar->archivo = $name;
         $CapacitacionAgregar->save();

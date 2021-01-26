@@ -55,10 +55,6 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
                 max-height: 129px;"></a>
                 </div>
             </li>
-<<<<<<< HEAD
-
-=======
->>>>>>> 0fd36da1a85d2f7a4a19d145e9725f67b55e0e33
           </ul>
           <ul class="navbar-nav ml-lg-auto">
             <li class="nav-item">

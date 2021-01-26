@@ -4,9 +4,9 @@
     <div class="content">
         <div class="page-inner">
             @include('admin.noticias.estadisticas')
-            @if (session('agregar'))
+            @if (session('Crearpresentacion'))
             <div class="alert alert-primary" role="alert">
-                {{(session('agregar'))}}
+                {{(session('Crearpresentacion'))}}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -36,7 +36,7 @@
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title">Gestión de Presentaciones</h4>
-                                <a class="btn btn-primary btn-round ml-auto" href="{{ url('crearpresentacion') }}">
+                                <a class="btn btn-primary btn-round ml-auto" href="{{ url('admin/crearpresentacionAdmin') }}">
                                     <i class="fa fa-plus"></i>
                                     Crear Presentacion
                                 </a>

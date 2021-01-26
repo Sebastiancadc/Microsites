@@ -136,21 +136,24 @@
                                         </a>
                                     </li>
 
-                                    <li>
-                                        <a href="{{url('admin/archivos')}}">
-                                            <span class="sub-item">Archivos</span>
-                                        </a>
-                                    </li>
-
                                 </ul>
                             </div>
                         </li>
                         <li class="nav-item ">
                             <a href="{{url('admin/noticia')}}">
                                 <i class="fas fa-newspaper"></i>
-                                <p>Noticias
+                                <p>Presentaciones
                                 </p>
                             </a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a href="{{url('admin/archivos')}}">
+                                <i class="fas fa-cloud"></i>
+                                <p>Archivos
+                                </p>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

@@ -5,6 +5,8 @@
 $rol = auth()->user()->username;
 $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Roles', '=', $rol)->first();
 
+ $fechahoy = new \DateTime();
+ $fechas = $fechahoy->format('d-m-Y');
 ?><link rel="stylesheet" href="{{asset("plantilla/css/gallery.css")}}" type="text/css">
 <link rel="stylesheet" href="{{asset("plantilla/css/blog.css")}}" type="text/css">
 <link rel="stylesheet" href="{{asset("plantilla/css/landing.css")}}" type="text/css">
@@ -39,7 +41,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
 </div>
 <!-- /Header -->
 <!-- Page content -->
-@if (session('crearnoticia'))
+        @if (session('crearnoticia'))
             <div class="alert alert-success" role="alert" style="    margin-top: 37px;
             width: 92%;
             margin-left: 63px;">
@@ -48,7 +50,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            @endif
+            @endif  
             @if (session('eliminar'))
             <div class="alert alert-danger" role="alert" style="    margin-top: 37px;
             width: 92%;
@@ -60,7 +62,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
             </div>
             @endif
             @if (session('editarnoticia'))
-            <div class="alert alert-warning" role="alert" style="    margin-top: 37px;
+            <div class="alert alert-warning" role="alert" style="  margin-top: 37px;
             width: 92%;
             margin-left: 63px;">
                 {{(session('editarnoticia'))}}
@@ -76,8 +78,9 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                 <h2 class="pb-4 m-0">Artículos</h2>
             </div>
             <div id="articlesPostContent" class="col-md-12 mt-5 pt-4">
+
                 @foreach ($vercampaña as $item)
-               
+                @if(App\Helpers\Helpers::formatearFechahoy($item->fecha) == $fechas)
                 <article class="mb-5 pb-5">
                     <div class="row">
                         <div class="col-md-4 text-center">
@@ -111,6 +114,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                         </div>
                     </div>
                 </article>
+                @endif
                 @endforeach
             </div>
         </div>

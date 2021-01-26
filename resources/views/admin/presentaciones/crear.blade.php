@@ -41,7 +41,7 @@
                     <div class="span-mode"></div>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{ url('crearpresentaciones') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ url('crearpresentaciones') }}"  enctype="multipart/form-data">
                         @csrf 
                         <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                         <div class="form-group">
@@ -156,9 +156,6 @@
                 </div>
             </div>
         </div>
-    
-        {{-- <a style="margin-left: 78%;
-        top: -39px;color:white;" id="btn2" class="btn btn-danger my-4">Agregar otra pagina</a> --}}
         <a class="add btn btn-danger my-4" style="margin-left: 81%;
         top: -17px;
         color: white;
@@ -172,7 +169,6 @@
                     </div>
                     <div class="span-mode"></div>
                 </div>
-               
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
                         <input type="hidden" name="numero_pg[]" value="1">
@@ -362,7 +358,7 @@
 
             <div id="accordion">
                 <div class="card hidden" >
-                    <i class="far fa-times-circle close" style="    margin-left: 98%;"></i>
+                    <i class="far fa-times-circle close" style="margin-left: 98%;"></i>
                     <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collap6" aria-expanded="false" aria-controls="collap6">
                         <div class="span-title">
                             <h3 class="text-section">Pagina - 6</h3>
