@@ -18,7 +18,9 @@
             <div class="container-fluid mt--6">
 
                 @if (session('agregar'))
-                <div class="alert alert-primary" role="alert">
+                <div class="alert alert-success" role="alert" style="    margin-top: 37px;
+                width: 92%;
+                margin-left: 63px;">
                     {{(session('agregar'))}}
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>

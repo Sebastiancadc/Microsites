@@ -8,6 +8,7 @@ use App\User;
 use App\Category;
 use App\Helpers\Helpers;
 use App\Http\Requests\NoticiaRequest;
+use App\Presentaciones;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -25,10 +26,9 @@ class NoticiasController extends Controller
 
     public function index()
     {
-        $noticia = Noticia::paginate(4);
-        $noticiasRegistradas = DB::table('noticias')->count();
-        $programacion = DB::table('noticias')->wherecategory_id(1)->count();
-        return view('admin.noticias.index', compact('noticia', 'noticiasRegistradas', 'programacion'));
+        $noticia = Presentaciones::paginate(6);
+        $noticiasRegistradas = DB::table('presentaciones')->count();
+        return view('admin.noticias.index', compact('noticia', 'noticiasRegistradas'));
     }
     public function index2()
     {

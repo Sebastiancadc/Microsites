@@ -108,6 +108,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
     //PRESENTACION
     Route::resource('presentacion', 'PresentacionesController');
+    Route::get('crearpresentacionAdmin', 'PresentacionesController@crearpresentacionAd')->name('crearpresentacionAdmin');
+    Route::post('crearpresentacionesAdmin', 'PresentacionesController@storeAd')->name('crearpresentacionesAdmin');
     Route::get('editarpresentacionad/{id}', 'PresentacionesController@editAd')->name('editarpresentacionad');
     Route::put('updatepresentacionad/{id}', 'PresentacionesController@update')->name('update');
     Route::delete('deletepresentacion/{id}', 'PresentacionesController@destroyUs')->name('eliminarpresentacion');

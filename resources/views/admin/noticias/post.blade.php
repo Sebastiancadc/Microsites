@@ -103,9 +103,8 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                                         </div>
                                     </div>
                                 </div>
-                <a href="{{route('presentacionf', $presentacion->id)}}" target="_blank">
+                <a href="{{route('presentacionf', $presentacion->id)}}">
                 <div class="card-body">
-                   
                     <div id="sequence">
                         <ul class="seq-canvas">
                             @foreach ($titulo1 as $item)
@@ -116,7 +115,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                            @if (json_encode($item->imagen_fondo) == "null" )
                             class="step1"
                             @else
-                            style="background-image: url('{{$item->imagen_fondo}}');
+                            style="background-image: url('{{asset("$item->imagen_fondo")}}');
                              background-repeat: no-repeat;background-size:cover;"
                           @endif 
                           @endforeach>
@@ -131,7 +130,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen1 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{$item->imagen}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
                               @endif
                               @endforeach
                             </div>
@@ -146,7 +145,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @if (json_encode($item->imagen_fondo) == "null" )
                            class="step1"
                            @else
-                           style="background-image: url('{{$item->imagen_fondo}}');
+                           style="background-image: url('{{asset("$item->imagen_fondo")}}');
                             background-repeat: no-repeat;background-size:cover;"
                          @endif 
                          @endforeach>
@@ -161,7 +160,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen2 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{$item->imagen}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
                               @endif
                               @endforeach
                             </div>
@@ -176,7 +175,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @if (json_encode($item->imagen_fondo) == "null" )
                            class="step1"
                            @else
-                           style="background-image: url('{{$item->imagen_fondo}}');
+                           style="background-image: url('{{asset("$item->imagen_fondo")}}');
                             background-repeat: no-repeat;background-size:cover;"
                          @endif 
                          @endforeach>
@@ -191,7 +190,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen3 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{$item->imagen}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
                               @endif
                               @endforeach
                             </div>
@@ -207,7 +206,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @if (json_encode($item->imagen_fondo) == "null" )
                            class="step1"
                            @else
-                           style="background-image: url('{{$item->imagen_fondo}}');
+                           style="background-image: url('{{asset("$item->imagen_fondo")}}');
                             background-repeat: no-repeat;background-size:cover;"
                          @endif 
                          @endforeach>
@@ -222,7 +221,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen4 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{$item->imagen}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
                               @endif
                               @endforeach
                             </div>
@@ -237,7 +236,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @if (json_encode($item->imagen_fondo) == "null" )
                            class="step1"
                            @else
-                           style="background-image: url('{{$item->imagen_fondo}}');
+                           style="background-image: url('{{asset("$item->imagen_fondo")}}');
                             background-repeat: no-repeat;background-size:cover;"
                          @endif 
                          @endforeach>
@@ -251,7 +250,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen5 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{$item->imagen}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
                               @endif
                               @endforeach
                             </div>
@@ -266,7 +265,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @if (json_encode($item->imagen_fondo) == "null" )
                            class="step1"
                            @else
-                           style="background-image: url('{{$item->imagen_fondo}}');
+                           style="background-image: url('{{asset("$item->imagen_fondo")}}');
                             background-repeat: no-repeat;background-size:cover;"
                          @endif 
                          @endforeach>
@@ -280,7 +279,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen6 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{$item->imagen}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
                               @endif
                               @endforeach
                             </div>
@@ -295,7 +294,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @if (json_encode($item->imagen_fondo) == "null" )
                            class="step1"
                            @else
-                           style="background-image: url('{{$item->imagen_fondo}}');
+                           style="background-image: url('{{asset("$item->imagen_fondo")}}');
                             background-repeat: no-repeat;background-size:cover;"
                          @endif 
                          @endforeach>
@@ -309,7 +308,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen7 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{$item->imagen}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
                               @endif
                               @endforeach
                             </div>
@@ -324,7 +323,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @if (json_encode($item->imagen_fondo) == "null" )
                            class="step1"
                            @else
-                           style="background-image: url('{{$item->imagen_fondo}}');
+                           style="background-image: url('{{asset("$item->imagen_fondo")}}');
                             background-repeat: no-repeat;background-size:cover;"
                          @endif 
                          @endforeach>
@@ -338,7 +337,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen8 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{$item->imagen}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
                               @endif
                               @endforeach
                             </div>
@@ -353,7 +352,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @if (json_encode($item->imagen_fondo) == "null" )
                            class="step1"
                            @else
-                           style="background-image: url('{{$item->imagen_fondo}}');
+                           style="background-image: url('{{asset("$item->imagen_fondo")}}');
                             background-repeat: no-repeat;background-size:cover;"
                          @endif 
                          @endforeach>
@@ -367,7 +366,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen9 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{$item->imagen}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
                               @endif
                               @endforeach
                             </div>
@@ -382,7 +381,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @if (json_encode($item->imagen_fondo) == "null" )
                            class="step1"
                            @else
-                           style="background-image: url('{{$item->imagen_fondo}}');
+                           style="background-image: url('{{asset("$item->imagen_fondo")}}');
                             background-repeat: no-repeat;background-size:cover;"
                          @endif 
                          @endforeach>
@@ -396,7 +395,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen10 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{$item->imagen}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
                               @endif
                               @endforeach
                             </div>
@@ -411,7 +410,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @if (json_encode($item->imagen_fondo) == "null" )
                            class="step1"
                            @else
-                           style="background-image: url('{{$item->imagen_fondo}}');
+                           style="background-image: url('{{asset("$item->imagen_fondo")}}');
                             background-repeat: no-repeat;background-size:cover;"
                          @endif 
                          @endforeach>
@@ -425,7 +424,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen11 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{$item->imagen}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
                               @endif
                               @endforeach
                             </div>
@@ -440,7 +439,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @if (json_encode($item->imagen_fondo) == "null" )
                            class="step1"
                            @else
-                           style="background-image: url('{{$item->imagen_fondo}}');
+                           style="background-image: url('{{asset("$item->imagen_fondo")}}');
                             background-repeat: no-repeat;background-size:cover;"
                          @endif 
                          @endforeach>
@@ -454,7 +453,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen12 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{$item->imagen}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
                               @endif
                               @endforeach
                             </div>
@@ -469,7 +468,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @if (json_encode($item->imagen_fondo) == "null" )
                            class="step1"
                            @else
-                           style="background-image: url('{{$item->imagen_fondo}}');
+                           style="background-image: url('{{asset("$item->imagen_fondo")}}');
                             background-repeat: no-repeat;background-size:cover;"
                          @endif 
                          @endforeach>
@@ -483,7 +482,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen13 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{$item->imagen}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
                               @endif
                               @endforeach
                             </div>
@@ -498,7 +497,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @if (json_encode($item->imagen_fondo) == "null" )
                            class="step1"
                            @else
-                           style="background-image: url('{{$item->imagen_fondo}}');
+                           style="background-image: url('{{asset("$item->imagen_fondo")}}');
                             background-repeat: no-repeat;background-size:cover;"
                          @endif 
                          @endforeach>
@@ -512,7 +511,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen14 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{$item->imagen}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
                               @endif
                               @endforeach
                             </div>
@@ -527,7 +526,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @if (json_encode($item->imagen_fondo) == "null" )
                            class="step1"
                            @else
-                           style="background-image: url('{{$item->imagen_fondo}}');
+                           style="background-image: url('{{asset("$item->imagen_fondo")}}');
                             background-repeat: no-repeat;background-size:cover;"
                          @endif 
                          @endforeach>
@@ -541,7 +540,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen15 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{$item->imagen}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
                               @endif
                               @endforeach
                             </div>
@@ -556,7 +555,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @if (json_encode($item->imagen_fondo) == "null" )
                            class="step1"
                            @else
-                           style="background-image: url('{{$item->imagen_fondo}}');
+                           style="background-image: url('{{asset("$item->imagen_fondo")}}');
                             background-repeat: no-repeat;background-size:cover;"
                          @endif 
                          @endforeach>
@@ -570,7 +569,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen16 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{$item->imagen}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
                               @endif
                               @endforeach
                             </div>
@@ -585,7 +584,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @if (json_encode($item->imagen_fondo) == "null" )
                            class="step1"
                            @else
-                           style="background-image: url('{{$item->imagen_fondo}}');
+                           style="background-image: url('{{asset("$item->imagen_fondo")}}');
                             background-repeat: no-repeat;background-size:cover;"
                          @endif 
                          @endforeach>
@@ -599,7 +598,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen17 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{$item->imagen}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
                               @endif
                               @endforeach
                             </div>
@@ -614,7 +613,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @if (json_encode($item->imagen_fondo) == "null" )
                            class="step1"
                            @else
-                           style="background-image: url('{{$item->imagen_fondo}}');
+                           style="background-image: url('{{asset("$item->imagen_fondo")}}');
                             background-repeat: no-repeat;background-size:cover;"
                          @endif 
                          @endforeach>
@@ -628,7 +627,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen18 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{$item->imagen}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
                               @endif
                               @endforeach
                             </div>
@@ -643,7 +642,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @if (json_encode($item->imagen_fondo) == "null" )
                            class="step1"
                            @else
-                           style="background-image: url('{{$item->imagen_fondo}}');
+                           style="background-image: url('{{asset("$item->imagen_fondo")}}');
                             background-repeat: no-repeat;background-size:cover;"
                          @endif 
                          @endforeach>
@@ -657,7 +656,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen19 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{$item->imagen}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
                               @endif
                               @endforeach
                             </div>
@@ -672,7 +671,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                           @if (json_encode($item->imagen_fondo) == "null" )
                            class="step1"
                            @else
-                           style="background-image: url('{{$item->imagen_fondo}}');
+                           style="background-image: url('{{asset("$item->imagen_fondo")}}');
                             background-repeat: no-repeat;background-size:cover;"
                          @endif 
                          @endforeach>
@@ -686,7 +685,7 @@ $campaña = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('Rol
                               @foreach ($imagen20 as $item)
                               @if (json_encode($item->imagen) == "null")
                               @else
-                              <img src="{{$item->imagen}}" height="300" width="500">
+                              <img src="{{asset("$item->imagen")}}" height="300" width="500">
                               @endif
                               @endforeach
                             </div>

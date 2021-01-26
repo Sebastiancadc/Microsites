@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class PresentacionesController extends Controller
 {
@@ -45,109 +46,110 @@ class PresentacionesController extends Controller
         }
         return view('admin.noticias.noticia', compact('vercampaña'));
     }
+
     public function post($title)
     {
         $presentacion = Presentaciones::where('title', $title)->first();
         $ids = $presentacion->id;
-        $titulo1 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 1 and id = $ids");
-        $contenido1 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 1 and id = $ids");
-        $imagen1 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 1 and id = $ids");
-        $imagen_fondo1 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 1 and id = $ids");
+        $titulo1 = DB::select("SELECT Max(titulo) as titulo FROM diapositiva WHERE numero_pg = 1 and id = $ids");
+        $contenido1 = DB::select("SELECT MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 1 and id = $ids");
+        $imagen1 = DB::select("SELECT MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 1 and id = $ids");
+        $imagen_fondo1 = DB::select("SELECT MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 1 and id = $ids");
 
-        $titulo2 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 2 and id = $ids");
-        $contenido2 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 2 and id = $ids");
-        $imagen2 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 2 and id = $ids");
-        $imagen_fondo2 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 2 and id = $ids");
+        $titulo2 = DB::select("SELECT MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 2 and id = $ids");
+        $contenido2 = DB::select("SELECT MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 2 and id = $ids");
+        $imagen2 = DB::select("SELECT MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 2 and id = $ids");
+        $imagen_fondo2 = DB::select("SELECT MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 2 and id = $ids");
 
-        $titulo3 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 3 and id = $ids");
-        $contenido3 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 3 and id = $ids");
-        $imagen3 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 3 and id = $ids");
-        $imagen_fondo3 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 3 and id = $ids");
+        $titulo3 = DB::select("SELECT MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 3 and id = $ids");
+        $contenido3 = DB::select("SELECT  MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 3 and id = $ids");
+        $imagen3 = DB::select("SELECT  MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 3 and id = $ids");
+        $imagen_fondo3 = DB::select("SELECT  MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 3 and id = $ids");
 
-        $titulo4 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 4 and id = $ids");
-        $contenido4 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 4 and id = $ids");
-        $imagen4 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 4 and id = $ids");
-        $imagen_fondo4 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 4 and id = $ids");
+        $titulo4 = DB::select("SELECT  MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 4 and id = $ids");
+        $contenido4 = DB::select("SELECT  MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 4 and id = $ids");
+        $imagen4 = DB::select("SELECT  MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 4 and id = $ids");
+        $imagen_fondo4 = DB::select("SELECT  MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 4 and id = $ids");
 
-        $titulo5 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 5 and id = $ids");
-        $contenido5 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 5 and id = $ids");
-        $imagen5 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 5 and id = $ids");
-        $imagen_fondo5 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 5 and id = $ids");
+        $titulo5 = DB::select("SELECT  MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 5 and id = $ids");
+        $contenido5 = DB::select("SELECT  MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 5 and id = $ids");
+        $imagen5 = DB::select("SELECT  MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 5 and id = $ids");
+        $imagen_fondo5 = DB::select("SELECT  MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 5 and id = $ids");
 
-        $titulo6 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 6 and id = $ids");
-        $contenido6 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 6 and id = $ids");
-        $imagen6 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 6 and id = $ids");
-        $imagen_fondo6 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 6 and id = $ids");
+        $titulo6 = DB::select("SELECT  MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 6 and id = $ids");
+        $contenido6 = DB::select("SELECT  MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 6 and id = $ids");
+        $imagen6 = DB::select("SELECT  MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 6 and id = $ids");
+        $imagen_fondo6 = DB::select("SELECT  MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 6 and id = $ids");
 
-        $titulo7 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 7 and id = $ids");
-        $contenido7 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 7 and id = $ids");
-        $imagen7 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 7 and id = $ids");
-        $imagen_fondo7 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 7 and id = $ids");
+        $titulo7 = DB::select("SELECT  MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 7 and id = $ids");
+        $contenido7 = DB::select("SELECT  MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 7 and id = $ids");
+        $imagen7 = DB::select("SELECT  MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 7 and id = $ids");
+        $imagen_fondo7 = DB::select("SELECT  MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 7 and id = $ids");
 
-        $titulo8 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 8 and id = $ids");
-        $contenido8 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 8 and id = $ids");
-        $imagen8 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 8 and id = $ids");
-        $imagen_fondo8 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 8 and id = $ids");
+        $titulo8 = DB::select("SELECT  MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 8 and id = $ids");
+        $contenido8 = DB::select("SELECT  MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 8 and id = $ids");
+        $imagen8 = DB::select("SELECT  MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 8 and id = $ids");
+        $imagen_fondo8 = DB::select("SELECT  MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 8 and id = $ids");
 
-        $titulo9 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 9 and id = $ids");
-        $contenido9 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 9 and id = $ids");
-        $imagen9 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 9 and id = $ids");
-        $imagen_fondo9 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 9 and id = $ids");
+        $titulo9 = DB::select("SELECT  MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 9 and id = $ids");
+        $contenido9 = DB::select("SELECT  MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 9 and id = $ids");
+        $imagen9 = DB::select("SELECT  MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 9 and id = $ids");
+        $imagen_fondo9 = DB::select("SELECT  MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 9 and id = $ids");
 
-        $titulo10 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 10 and id = $ids");
-        $contenido10 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 10 and id = $ids");
-        $imagen10 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 10 and id = $ids");
-        $imagen_fondo10 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 10 and id = $ids");
+        $titulo10 = DB::select("SELECT  MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 10 and id = $ids");
+        $contenido10 = DB::select("SELECT  MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 10 and id = $ids");
+        $imagen10 = DB::select("SELECT  MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 10 and id = $ids");
+        $imagen_fondo10 = DB::select("SELECT  MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 10 and id = $ids");
 
-        $titulo11 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 11 and id = $ids");
-        $contenido11 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 11 and id = $ids");
-        $imagen11 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 11 and id = $ids");
-        $imagen_fondo11 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 11 and id = $ids");
+        $titulo11 = DB::select("SELECT  MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 11 and id = $ids");
+        $contenido11 = DB::select("SELECT  MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 11 and id = $ids");
+        $imagen11 = DB::select("SELECT  MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 11 and id = $ids");
+        $imagen_fondo11 = DB::select("SELECT  MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 11 and id = $ids");
 
-        $titulo12 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 12 and id = $ids");
-        $contenido12 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 12 and id = $ids");
-        $imagen12 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 12 and id = $ids");
-        $imagen_fondo12 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 12 and id = $ids");
+        $titulo12 = DB::select("SELECT  MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 12 and id = $ids");
+        $contenido12 = DB::select("SELECT  MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 12 and id = $ids");
+        $imagen12 = DB::select("SELECT  MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 12 and id = $ids");
+        $imagen_fondo12 = DB::select("SELECT MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 12 and id = $ids");
 
-        $titulo13 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 13 and id = $ids");
-        $contenido13 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 13 and id = $ids");
-        $imagen13 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 13 and id = $ids");
-        $imagen_fondo13 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 13 and id = $ids");
+        $titulo13 = DB::select("SELECT  MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 13 and id = $ids");
+        $contenido13 = DB::select("SELECT  MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 13 and id = $ids");
+        $imagen13 = DB::select("SELECT  MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 13 and id = $ids");
+        $imagen_fondo13 = DB::select("SELECT  MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 13 and id = $ids");
 
-        $titulo14 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 14 and id = $ids");
-        $contenido14 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 14 and id = $ids");
-        $imagen14 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 14 and id = $ids");
-        $imagen_fondo14 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 14 and id = $ids");
+        $titulo14 = DB::select("SELECT  MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 14 and id = $ids");
+        $contenido14 = DB::select("SELECT  MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 14 and id = $ids");
+        $imagen14 = DB::select("SELECT  MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 14 and id = $ids");
+        $imagen_fondo14 = DB::select("SELECT  MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 14 and id = $ids");
         
-        $titulo15 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 15 and id = $ids");
-        $contenido15 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 15 and id = $ids");
-        $imagen15 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 15 and id = $ids");
-        $imagen_fondo15 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 15 and id = $ids"); 
+        $titulo15 = DB::select("SELECT  MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 15 and id = $ids");
+        $contenido15 = DB::select("SELECT  MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 15 and id = $ids");
+        $imagen15 = DB::select("SELECT  MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 15 and id = $ids");
+        $imagen_fondo15 = DB::select("SELECT  MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 15 and id = $ids"); 
 
-        $titulo16 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 16 and id = $ids");
-        $contenido16 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 16 and id = $ids");
-        $imagen16 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 16 and id = $ids");
-        $imagen_fondo16 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 16 and id = $ids");
+        $titulo16 = DB::select("SELECT  MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 16 and id = $ids");
+        $contenido16 = DB::select("SELECT  MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 16 and id = $ids");
+        $imagen16 = DB::select("SELECT  MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 16 and id = $ids");
+        $imagen_fondo16 = DB::select("SELECT  MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 16 and id = $ids");
 
-        $titulo17 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 17 and id = $ids");
-        $contenido17 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 17 and id = $ids");
-        $imagen17 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 17 and id = $ids");
-        $imagen_fondo17 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 17 and id = $ids");
+        $titulo17 = DB::select("SELECT  MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 17 and id = $ids");
+        $contenido17 = DB::select("SELECT  MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 17 and id = $ids");
+        $imagen17 = DB::select("SELECT  MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 17 and id = $ids");
+        $imagen_fondo17 = DB::select("SELECT  MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 17 and id = $ids");
 
-        $titulo18 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 18 and id = $ids");
-        $contenido18 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 18 and id = $ids");
-        $imagen18 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 18 and id = $ids");
-        $imagen_fondo18 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 18 and id = $ids");
+        $titulo18 = DB::select("SELECT  MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 18 and id = $ids");
+        $contenido18 = DB::select("SELECT  MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 18 and id = $ids");
+        $imagen18 = DB::select("SELECT  MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 18 and id = $ids");
+        $imagen_fondo18 = DB::select("SELECT  MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 18 and id = $ids");
 
-        $titulo19 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 19 and id = $ids");
-        $contenido19 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 19 and id = $ids");
-        $imagen19 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 19 and id = $ids");
-        $imagen_fondo19 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 19 and id = $ids");
+        $titulo19 = DB::select("SELECT  MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 19 and id = $ids");
+        $contenido19 = DB::select("SELECT  MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 19 and id = $ids");
+        $imagen19 = DB::select("SELECT  MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 19 and id = $ids");
+        $imagen_fondo19 = DB::select("SELECT  MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 19 and id = $ids");
 
-        $titulo20 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 20 and id = $ids");
-        $contenido20 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 20 and id = $ids");
-        $imagen20 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 20 and id = $ids");
-        $imagen_fondo20 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 20 and id = $ids");
+        $titulo20 = DB::select("SELECT  MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 20 and id = $ids");
+        $contenido20 = DB::select("SELECT  MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 20 and id = $ids");
+        $imagen20 = DB::select("SELECT  MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 20 and id = $ids");
+        $imagen_fondo20 = DB::select("SELECT  MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 20 and id = $ids");
 
         return view('admin.noticias.post', compact('presentacion',
         'titulo1','contenido1','imagen1','imagen_fondo1',
@@ -170,8 +172,6 @@ class PresentacionesController extends Controller
         'titulo18','contenido18','imagen18','imagen_fondo18',
         'titulo19','contenido19','imagen19','imagen_fondo19',
         'titulo20','contenido20','imagen20','imagen_fondo20'
-
-
     ));
     }
 
@@ -179,105 +179,105 @@ class PresentacionesController extends Controller
     {
         $presentacion = Presentaciones::where('id', $id)->first();
         $ids = $presentacion->id;
-        $titulo1 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 1 and id = $ids");
-        $contenido1 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 1 and id = $ids");
-        $imagen1 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 1 and id = $ids");
-        $imagen_fondo1 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 1 and id = $ids");
+        $titulo1 = DB::select("SELECT MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 1 and id = $ids");
+        $contenido1 = DB::select("SELECT MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 1 and id = $ids");
+        $imagen1 = DB::select("SELECT MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 1 and id = $ids");
+        $imagen_fondo1 = DB::select("SELECT MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 1 and id = $ids");
 
-        $titulo2 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 2 and id = $ids");
-        $contenido2 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 2 and id = $ids");
-        $imagen2 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 2 and id = $ids");
-        $imagen_fondo2 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 2 and id = $ids");
+        $titulo2 = DB::select("SELECT MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 2 and id = $ids");
+        $contenido2 = DB::select("SELECT MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 2 and id = $ids");
+        $imagen2 = DB::select("SELECT MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 2 and id = $ids");
+        $imagen_fondo2 = DB::select("SELECT MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 2 and id = $ids");
 
-        $titulo3 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 3 and id = $ids");
-        $contenido3 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 3 and id = $ids");
-        $imagen3 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 3 and id = $ids");
-        $imagen_fondo3 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 3 and id = $ids");
+        $titulo3 = DB::select("SELECT MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 3 and id = $ids");
+        $contenido3 = DB::select("SELECT MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 3 and id = $ids");
+        $imagen3 = DB::select("SELECT MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 3 and id = $ids");
+        $imagen_fondo3 = DB::select("SELECT MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 3 and id = $ids");
 
-        $titulo4 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 4 and id = $ids");
-        $contenido4 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 4 and id = $ids");
-        $imagen4 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 4 and id = $ids");
-        $imagen_fondo4 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 4 and id = $ids");
+        $titulo4 = DB::select("SELECT MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 4 and id = $ids");
+        $contenido4 = DB::select("SELECT MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 4 and id = $ids");
+        $imagen4 = DB::select("SELECT MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 4 and id = $ids");
+        $imagen_fondo4 = DB::select("SELECT  MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 4 and id = $ids");
 
-        $titulo5 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 5 and id = $ids");
-        $contenido5 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 5 and id = $ids");
-        $imagen5 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 5 and id = $ids");
-        $imagen_fondo5 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 5 and id = $ids");
+        $titulo5 = DB::select("SELECT MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 5 and id = $ids");
+        $contenido5 = DB::select("SELECT MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 5 and id = $ids");
+        $imagen5 = DB::select("SELECT MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 5 and id = $ids");
+        $imagen_fondo5 = DB::select("SELECT MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 5 and id = $ids");
 
-        $titulo6 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 6 and id = $ids");
-        $contenido6 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 6 and id = $ids");
-        $imagen6 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 6 and id = $ids");
-        $imagen_fondo6 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 6 and id = $ids");
+        $titulo6 = DB::select("SELECT MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 6 and id = $ids");
+        $contenido6 = DB::select("SELECT MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 6 and id = $ids");
+        $imagen6 = DB::select("SELECT MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 6 and id = $ids");
+        $imagen_fondo6 = DB::select("SELECT MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 6 and id = $ids");
 
-        $titulo7 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 7 and id = $ids");
-        $contenido7 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 7 and id = $ids");
-        $imagen7 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 7 and id = $ids");
-        $imagen_fondo7 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 7 and id = $ids");
+        $titulo7 = DB::select("SELECT MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 7 and id = $ids");
+        $contenido7 = DB::select("SELECT MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 7 and id = $ids");
+        $imagen7 = DB::select("SELECT MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 7 and id = $ids");
+        $imagen_fondo7 = DB::select("SELECT MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 7 and id = $ids");
 
-        $titulo8 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 8 and id = $ids");
-        $contenido8 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 8 and id = $ids");
-        $imagen8 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 8 and id = $ids");
-        $imagen_fondo8 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 8 and id = $ids");
+        $titulo8 = DB::select("SELECT MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 8 and id = $ids");
+        $contenido8 = DB::select("SELECT MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 8 and id = $ids");
+        $imagen8 = DB::select("SELECT MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 8 and id = $ids");
+        $imagen_fondo8 = DB::select("SELECT MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 8 and id = $ids");
 
-        $titulo9 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 9 and id = $ids");
-        $contenido9 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 9 and id = $ids");
-        $imagen9 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 9 and id = $ids");
-        $imagen_fondo9 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 9 and id = $ids");
+        $titulo9 = DB::select("SELECT MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 9 and id = $ids");
+        $contenido9 = DB::select("SELECT MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 9 and id = $ids");
+        $imagen9 = DB::select("SELECT MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 9 and id = $ids");
+        $imagen_fondo9 = DB::select("SELECT MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 9 and id = $ids");
 
-        $titulo10 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 10 and id = $ids");
-        $contenido10 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 10 and id = $ids");
-        $imagen10 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 10 and id = $ids");
-        $imagen_fondo10 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 10 and id = $ids");
+        $titulo10 = DB::select("SELECT MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 10 and id = $ids");
+        $contenido10 = DB::select("SELECT MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 10 and id = $ids");
+        $imagen10 = DB::select("SELECT MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 10 and id = $ids");
+        $imagen_fondo10 = DB::select("SELECT MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 10 and id = $ids");
 
-        $titulo11 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 11 and id = $ids");
-        $contenido11 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 11 and id = $ids");
-        $imagen11 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 11 and id = $ids");
-        $imagen_fondo11 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 11 and id = $ids");
+        $titulo11 = DB::select("SELECT MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 11 and id = $ids");
+        $contenido11 = DB::select("SELECT MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 11 and id = $ids");
+        $imagen11 = DB::select("SELECT MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 11 and id = $ids");
+        $imagen_fondo11 = DB::select("SELECT MAX(imagen_fondo)as imagen_fondo FROM diapositiva WHERE numero_pg = 11 and id = $ids");
 
-        $titulo12 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 12 and id = $ids");
-        $contenido12 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 12 and id = $ids");
-        $imagen12 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 12 and id = $ids");
-        $imagen_fondo12 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 12 and id = $ids");
+        $titulo12 = DB::select("SELECT MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 12 and id = $ids");
+        $contenido12 = DB::select("SELECT MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 12 and id = $ids");
+        $imagen12 = DB::select("SELECT MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 12 and id = $ids");
+        $imagen_fondo12 = DB::select("SELECT MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 12 and id = $ids");
 
-        $titulo13 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 13 and id = $ids");
-        $contenido13 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 13 and id = $ids");
-        $imagen13 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 13 and id = $ids");
-        $imagen_fondo13 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 13 and id = $ids");
+        $titulo13 = DB::select("SELECT MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 13 and id = $ids");
+        $contenido13 = DB::select("SELECT MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 13 and id = $ids");
+        $imagen13 = DB::select("SELECT MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 13 and id = $ids");
+        $imagen_fondo13 = DB::select("SELECT MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 13 and id = $ids");
 
-        $titulo14 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 14 and id = $ids");
-        $contenido14 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 14 and id = $ids");
-        $imagen14 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 14 and id = $ids");
-        $imagen_fondo14 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 14 and id = $ids");
+        $titulo14 = DB::select("SELECT MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 14 and id = $ids");
+        $contenido14 = DB::select("SELECT MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 14 and id = $ids");
+        $imagen14 = DB::select("SELECT MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 14 and id = $ids");
+        $imagen_fondo14 = DB::select("SELECT MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 14 and id = $ids");
         
-        $titulo15 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 15 and id = $ids");
-        $contenido15 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 15 and id = $ids");
-        $imagen15 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 15 and id = $ids");
-        $imagen_fondo15 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 15 and id = $ids"); 
+        $titulo15 = DB::select("SELECT MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 15 and id = $ids");
+        $contenido15 = DB::select("SELECT MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 15 and id = $ids");
+        $imagen15 = DB::select("SELECT MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 15 and id = $ids");
+        $imagen_fondo15 = DB::select("SELECT MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 15 and id = $ids"); 
 
-        $titulo16 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 16 and id = $ids");
-        $contenido16 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 16 and id = $ids");
-        $imagen16 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 16 and id = $ids");
-        $imagen_fondo16 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 16 and id = $ids");
+        $titulo16 = DB::select("SELECT MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 16 and id = $ids");
+        $contenido16 = DB::select("SELECT MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 16 and id = $ids");
+        $imagen16 = DB::select("SELECT MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 16 and id = $ids");
+        $imagen_fondo16 = DB::select("SELECT MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 16 and id = $ids");
 
-        $titulo17 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 17 and id = $ids");
-        $contenido17 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 17 and id = $ids");
-        $imagen17 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 17 and id = $ids");
-        $imagen_fondo17 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 17 and id = $ids");
+        $titulo17 = DB::select("SELECT MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 17 and id = $ids");
+        $contenido17 = DB::select("SELECT MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 17 and id = $ids");
+        $imagen17 = DB::select("SELECT MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 17 and id = $ids");
+        $imagen_fondo17 = DB::select("SELECT MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 17 and id = $ids");
 
-        $titulo18 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 18 and id = $ids");
-        $contenido18 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 18 and id = $ids");
-        $imagen18 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 18 and id = $ids");
-        $imagen_fondo18 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 18 and id = $ids");
+        $titulo18 = DB::select("SELECT MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 18 and id = $ids");
+        $contenido18 = DB::select("SELECT MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 18 and id = $ids");
+        $imagen18 = DB::select("SELECT MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 18 and id = $ids");
+        $imagen_fondo18 = DB::select("SELECT MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 18 and id = $ids");
 
-        $titulo19 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 19 and id = $ids");
-        $contenido19 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 19 and id = $ids");
-        $imagen19 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 19 and id = $ids");
-        $imagen_fondo19 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 19 and id = $ids");
+        $titulo19 = DB::select("SELECT MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 19 and id = $ids");
+        $contenido19 = DB::select("SELECT MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 19 and id = $ids");
+        $imagen19 = DB::select("SELECT MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 19 and id = $ids");
+        $imagen_fondo19 = DB::select("SELECT MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 19 and id = $ids");
 
-        $titulo20 = DB::select("SELECT titulo as titulo FROM diapositiva WHERE numero_pg = 20 and id = $ids");
-        $contenido20 = DB::select("SELECT contenido as contenido FROM diapositiva WHERE numero_pg = 20 and id = $ids");
-        $imagen20 = DB::select("SELECT imagen as imagen FROM diapositiva WHERE numero_pg = 20 and id = $ids");
-        $imagen_fondo20 = DB::select("SELECT imagen_fondo as imagen_fondo FROM diapositiva WHERE numero_pg = 20 and id = $ids");
+        $titulo20 = DB::select("SELECT MAX(titulo) as titulo FROM diapositiva WHERE numero_pg = 20 and id = $ids");
+        $contenido20 = DB::select("SELECT MAX(contenido) as contenido FROM diapositiva WHERE numero_pg = 20 and id = $ids");
+        $imagen20 = DB::select("SELECT MAX(imagen) as imagen FROM diapositiva WHERE numero_pg = 20 and id = $ids");
+        $imagen_fondo20 = DB::select("SELECT MAX(imagen_fondo) as imagen_fondo FROM diapositiva WHERE numero_pg = 20 and id = $ids");
 
         return view('admin.presentaciones.index', compact('presentacion',
         'titulo1','contenido1','imagen1','imagen_fondo1',
@@ -303,14 +303,16 @@ class PresentacionesController extends Controller
     ));
     }
 
-
-
-
-
     public function crearpresentacion()
     {
         $vercampaña = DB::select("SELECT * FROM rol WHERE Roles <> 'admin'");
         return view('admin.presentaciones.crear', compact('vercampaña'));
+    }
+
+    public function crearpresentacionAd()
+    {
+        $vercampaña = DB::select("SELECT * FROM rol WHERE Roles <> 'admin'");
+        return view('admin.presentaciones.crearad', compact('vercampaña'));
     }
 
     public function store(PresentacionRequest $request)
@@ -328,27 +330,82 @@ class PresentacionesController extends Controller
         $presentaciones->colorcontenido = $request->colorcontenido;
         $presentaciones->fecha = Carbon::createFromFormat('d/m/Y', $request->fecha);
         $presentaciones->save();
-
-        foreach ($request->titulo as $key => $value) {
+    
+        foreach ($request->titulo as $key => $value) { 
             $diapositiva = new Diapositivas();
             $diapositiva->user_id = $request->user_id;
             $diapositiva->number = $request->id;
             $diapositiva->id = $request->id;
             $diapositiva->numero_pg = $request->numero_pg[$key];
             $diapositiva->titulo = $request->titulo[$key];
-            if(isset($diapositiva->imagen)){
-                $diapositiva->imagen = $request->imagen[$key];
+
+           if(isset($request->imagen[$key])){
+            if ($request->hasFile('imagen')) {
+                $imagen1 = $request->file('imagen');
+                $nombreImage1= $imagen1[$key]->getClientOriginalName();
+                $diapositiva->imagen= '/imagenes/posts/' . $nombreImage1;
+                $imagen1[$key]->move(public_path() . '/imagenes/posts/', $nombreImage1);
             }
-            if(isset($diapositiva->imagen_fondo)){
-                $diapositiva->imagen_fondo = $request->imagen_fondo[$key];
+            if ($request->hasFile('imagen_fondo')) {
+                $imagen2 = $request->file('imagen_fondo');
+                $nombreImage2 = $imagen2[$key]->getClientOriginalName();
+                $diapositiva->imagen_fondo= '/imagenes/fondo/' . $nombreImage2;
+                $imagen2[$key]->move(public_path() . '/imagenes/fondo/', $nombreImage2);   
             }
+           }
             $diapositiva->contenido = $request->contenido[$key];
             $diapositiva->campana = $request->campana;
-            $diapositiva->save();
+            $diapositiva->save();            
         }
-
         return redirect()->action('PresentacionesController@index2')->with('crearnoticia', 'La presentacion se creo correctamente');
     }
+ 
+
+
+    public function storeAd(PresentacionRequest $request)
+    {
+        $presentaciones = new Presentaciones();
+        $presentaciones->id = $request->id;
+        $presentaciones->user_id = $request->user_id;
+        $presentaciones->number = $request->id;
+        $presentaciones->title = $request->title;
+        $presentaciones->campana = $request->campana;
+        $presentaciones->time = $request->time;
+        $presentaciones->color = $request->color;
+        $presentaciones->colortitulos = $request->colortitulos;
+        $presentaciones->colorcontenido = $request->colorcontenido;
+        $presentaciones->fecha = $request->fecha;
+        $presentaciones->save();
+    
+        foreach ($request->titulo as $key => $value) { 
+            $diapositiva = new Diapositivas();
+            $diapositiva->user_id = $request->user_id;
+            $diapositiva->number = $request->id;
+            $diapositiva->id = $request->id;
+            $diapositiva->numero_pg = $request->numero_pg[$key];
+            $diapositiva->titulo = $request->titulo[$key];
+
+           if(isset($request->imagen[$key])){
+            if ($request->hasFile('imagen')) {
+                $imagen1 = $request->file('imagen');
+                $nombreImage1= $imagen1[$key]->getClientOriginalName();
+                $diapositiva->imagen= '/imagenes/posts/' . $nombreImage1;
+                $imagen1[$key]->move(public_path() . '/imagenes/posts/', $nombreImage1);
+            }
+            if ($request->hasFile('imagen_fondo')) {
+                $imagen2 = $request->file('imagen_fondo');
+                $nombreImage2 = $imagen2[$key]->getClientOriginalName();
+                $diapositiva->imagen_fondo= '/imagenes/fondo/' . $nombreImage2;
+                $imagen2[$key]->move(public_path() . '/imagenes/fondo/', $nombreImage2);   
+            }
+           }
+            $diapositiva->contenido = $request->contenido[$key];
+            $diapositiva->campana = $request->campana;
+            $diapositiva->save();            
+        }
+        return redirect()->action('PresentacionesController@index')->with('Crearpresentacion', 'La presentacion se creo correctamente');
+    }
+
 
     public function edit($id)
     {   
@@ -610,11 +667,10 @@ class PresentacionesController extends Controller
 
     public function update(Request $request, $id)
     {
-       
         $noticiaUpdate = Presentaciones::findOrFail($id);
         $noticiaUpdate->save();
         $noticia = Presentaciones::find($id);
-        $noticia->fecha = Carbon::createFromFormat('Y-m-d', $request->fecha);
+        $noticia->fecha = $request->fecha;
         $noticia->update($request->all());
 
         foreach ($request->titulo as $key => $value) {
@@ -624,25 +680,23 @@ class PresentacionesController extends Controller
             $diapositiva->number = $request->id;
             $diapositiva->numero_pg = $request->numero_pg[$key];
             $diapositiva->titulo = $request->titulo[$key];
-            $diapositiva->imagen_fondo = $request->imagen_fondo[$key];
             $diapositiva->imagen = $request->imagen[$key];
+            $diapositiva->imagen_fondo = $request->imagen_fondo[$key];
             $diapositiva->contenido = $request->contenido[$key];
             $diapositiva->campana = $request->campana;
             $diapositiva->save();
         }
-        
+
         return redirect()->action('PresentacionesController@index')->with('editarnoticia', 'Presentacion actualizada correctamente');
     }
 
     public function updateUs(Request $request, $id)
     {
-
         $noticiaUpdate = Presentaciones::findOrFail($id);
         $noticiaUpdate->save();
         $noticia = Presentaciones::find($id);
         $noticia->fecha = Carbon::createFromFormat('Y-m-d', $request->fecha);
         $noticia->update($request->all());
-
         foreach ($request->titulo as $key => $value) {
             $diapositiva = new Diapositivas();
             $diapositiva->user_id = $request->user_id;
@@ -650,8 +704,8 @@ class PresentacionesController extends Controller
             $diapositiva->number = $request->id;
             $diapositiva->numero_pg = $request->numero_pg[$key];
             $diapositiva->titulo = $request->titulo[$key];
-            $diapositiva->imagen_fondo = $request->imagen_fondo[$key];
             $diapositiva->imagen = $request->imagen[$key];
+            $diapositiva->imagen_fondo = $request->imagen_fondo[$key];
             $diapositiva->contenido = $request->contenido[$key];
             $diapositiva->campana = $request->campana;
             $diapositiva->save();

@@ -148,14 +148,16 @@
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                 @foreach ($imagen1 as $item)
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen[]" value="{{$item->imagen}}">
+                                <img src="{{asset("$item->imagen")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="hidden" name="imagen[]" value="{{$item->imagen}}">
                                 @endforeach
                             </li>
 
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
                                 @foreach ($imagen_fondo1 as $item)
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]" value="{{$item->imagen_fondo}}">
+                                <img src="{{asset("$item->imagen_fondo")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="hidden" name="imagen_fondo[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
@@ -195,14 +197,18 @@
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
+                                
                                 @foreach ($imagen2 as $item)
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen[]" value="{{$item->imagen}}">
+                                <img src="{{asset("$item->imagen")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="hidden" name="imagen[]" value="{{$item->imagen}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
+                                
                                 @foreach ($imagen_fondo2 as $item)
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]" value="{{$item->imagen_fondo}}">
+                                <img src="{{asset("$item->imagen_fondo")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="hidden" name="imagen_fondo[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
 
@@ -245,14 +251,16 @@
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                 @foreach ($imagen3 as $item)
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen[]" value="{{$item->imagen}}">
+                                 <img src="{{asset("$item->imagen")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="hidden" name="imagen[]" value="{{$item->imagen}}">
                                 @endforeach
                             </li>
 
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
                                 @foreach ($imagen_fondo3 as $item)
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]" value="{{$item->imagen_fondo}}">
+                                <img src="{{asset("$item->imagen_fondo")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="hidden" name="imagen_fondo[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
@@ -295,13 +303,15 @@
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                  @foreach ($imagen4 as $item)
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen[]" value="{{$item->imagen}}">
+                                  <img src="{{asset("$item->imagen")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="hidden" name="imagen[]" value="{{$item->imagen}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
                                 @foreach ($imagen_fondo4 as $item)
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]" value="{{$item->imagen_fondo}}">
+                                <img src="{{asset("$item->imagen_fondo")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="hidden" name="imagen_fondo[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
@@ -344,13 +354,15 @@
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                 @foreach ($imagen5 as $item)
-                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="file" name="imagen[]" value="{{$item->imagen}}">
+                                 <img src="{{asset("$item->imagen")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="hidden" name="imagen[]" value="{{$item->imagen}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
                                 @foreach ($imagen_fondo5 as $item)
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]" value="{{$item->imagen_fondo}}">
+                                <img src="{{asset("$item->imagen_fondo")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="hidden" name="imagen_fondo[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
@@ -393,14 +405,16 @@
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                 @foreach ($imagen6 as $item)
-                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="file" name="imagen[]" value="{{$item->imagen}}">
+                                 <img src="{{asset("$item->imagen")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="hidden" name="imagen[]" value="{{$item->imagen}}">
                                 @endforeach
                             </li>
 
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
                                 @foreach ($imagen_fondo7 as $item)
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]" value="{{$item->imagen_fondo}}">
+                                <img src="{{asset("$item->imagen_fondo")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="hidden" name="imagen_fondo[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
@@ -443,14 +457,16 @@
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                 @foreach ($imagen7 as $item)
-                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="file" name="imagen[]" value="{{$item->imagen}}">
+                                 <img src="{{asset("$item->imagen")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="hidden" name="imagen[]" value="{{$item->imagen}}">
                                 @endforeach
                             </li>
 
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
                                 @foreach ($imagen_fondo7 as $item)
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]" value="{{$item->imagen_fondo}}">
+                                <img src="{{asset("$item->imagen_fondo")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="hidden" name="imagen_fondo[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
@@ -493,13 +509,15 @@
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                 @foreach ($imagen8 as $item)
-                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="file" name="imagen[]" value="{{$item->imagen}}">
+                                 <img src="{{asset("$item->imagen")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="hidden" name="imagen[]" value="{{$item->imagen}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
                                 @foreach ($imagen_fondo8 as $item)
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]" value="{{$item->imagen_fondo}}">
+                                <img src="{{asset("$item->imagen_fondo")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="hidden" name="imagen_fondo[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
@@ -543,13 +561,15 @@
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                 @foreach ($imagen9 as $item)
-                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="file" name="imagen[]" value="{{$item->imagen}}">
+                                 <img src="{{asset("$item->imagen")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="hidden" name="imagen[]" value="{{$item->imagen}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
                                 @foreach ($imagen_fondo9 as $item)
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]" value="{{$item->imagen_fondo}}">
+                                <img src="{{asset("$item->imagen_fondo")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="hidden" name="imagen_fondo[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
@@ -593,13 +613,15 @@
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                 @foreach ($imagen10 as $item)
-                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="file" name="imagen[]" value="{{$item->imagen}}">
+                                 <img src="{{asset("$item->imagen")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="hidden" name="imagen[]" value="{{$item->imagen}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
                                 @foreach ($imagen_fondo10 as $item)
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]" value="{{$item->imagen_fondo}}">
+                                <img src="{{asset("$item->imagen_fondo")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="hidden" name="imagen_fondo[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
@@ -643,13 +665,15 @@
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                 @foreach ($imagen11 as $item)
-                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="file" name="imagen[]" value="{{$item->imagen}}">
+                                 <img src="{{asset("$item->imagen")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="hidden" name="imagen[]" value="{{$item->imagen}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
                                 @foreach ($imagen_fondo11 as $item)
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]" value="{{$item->imagen_fondo}}">
+                                <img src="{{asset("$item->imagen_fondo")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="hidden" name="imagen_fondo[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
@@ -693,13 +717,15 @@
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                 @foreach ($imagen12 as $item)
-                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="file" name="imagen[]" value="{{$item->imagen}}">
+                                 <img src="{{asset("$item->imagen")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="hidden" name="imagen[]" value="{{$item->imagen}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
                                 @foreach ($imagen_fondo12 as $item)
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]" value="{{$item->imagen_fondo}}">
+                                <img src="{{asset("$item->imagen_fondo")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="hidden" name="imagen_fondo[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
@@ -743,13 +769,15 @@
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                 @foreach ($imagen13 as $item)
-                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="fileile" name="imagen[]" value="{{$item->imagen}}">
+                                <img src="{{asset("$item->imagen")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="hidden" name="imagen[]" value="{{$item->imagen}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
                                 @foreach ($imagen_fondo13 as $item)
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="fileile" name="imagen_fondo_fondo[]" value="{{$item->imagen_fondo}}">
+                                <img src="{{asset("$item->imagen_fondo")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="hidden" name="imagen_fondo_fondo[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
@@ -793,13 +821,15 @@
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                 @foreach ($imagen14 as $item)
-                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="fileile" name="imagen[]" value="{{$item->imagen}}">
+                                <img src="{{asset("$item->imagen")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="hidden" name="imagen[]" value="{{$item->imagen}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
                                 @foreach ($imagen_fondo14 as $item)
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="fileile" name="imagen_fondo_fondo[]" value="{{$item->imagen_fondo}}">
+                                <img src="{{asset("$item->imagen_fondo")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="hidden" name="imagen_fondo_fondo[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
@@ -843,13 +873,15 @@
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                 @foreach ($imagen15 as $item)
-                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="fileile" name="imagen[]" value="{{$item->imagen}}">
+                                <img src="{{asset("$item->imagen")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="hidden" name="imagen[]" value="{{$item->imagen}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
                                 @foreach ($imagen_fondo15 as $item)
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="fileile" name="imagen_fondo_fondo[]" value="{{$item->imagen_fondo}}">
+                                <img src="{{asset("$item->imagen_fondo")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="hidden" name="imagen_fondo_fondo[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
@@ -893,13 +925,15 @@
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                 @foreach ($imagen16 as $item)
-                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="fileile" name="imagen[]" value="{{$item->imagen}}">
+                                <img src="{{asset("$item->imagen")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="hidden" name="imagen[]" value="{{$item->imagen}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
                                 @foreach ($imagen_fondo16 as $item)
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="fileile" name="imagen_fondo_fondo[]" value="{{$item->imagen_fondo}}">
+                                <img src="{{asset("$item->imagen_fondo")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="hidden" name="imagen_fondo_fondo[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
@@ -942,12 +976,14 @@
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                 @foreach ($imagen17 as $item)
-                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="fileile" name="imagen[]" value="{{$item->imagen}}">
+                                <img src="{{asset("$item->imagen")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="hidden" name="imagen[]" value="{{$item->imagen}}">
                                 @endforeach
                             </li><li class="list-group-item">
                                 <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
                                 @foreach ($imagen_fondo17 as $item)
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="fileile" name="imagen_fondo_fondo[]" value="{{$item->imagen_fondo}}">
+                                <img src="{{asset("$item->imagen_fondo")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="hidden" name="imagen_fondo_fondo[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
@@ -990,13 +1026,15 @@
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                 @foreach ($imagen18 as $item)
-                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="fileile" name="imagen[]" value="{{$item->imagen}}">
+                                <img src="{{asset("$item->imagen")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="hidden" name="imagen[]" value="{{$item->imagen}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
                                 @foreach ($imagen_fondo18 as $item)
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="fileile" name="imagen_fondo_fondo[]" value="{{$item->imagen_fondo}}">
+                                <img src="{{asset("$item->imagen_fondo")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="hidden" name="imagen_fondo_fondo[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
@@ -1040,13 +1078,15 @@
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                 @foreach ($imagen19 as $item)
-                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="file" name="imagen[]" value="{{$item->imagen}}">
+                                <img src="{{asset("$item->imagen")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="hidden" name="imagen[]" value="{{$item->imagen}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
                                 @foreach ($imagen_fondo19 as $item)
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]" value="{{$item->imagen_fondo}}">
+                                <img src="{{asset("$item->imagen_fondo")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="hidden" name="imagen_fondo[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
@@ -1090,13 +1130,15 @@
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen (Opcional)</h4>
                                 @foreach ($imagen20 as $item)
-                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="file" name="imagen[]" value="{{$item->imagen}}">
+                                <img src="{{asset("$item->imagen")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="Titulo..." type="hidden" name="imagen[]" value="{{$item->imagen}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">
                                 <h4 class="colorsito">Imagen de fondo (Opcional)</h4>
                                 @foreach ($imagen_fondo20 as $item)
-                                <input class="form-control form-control-alternative" placeholder="imagen..." type="file" name="imagen_fondo[]" value="{{$item->imagen_fondo}}">
+                                <img src="{{asset("$item->imagen_fondo")}}" class="img-fluid rounded img4">
+                                <input class="form-control form-control-alternative" placeholder="imagen..." type="hidden" name="imagen_fondo[]" value="{{$item->imagen_fondo}}">
                                 @endforeach
                             </li>
                             <li class="list-group-item">

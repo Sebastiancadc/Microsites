@@ -41,7 +41,7 @@ body,html {
        @if (json_encode($item->imagen_fondo) == "null" )
         class="step1"
         @else
-        style="background-image: url('{{$item->imagen_fondo}}');
+        style="background-image: url('{{asset("$item->imagen_fondo")}}');
          background-repeat: no-repeat;background-size:cover;"
       @endif 
       @endforeach>
@@ -56,7 +56,7 @@ body,html {
           @foreach ($imagen1 as $item)
           @if (json_encode($item->imagen) == "null")
           @else
-          <img src="{{$item->imagen}}" height="300" width="500">
+          <img src="{{asset("$item->imagen")}}" height="300" width="500">
           @endif
           @endforeach
         </div>
@@ -71,7 +71,7 @@ body,html {
       @if (json_encode($item->imagen_fondo) == "null" )
        class="step1"
        @else
-       style="background-image: url('{{$item->imagen_fondo}}');
+       style="background-image: url('{{asset("$item->imagen_fondo")}}');
         background-repeat: no-repeat;background-size:cover;"
      @endif 
      @endforeach>
@@ -86,7 +86,7 @@ body,html {
           @foreach ($imagen2 as $item)
           @if (json_encode($item->imagen) == "null")
           @else
-          <img src="{{$item->imagen}}" height="300" width="500">
+          <img src="{{asset("$item->imagen")}}" height="300" width="500">
           @endif
           @endforeach
         </div>
@@ -116,7 +116,7 @@ body,html {
           @foreach ($imagen3 as $item)
           @if (json_encode($item->imagen) == "null")
           @else
-          <img src="{{$item->imagen}}" height="300" width="500">
+          <img src="{{asset("$item->imagen")}}" height="300" width="500">
           @endif
           @endforeach
         </div>
@@ -147,7 +147,7 @@ body,html {
           @foreach ($imagen4 as $item)
           @if (json_encode($item->imagen) == "null")
           @else
-          <img src="{{$item->imagen}}" height="300" width="500">
+          <img src="{{asset("$item->imagen")}}" height="300" width="500">
           @endif
           @endforeach
         </div>
@@ -176,7 +176,7 @@ body,html {
           @foreach ($imagen5 as $item)
           @if (json_encode($item->imagen) == "null")
           @else
-          <img src="{{$item->imagen}}" height="300" width="500">
+          <img src="{{asset("$item->imagen")}}" height="300" width="500">
           @endif
           @endforeach
         </div>
@@ -205,7 +205,7 @@ body,html {
           @foreach ($imagen6 as $item)
           @if (json_encode($item->imagen) == "null")
           @else
-          <img src="{{$item->imagen}}" height="300" width="500">
+          <img src="{{asset("$item->imagen")}}" height="300" width="500">
           @endif
           @endforeach
         </div>
@@ -234,7 +234,7 @@ body,html {
           @foreach ($imagen7 as $item)
           @if (json_encode($item->imagen) == "null")
           @else
-          <img src="{{$item->imagen}}" height="300" width="500">
+          <img src="{{asset("$item->imagen")}}" height="300" width="500">
           @endif
           @endforeach
         </div>
@@ -263,7 +263,7 @@ body,html {
           @foreach ($imagen8 as $item)
           @if (json_encode($item->imagen) == "null")
           @else
-          <img src="{{$item->imagen}}" height="300" width="500">
+          <img src="{{asset("$item->imagen")}}" height="300" width="500">
           @endif
           @endforeach
         </div>
@@ -292,7 +292,7 @@ body,html {
           @foreach ($imagen9 as $item)
           @if (json_encode($item->imagen) == "null")
           @else
-          <img src="{{$item->imagen}}" height="300" width="500">
+          <img src="{{asset("$item->imagen")}}" height="300" width="500">
           @endif
           @endforeach
         </div>
@@ -321,7 +321,7 @@ body,html {
           @foreach ($imagen10 as $item)
           @if (json_encode($item->imagen) == "null")
           @else
-          <img src="{{$item->imagen}}" height="300" width="500">
+          <img src="{{asset("$item->imagen")}}" height="300" width="500">
           @endif
           @endforeach
         </div>
@@ -350,7 +350,7 @@ body,html {
           @foreach ($imagen11 as $item)
           @if (json_encode($item->imagen) == "null")
           @else
-          <img src="{{$item->imagen}}" height="300" width="500">
+          <img src="{{asset("$item->imagen")}}" height="300" width="500">
           @endif
           @endforeach
         </div>
@@ -379,7 +379,7 @@ body,html {
           @foreach ($imagen12 as $item)
           @if (json_encode($item->imagen) == "null")
           @else
-          <img src="{{$item->imagen}}" height="300" width="500">
+          <img src="{{asset("$item->imagen")}}" height="300" width="500">
           @endif
           @endforeach
         </div>
@@ -408,7 +408,7 @@ body,html {
           @foreach ($imagen13 as $item)
           @if (json_encode($item->imagen) == "null")
           @else
-          <img src="{{$item->imagen}}" height="300" width="500">
+          <img src="{{asset("$item->imagen")}}" height="300" width="500">
           @endif
           @endforeach
         </div>
@@ -437,7 +437,7 @@ body,html {
           @foreach ($imagen14 as $item)
           @if (json_encode($item->imagen) == "null")
           @else
-          <img src="{{$item->imagen}}" height="300" width="500">
+          <img src="{{asset("$item->imagen")}}" height="300" width="500">
           @endif
           @endforeach
         </div>
@@ -452,7 +452,7 @@ body,html {
       @if (json_encode($item->imagen_fondo) == "null" )
        class="step1"
        @else
-       style="background-image: url('{{$item->imagen_fondo}}');
+       style="background-image: url('{{asset("$item->imagen_fondo")}}');
         background-repeat: no-repeat;background-size:cover;"
      @endif 
      @endforeach>
@@ -466,7 +466,7 @@ body,html {
           @foreach ($imagen15 as $item)
           @if (json_encode($item->imagen) == "null")
           @else
-          <img src="{{$item->imagen}}" height="300" width="500">
+          <img src="{{asset("$item->imagen")}}" height="300" width="500">
           @endif
           @endforeach
         </div>
@@ -495,7 +495,7 @@ body,html {
           @foreach ($imagen16 as $item)
           @if (json_encode($item->imagen) == "null")
           @else
-          <img src="{{$item->imagen}}" height="300" width="500">
+          <img src="{{asset("$item->imagen")}}" height="300" width="500">
           @endif
           @endforeach
         </div>
@@ -524,7 +524,7 @@ body,html {
           @foreach ($imagen17 as $item)
           @if (json_encode($item->imagen) == "null")
           @else
-          <img src="{{$item->imagen}}" height="300" width="500">
+          <img src="{{asset("$item->imagen")}}" height="300" width="500">
           @endif
           @endforeach
         </div>
@@ -553,7 +553,7 @@ body,html {
           @foreach ($imagen18 as $item)
           @if (json_encode($item->imagen) == "null")
           @else
-          <img src="{{$item->imagen}}" height="300" width="500">
+          <img src="{{asset("$item->imagen")}}" height="300" width="500">
           @endif
           @endforeach
         </div>
@@ -582,7 +582,7 @@ body,html {
           @foreach ($imagen19 as $item)
           @if (json_encode($item->imagen) == "null")
           @else
-          <img src="{{$item->imagen}}" height="300" width="500">
+          <img src="{{asset("$item->imagen")}}" height="300" width="500">
           @endif
           @endforeach
         </div>
@@ -597,7 +597,7 @@ body,html {
       @if (json_encode($item->imagen_fondo) == "null" )
        class="step1"
        @else
-       style="background-image: url('{{$item->imagen_fondo}}');
+       style="background-image: url('{{asset("$item->imagen_fondo")}}');
         background-repeat: no-repeat;background-size:cover;"
      @endif 
      @endforeach>
@@ -611,7 +611,7 @@ body,html {
           @foreach ($imagen20 as $item)
           @if (json_encode($item->imagen) == "null")
           @else
-          <img src="{{$item->imagen}}" height="300" width="500">
+          <img src="{{asset("$item->imagen")}}" height="300" width="500">
           @endif
           @endforeach
         </div>
@@ -714,7 +714,6 @@ body,html {
 	  keyNavigation: true,
 	  fadeStepWhenSkipped: false,
 	  autoPlay: true,
-    
 	  autoPlayInterval: {{$presentacion->time}},
 	}
   
