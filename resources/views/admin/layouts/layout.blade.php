@@ -67,7 +67,7 @@ $colaborador = Illuminate\Support\Facades\DB::table('rol')->select('*')->where('
             <li class="nav-item">
                 <a class="nav-link" href="{{url('archivos')}}">Archivos</a>
               </li>
-          </ul>
+          </ul> 
           @else
           <ul class="navbar-nav ml-lg-auto">
           <li class="nav-item">

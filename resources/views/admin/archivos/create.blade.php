@@ -52,13 +52,11 @@
                                 <div class="form-group">
                                     <label class="form-control-label">Archivo<i class="ii">*</i></label>
                                     <input type="file" class="form-control form-control-alternative" name="archivo"
-                                        id="archivo" required>
+                                        id="archivo" required accept="application/.pdf,application/.xlsx,application/.doc">
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
                     <div class="modal-footer no-bd">
                         <button type="submit" class="btn btn-primary">Agregar</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>

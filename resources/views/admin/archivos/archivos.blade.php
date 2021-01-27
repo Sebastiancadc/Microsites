@@ -55,6 +55,7 @@
                                     data-target="#addRowModal">Agregar Archivo</a>
                                 <br><br>
                                 @foreach ($archivos22 as $item)
+                                
                                 <div class="col-lg-4 card-wrapper" style="float:left;">
                                     <div class="card"
                                 
@@ -124,7 +125,6 @@
                                                 </div>
                                             </div>
                                             {{-- FIN MODAL --}}
-
                                             <style>
                                                 #botoneliminar {
                                                     box-shadow: none;
@@ -135,8 +135,16 @@
                                                     margin-right: -24px;
                                                 }
                                             </style>
-
-                                            <a href="upload/{{$item->archivo}}" download="{{$item->archivo}}"
+                                            @if ($item->tipo_archivo == 'PDF')
+                                                <a href="upload/{{$item->archivo}}" 
+                                                    target="_blank"
+                                                    class="btn btn-succes btn-sm" style="float: right">
+                                                    Ver 
+                                                    <i class="fa fa-eye"></i>
+                                                </a>
+                                               @endif 
+                                            <a href="upload/{{$item->archivo}}" 
+                                                download="{{$item->archivo}}"
                                                 class="btn btn-primary btn-sm" style="float: right">
                                                 Descargar &nbsp
                                                 <i class="fa fa-download"></i>
@@ -145,6 +153,7 @@
                                         </div>
                                     </div>
                                 </div>
+                           
                                 @endforeach
                             </div>
                         </div>
